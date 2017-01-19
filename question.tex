@@ -10,7 +10,7 @@
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 \newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat[article, inproceedings, inbook, thesis]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+\DeclareFieldFormat[article, inproceedings, inbook, book, thesis]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
 \renewcommand*{\bibfont}{\footnotesize}
 
 \newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label={\rm(\arabic{lemlisti})}, ref=\thelemma.(\arabic{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
@@ -699,7 +699,7 @@ Its $k$-simplices $W_k$ are matrices $\left(\begin{smallmatrix}x_0 & x_1 & \ldot
  To prove the lemma it suffices to show that $f$ and $g$ are homotopy equivalences. 
  The proof for $f$ and $g$ is similar, let us show, for example, that $g$ is a homotopy equivalence.
  
- In view of Quillen theorem A (cf.\cite[ex.~3.11, p.~325]{Kbook}) it suffices to show that for each $p$-simplex $d \colon \Delta^p \to V$ the 
+ In view of Quillen theorem A (cf.\cite[ex.~IV.3.11]{Kbook}) it suffices to show that for each $p$-simplex $d \colon \Delta^p \to V$ the 
   pullback $g/(p, d)$ of $d$ and $g$ is contractible.
  The simplicial set $g/(p, d)$ can be interpreted as the subset of $\Delta^p \times E(X)$ whose set of $k$-simplices consists of pairs
   $(\alpha\colon \underline{k}\to \underline{p}, (x_0, \ldots, x_k)\in X(\alpha, d)^{k+1})$.
@@ -759,12 +759,22 @@ To finish the proof of~\cref{thm:main} it remains to show that $\psi$ is an isom
 It is well possible to compute explicitly the image of an element of $\HH_2(G, \ZZ)$ under $\psi$, however, since $\psi$ is natural,
  by~\cref{lm:endotr} below we can simplify our computations and restrict ourselves to the case of abelian $G$.
 
-
 \end{proof}
 
 \begin{lemma} \label{lm:endotr} The only natural endotransformations of the second homology functor $\HH_2(-, \ZZ)\colon \catname{Groups}\to \catname{Ab}$ 
- are morphisms of multiplication by some integer $n \in \ZZ$.
+ are morphisms of multiplication by $n \in \ZZ$.
 \end{lemma}
+\begin{proof}
+ Denote by $\eta$ an endotransformation $\HH^2(-, \ZZ) \to \HH^2(-, \ZZ)$.
+ When restricted to the subcategory of free finitely-generated abelian groups $\catname{Add}(\ZZ) \subseteq \catname{Ab}$ the second homology functor
+ coincides with the second exterior power functor $A \mapsto \wedge^2A$. 
+ 
+ Recall from~\cite[Theorem~6.13.12]{Ba96} that the category of quadratic functors is equivalent to the category of quadratic $\ZZ$-modules (see Definition~6.13.5 ibid.)
+ The functor $A \mapsto \wedge^2A$ is clearly quadratic and corresponds to the quadratic $\ZZ$-module $0 \to \ZZ \to 0$ under this equivalence.
+ Thus, we get that $\eta$ restricted to $\catname{Add}(\ZZ)$ coincides with the the morphism of multiplication by $n\in \ZZ$.
+ 
+\end{proof}
+
 
 
 \begin{comment}                           
