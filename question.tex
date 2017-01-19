@@ -739,31 +739,31 @@ For $h \in G^n$ the subgroup $N_h$ consists of elements $(g, s) \in N$ satisfyin
 Thus, $N_h\cong S_n$, $\pi_1(S)$ is isomorphic to the group $S_n(G)$ and the map $\pi_1(S) \to N$ coincides with the map $\mu$ defined in section~\ref{sec:QnG-def} {\bf ???}.
 
 \begin{proof}[Proof of~\cref{thm:main}]
-Factor the map $h_n$ as a composition of a trivial cofibration followed by a fibration: $BG^{2n} \hookrightarrow E_{h_n} \twoheadrightarrow \ZZ[BG]$
- and write down the starting portion of the long homotopy exact sequence of $E_{h_n} \twoheadrightarrow \ZZ[BG]$.
-If we denote by $K$ the kernel of  the map $\nu\colon \pi_1(T) \to G^{2n}$ induced by the embedding $h_n^{-1}(0)=T \subseteq BG^{2n}$ we 
- come to the following commutative diagram.
-\[ \xymatrix{1 \ar[r] & K       \ar[d]_{\psi} \ar[r] & \pi_1(T) \ar[d]_{\phi} \ar[r]_{\nu}     & G^{2n} \ar[rd] \ar[d]_{\cong} &                      & \\
-             1 \ar[r] & \HH_2(G, \ZZ) \ar[r] & \pi_1(F_{h_n})           \ar[r]  & \pi_1(E_{h_n}) \ar[r]  & \HH_1(G, \ZZ) \ar[r] & 1}\]
-We already know by~\cref{cor:ker-iso} and {\bf ???} that $K$ is isomorphic to $\HH_2(G, \ZZ)$ provided $n\geq 3$.
-Thus, to finish the proof of~\cref{thm:main} it remains to show that $\psi$ is an isomorphism. 
-
-Notice first that the map $\psi$ is natural in $G$. 
-This follows from the fact that the isomorphisms $K \cong \HH_2(G, \ZZ)$ and the maps $\phi$ can be defined naturally with respect to $G$.
-For example, in order to choose $E_{h_n}$ and $F_{h_n}$ naturally in $G$ we can use the usual path space construction
+Factor $h_n$ as a composition of a trivial cofibration followed by a fibration: 
+\begin{equation} \label{eq:fibr-repl} BG^{2n} \hookrightarrow E_{h_n} \twoheadrightarrow \ZZ[BG] \end{equation}
+For example, we can define $E_{h_n}$ and the homotopy fiber $F_{h_n}$ via the usual path space construction
  (here we use the fact that $BG$ and $\ZZ[BG]$ are fibrant).
 \[ \xymatrix{ E_{h_n}  \ar[r]_{\pi_2} \ar[d]_{\pi_1} \pullbackcorner & \ar[d]^{ev_0} \ZZ[BG]^I\\
               BG^{2n} \ar[r]_{h_n} & \ZZ[BG] } \ \ \ 
    \xymatrix{ F_{h_n}  \ar[r] \ar[d] \pullbackcorner & \ar[d]^{ev_1\,\circ\,\pi_2} E_{h_n} \\
               pt \ar[r]_{0} & \ZZ[BG]}  \]
-It is possible to classify all the natural transformations $\HH_2(G, \ZZ) \to \HH_2(G, \ZZ)$~see Lemma~{\bf ???} below.
-As a matter of fact, such maps correspond to multiplication by some integer $n$.
-Thus, it remains 
+Now write down the starting portion of the long homotopy exact sequence of the fibration $E_{h_n} \twoheadrightarrow \ZZ[BG]$.
+If we denote by $K$ the kernel of  the map $\nu\colon \pi_1(T) \to G^{2n}$ induced by the embedding $h_n^{-1}(0)=T \subseteq BG^{2n}$ we 
+ come to the following commutative diagram.
+\[ \xymatrix{1 \ar[r] & K       \ar[d]_{\psi} \ar[r] & \pi_1(T) \ar[d]_{\phi} \ar[r]_{\nu}     & G^{2n} \ar[rd] \ar[d]_{\cong} &                      & \\
+             1 \ar[r] & \HH_2(G, \ZZ) \ar[r] & \pi_1(F_{h_n})           \ar[r]  & \pi_1(E_{h_n}) \ar[r]  & \HH_1(G, \ZZ) \ar[r] & 1}\]
+We already know by~\cref{cor:ker-iso} and {\bf ???} that $K$ is isomorphic to $\HH_2(G, \ZZ)$ provided $n\geq 3$.
+Notice that this isomorphism is natural in $G$.
+
+To finish the proof of~\cref{thm:main} it remains to show that $\psi$ is an isomorphism (clearly, this implies that $\phi$ is an isomoprhism).
+It is well possible to compute explicitly the image of an element of $\HH_2(G, \ZZ)$ under $\psi$, however, since $\psi$ is natural,
+ by~\cref{lm:endotr} below we can simplify our computations and restrict ourselves to the case of abelian $G$.
+
+
 \end{proof}
 
-\begin{lemma} The natural transformations $\HH_2(G, \ZZ) \to \HH_2(G, \ZZ)$ of the second group homology functor 
- $\HH_2(-, \ZZ)\colon \catname{Groups}\to \catname{Ab}$ coincides morphisms of multiplication by $n$.
- 
+\begin{lemma} \label{lm:endotr} The only natural endotransformations of the second homology functor $\HH_2(-, \ZZ)\colon \catname{Groups}\to \catname{Ab}$ 
+ are morphisms of multiplication by some integer $n \in \ZZ$.
 \end{lemma}
 
 
