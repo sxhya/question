@@ -736,7 +736,16 @@ It is not hard to check that in this case the simplicial subset $T \subset BG^{2
 It is also easy to compute the map $\pi_1(S) \to N$. Indeed, van Kampen theorem~\cite[Theorem~2.7]{May99} asserts that
 $\pi_1(S)$ is isomorphic to the free product of stabilizer subgroups $N_{h} \leq N$ amalgamated over pairwise intersections $N_h \cap N_{h'}$, $h, h\in H$.
 For $h \in G^n$ the subgroup $N_h$ consists of elements $(g, s) \in N$ satisfying $gh^{s^{-1}} = h$, i.e. elements of the form $(hh^{-s^{-1}}, s)$.
-Thus, $N_h\cong S_n$, $\pi_1(S)$ is isomorphic to the group $S_n(G)$ and the map $\pi_1(S) \to N$ coincides with the map $\mu$ defined in section~\ref{sec:QnG-def} {\bf ???}.
+Thus, $N_h\cong S_n$, $\pi_1(S)$ is isomorphic to the group $S_n(G)$ and the map $\pi_1(S) \to N$ coincides with the map $\mu$ defined in section~\ref{sec:QnG-def}.
+
+\begin{example} 
+ We leave it as an exercise to the reader to check that an element $[h_{12}(a), h_{13}(b)] \in \pi_1(S)$ corresponds to the following element of $\pi_1(T)$
+  under the isomorphism of \cref{lm:quillen-a}:
+ \begin{multline} \nonumber
+  (a[1], a[1]) (a^{-1}[1], a^{-1}[2]) (b[1], b[1]) (b^{-1}[1], b^{-1}[3]) \cdot \\ (a[1], a[2]) (a^{-1}[1], a^{-1}[1]) (b[1], b[3]) (b^{-1}[1], b^{-1}[1])).
+ \end{multline}  
+\end{example}
+
 
 \begin{proof}[Proof of~\cref{thm:main}]
 Factor $h_n$ as a composition of a trivial cofibration followed by a fibration: 
@@ -765,7 +774,7 @@ It is well possible to compute explicitly the image of an element of $\HH_2(G, \
  are morphisms of multiplication by $n \in \ZZ$.
 \end{lemma}
 \begin{proof}
- Denote by $\eta$ an endotransformation $\HH^2(-, \ZZ) \to \HH^2(-, \ZZ)$.
+ Denote by $\eta$ an endotransformation $\HH_2(-, \ZZ) \to \HH_2(-, \ZZ)$.
  When restricted to the subcategory of free finitely-generated abelian groups $\catname{Add}(\ZZ) \subseteq \catname{Ab}$ the second homology functor
  coincides with the second exterior power functor $A \mapsto \wedge^2A$. 
  
@@ -778,8 +787,8 @@ It is well possible to compute explicitly the image of an element of $\HH_2(G, \
  Consider the following diagrams.
   \[ \xymatrix{ \ZZ \ar@{^{(}->}[r] \ar[d]_{\eta_{\Gamma_k}} & \ar[d]^{n \cdot} \wedge^2\ZZ^{2k} \\
                 \ZZ \ar@{^{(}->}[r]                          & \wedge^2\ZZ^{2k} } \ \ \ 
-     \xymatrix{   \ZZ  \ar[r]^(.35){\chi_*} \ar[d]_{\eta_{\Gamma_k}} & \ar[d]^{\eta_G} \HH_2(G, \ZZ) \\
-                  \ZZ  \ar[r]^(.35){\chi_*}                          & \HH_2(G, \ZZ)}  \]
+     \xymatrix{   \ZZ  \ar[r]^(.35){\chi} \ar[d]_{\eta_{\Gamma_k}} & \ar[d]^{\eta_G} \HH_2(G, \ZZ) \\
+                  \ZZ  \ar[r]^(.35){\chi}                          & \HH_2(G, \ZZ)}  \]
  From the left diagram it follows that $\eta_{\Gamma_k}$ is also the morphism of multiplication by $n$.
  For every element $x\in \HH_2(G, \ZZ)$ there exist an integer $k$ and a map $\chi\colon \Gamma_k\to G$ sending the generator of $\HH_2(\Gamma_k, \ZZ)$ to $x$.
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
