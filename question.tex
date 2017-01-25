@@ -738,18 +738,18 @@ $\pi_1(S)$ is isomorphic to the free product of stabilizer subgroups $N_{h} \leq
 For $h \in G^n$ the subgroup $N_h$ consists of elements $(g, s) \in N$ satisfying $gh^{s^{-1}} = h$, i.e. elements of the form $(hh^{-s^{-1}}, s)$.
 Thus, $N_h\cong S_n$, $\pi_1(S)$ is isomorphic to the group $S_n(G)$ and the map $\pi_1(S) \to N$ coincides with the map $\mu$ defined in section~\ref{sec:QnG-def}.
 
-\begin{example} 
- We leave it as an exercise to the reader to check that an element $[h_{12}(a), h_{13}(b)] \in \pi_1(S)$ corresponds to the following element of $\pi_1(T)$
+\begin{example} \label{ex44}
+ We leave it as an exercise to the reader to check that an element $[h_{12}(x), h_{13}(y)] \in \pi_1(S)$ corresponds to the following element of $\pi_1(T)$
   under the isomorphism of \cref{lm:quillen-a}:
- \begin{multline} \nonumber
-  (a[1], a[1]) (a^{-1}[1], a^{-1}[2]) (b[1], b[1]) (b^{-1}[1], b^{-1}[3]) \cdot \\ (a[1], a[2]) (a^{-1}[1], a^{-1}[1]) (b[1], b[3]) (b^{-1}[1], b^{-1}[1])).
+ \begin{multline} \label{eq:pathT}
+  \gamma_{x,y} = (x[1], x[1]) \circ (x^{-1}[1], x^{-1}[2]) \circ (y[1], y[1]) \circ (y^{-1}[1], y^{-1}[3]) \circ \\ \circ (x[1], x[2]) \circ (x^{-1}[1], x^{-1}[1]) \circ (y[1], y[3]) \circ (y^{-1}[1], y^{-1}[1])).
  \end{multline}  
 \end{example}
 
 
 \begin{proof}[Proof of~\cref{thm:main}]
 Factor $h_n$ as a composition of a trivial cofibration followed by a fibration: 
-\begin{equation} \label{eq:fibr-repl} BG^{2n} \hookrightarrow E_{h_n} \twoheadrightarrow \ZZ[BG] \end{equation}
+\begin{equation} \label{eq:fibr-repl} \xymatrix{BG^{2n} \ar@{^{(}->}[r] & E_{h_n} \ar@{->>}^(.45){ev_1 \circ \pi_2}[r] & \ZZ[BG]} \end{equation}
 For example, we can define $E_{h_n}$ and the homotopy fiber $F_{h_n}$ via the usual path space construction
  (here we use the fact that $BG$ and $\ZZ[BG]$ are fibrant).
 \[ \xymatrix{ E_{h_n}  \ar[r]_{\pi_2} \ar[d]_{\pi_1} \pullbackcorner & \ar[d]^{ev_0} \ZZ[BG]^I\\
@@ -757,16 +757,31 @@ For example, we can define $E_{h_n}$ and the homotopy fiber $F_{h_n}$ via the us
    \xymatrix{ F_{h_n}  \ar[r] \ar[d] \pullbackcorner & \ar[d]^{ev_1\,\circ\,\pi_2} E_{h_n} \\
               pt \ar[r]_{0} & \ZZ[BG]}  \]
 Now write down the starting portion of the long homotopy exact sequence of the fibration $E_{h_n} \twoheadrightarrow \ZZ[BG]$.
-If we denote by $K$ the kernel of  the map $\nu\colon \pi_1(T) \to G^{2n}$ induced by the embedding $h_n^{-1}(0)=T \subseteq BG^{2n}$ we 
+If we denote by $K$ the kernel of the map $\nu\colon \pi_1(T) \to G^{2n}$ induced by the embedding $h_n^{-1}(0)=T \subseteq BG^{2n}$ we 
  come to the following commutative diagram.
 \[ \xymatrix{1 \ar[r] & K       \ar[d]_{\psi} \ar[r] & \pi_1(T) \ar[d]_{\phi} \ar[r]_{\nu}     & G^{2n} \ar[rd] \ar[d]_{\cong} &                      & \\
              1 \ar[r] & \HH_2(G, \ZZ) \ar[r] & \pi_1(F_{h_n})           \ar[r]  & \pi_1(E_{h_n}) \ar[r]  & \HH_1(G, \ZZ) \ar[r] & 1}\]
 We already know by~\cref{cor:ker-iso} and {\bf ???} that $K$ is isomorphic to $\HH_2(G, \ZZ)$ provided $n\geq 3$.
 Notice that this isomorphism is natural in $G$.
 
-To finish the proof of~\cref{thm:main} it remains to show that $\psi$ is an isomorphism (clearly, this implies that $\phi$ is an isomoprhism).
-It is well possible to compute explicitly the image of an element of $\HH_2(G, \ZZ)$ under $\psi$, however, since $\psi$ is natural,
- by~\cref{lm:endotr} below we can simplify our computations and restrict ourselves to the case of abelian $G$.
+Since the kernels and cokernels of $\phi$ and $\psi$ are the same, it remains to show that $\psi$ is an isomorphism.
+In the sequel we identify loops of $F_{h_n}$ based at $0$ with pairs $(\gamma, s) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(s) = h_n(\gamma)$, $d_0(s) = d_1(s)=0$.
+
+%It is well possible to compute explicitly the image of an element of $\HH_2(G, \ZZ)$ under $\psi$, however, 
+Since $\psi$ is natural in $\psi$, by~\cref{lm:endotr} below we can simplify our calculations and restrict ourselves to the case of abelian $G$.
+In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentation corresponds to the 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}), which,
+  in turn, corresponds to the following normalized 2-cycle:
+ \[c' = c - s_0d_0c - s_1d_1c + s_1d_0 = ???. \]
+ 
+It remains to compute the loop homotopic to the image of the path $\gamma_{x,y}$ from~\eqref{eq:pathT} via $\phi$. %, which can be done via repeated computation of 3-dimensional fillers in $\ZZ[BG]$.
+The inductive procedure we use is as follows. Let $\gamma_0$ be an initial segment of a path $\gamma$ in $T$ for which we have already computed the image
+ $(g^0, s^0)$ in $F_{h_n}$ and let $g \in T_1$ be the next chain link. Set $s_0 = \sum (a_j, b_j) \in\ZZ[BG]_2$, $t = h_n (g^0, g) = \sum_{i=1}^{2n}(-1)^i(g^0_i, g_i)$.
+and compute the filler for the $3$-horn $(0,\ , s_0, t)$. Denote the $1$-st face of this filler by $s_1$.
+It is clear that $(g^0g, s_1)$ is the image of $\gamma^0 \circ g$ via $\phi$ and the concrete formula for $s_1$ is as follows:
+\[s_1 = \sum_{i=1}^{2n}(g^0_i + g_i, -g_i) - \sum_j (a_j + b_j, -b_j).\]
+Finally, we get $\phi(\gamma_{x, y}) = (1, s)$ where {\bf ???}
+\[s= -(x, 0) -(x+y, -x) +(x, -x) +(x+y, -y) -(x, -y) +(y, 0). \]
+It is an exercise to check that the difference 2-cycle $s - c'$ is a boundary {\bf ???}.
 
 \end{proof}
 
