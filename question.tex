@@ -53,7 +53,7 @@
 \newcommand{\pushoutcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
 \newcommand{\pullbackcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 
-\title{Parametrized symmetric groups}
+\title{TBA}
 \keywords {$\mathfrak{U}(G)$-extensions, $\mathfrak{H}_n(G)$-extensions, amalgamated products, van Kampen theorem}
 
 \author {Sergey Sinchuk}
@@ -63,7 +63,6 @@
 \begin{document}
 
 \begin{abstract} By amalgamating copies of symmetric group $S_n$ we construct a central extension $S_n(G)$ of a large subgroup of the wreath product $G \wr S_n$.
-%We call this group a parametrized symmetric group by analogy with parametrized braid groups defined by M.~Stein and J.~L.~Loday in ???.
 We then establish a connection between this group and the theory of $\mathfrak{U}(G)$ and $\mathfrak{H}_n(G)$-extensions developed by K.~Dennis and U.~Rehmann in 1970's.
 We also give a topological application of this construction by describing the fundamental group of the fiber of the ``alternating`` map $BG^{2n}\to \mathbb{Z}[BG]$.
 \end{abstract}
@@ -71,6 +70,7 @@ We also give a topological application of this construction by describing the fu
 \maketitle
 
 \section{Introduction}
+\begin{comment}
 Let $G$ be a group. In~\cite{De76} K.~Dennis defined certain central extension $(G, G)$ of the derived subgroup $[G, G]$ 
  (see section~\ref{ssec:extensions} below for the definition).
 This extension is a quotient of the nonabelian tensor square $G \otimes G$ (but is itself an extension of $\bigwedge^2G$) such that the kernel of the natural map $(G, G) \to [G, G]$ 
@@ -79,8 +79,6 @@ Under the notation $U(G)$ the same extension appears in U.~Rehmann's paper~\cite
 Recall that this theorem asserts for a skew-field $D$ that the group $K_2(D)$ is precisely the quotient of $\widetilde{H}_2(D^*, \mathbb{Z})$ modulo Steinberg relations $\{u, 1-u\} = 1$, $u\in D^*$.
 
 The aim of this note is to describe yet another situation in which the groups $(G, G)$ and $\Lambda^2(G)$ make an appearance.
-We start by defining an extension $S_n(G)$ of the symmetric group $S_n$ which we call a {\it parametrized symmetric group} by analogy
- with parametrized braid groups of M.~Stein and J.-L.~Loday (see~\cite{LS05}).
 
 {\bf TODO: Mention new simpler presentation of Rehmann's extensions for $n\geq 4$}
 %We then decompose $S_n(G)$ as $H_n(G)\times S_n(G)$, where $H_n(\Lambda^2G)$ is an extension of the $ $.
@@ -91,6 +89,7 @@ We start by defining an extension $S_n(G)$ of the symmetric group $S_n$ which we
 
 Unsurprisingly, the main motivation for the definition of the group $S_n(G)$ comes from algebraic topology.
 More specifically, our initial question was to describe the fiber of the ''alternating map`` $X^{2n} \to \mathbb{Z}[X]$ in the special case $X=BG$.
+\end{comment}
 
 For a pointed simplicial set $(X, x_0)$ one denotes by $\ZZ[X]$ its associated free simplicial abelian group,
  i.\,e. the simplicial group whose group of $n$-simplices $\ZZ[X]_n$ is the quotient of free abelian group $\ZZ[X_n]$ modulo relation $x_0=0$.
@@ -100,19 +99,25 @@ Denote by $X^\infty$ the colimit of $X^n$ with respect to the natural embeddings
 Taking colimit of $h_n$ we get the map $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to A(X)$.
 
 Based on a recent result of S.~Podkorytov one can deduce that the natural map $h^{-1}_\infty(0) \to F_{h_\infty}$
- between the fiber and the homotopy fiber of $h_\infty$ over $0$ is a weak equivalence provided $X$ is fibrant and connected, see section~\ref{sec:topo-weak-equiv}.
+ between the fiber and the homotopy fiber of $h_\infty$ over $0$ is a weak equivalence provided $X$ is fibrant and connected, see~\cref{lm:weak-equiv}.
 %%One might be interested in the description of its homotopy fiber $F_{h_\infty}$.
 %For example, one can show that the natural map  is a homotopy equivalence, see~\cref{sec:topology}.
 For finite $n$ this no longer remains true, however one may expect that the homotopy groups of $h^{-1}_n(0)$ and $F_{h_n}$ are still
  isomorphic in small degrees. % for some sufficiently good $X$, say $X$ fibrant and connected.
-We even expect that the natural map $h^{-1}_n(0) \to F_{h_n}$ is $c_n$-connected where $c_n$ tends to infinity as $n\to \infty$,
-however in this note we only show the following, much weaker result.
+One can even expect that the natural map $h^{-1}_n(0) \to F_{h_n}$ is $c_n$-connected where $c_n$ tends to infinity as $n\to \infty$,
+ however in this note we show only the following result.
 \begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$ the natural map $h_n^{-1}(0) \to F_{h_n}$ induces an isomorphism of fundamental groups
- $\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n}) \cong \HH_2(G, \ZZ)$. \end{thm}
+$\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n})$. \end{thm}
+
+The proof of our main results goes as follows. 
+We start by defining an extension $S_n(G)$ of the symmetric group $S_n$ which we call a {\it parametrized symmetric group} by analogy
+ with parametrized braid groups of M.~Stein and J.-L.~Loday (cf.~\cite{LS05}).
+We then show that these groups are directly related with the theory of $\mathfrak{U}(G)$ and $\mathfrak{H}_n(G)$-extensions developed by K.~Dennis and U.~Rehmann in 1970's.
+We find a presentation of a $\mathfrak{H}_n(G)$-extension that is simpler than the one used by Rehmann in~\cite{Reh78}, 
+ which is another main result of the paper, see~\cref{prop:simpler}.
 
 \subsection{Acknowledgements}
-I wish to thank S.~Podkorytov for suggesting the problem and also for his kind permission 
- to use some of his unpublished results in section~\ref{sec:topo-prelim}.
+I wish to thank S.~Podkorytov for suggesting the problem and also for his kind permission to use some of his unpublished results.
 I am also grateful to S.~O.~Ivanov and V.~Isaev for their numerous helpful comments and interest in this work.
 
 \section{The extension $S_n(G)$} 
@@ -447,8 +452,10 @@ In~\cite[\S~3]{Reh78} Rehmann also describes the inverse construction which assi
 \subsection{A simpler presentation of $H_n(G)$}
 The aim of this subsection is to obtain a presentation of $H_n(G)$ that is simpler than the original presentation: 4 instead of 5 relations that are also shorter. 
 Our main result is the following.
-\begin{prop} For $n\geq 4$ the group $H_n(G)$ admits presentation with generators $h_{ij}(a)$, $1\leq i, j\leq n$, $i\neq j$, $a\in G$ and relations \eqref{H0}--\eqref{H3}. \end{prop}
-The proof is based on a series of technical lemmas whose proofs is often identical to those found in Rehmann's paper~\cite{Reh78}.
+\begin{prop} \label{prop:simpler} For $n\geq 4$ % the group $H_n(G)$ admits presentation with generators $h_{ij}(a)$, $1\leq i, j\leq n$, $i\neq j$, $a\in G$ and relations \eqref{H0}--\eqref{H3}. 
+relations \eqref{H0}--\eqref{H3} are equivalent to \eqref{RH1}--\eqref{RH5}.
+\end{prop}
+The proof is based on several technical lemmas whose proof uses arguments similar to those in Rehmann's paper~\cite{Reh78}.
 For $u, v\in G$ we define the following two symbols:
 \[c_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(vu)^{-1}, c'_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(uv)^{-1}.\]
 Notice that~\eqref{RH4} implies $h_{ij}(1)=1$ therefore $c_{ij}(u, u^{-1}) = c'_{ij}(u, u^{-1})$.
@@ -457,9 +464,9 @@ Let us show that one of the relations~\eqref{RH3}, \eqref{RH4} can be excluded f
  the following facts still remain true:
  \begin{lemlist}
 \item \label{item-lem33-cntr} The elements $c_{ij}(u, u^{-1})$ are central in $H_n(G)$;
-\item \label{item-lem33-comm} One has $c'_{ij}(u, v) = [h_{ij}(u), h_{kj}(v)]$;
-\item \label{item-lem33-conj}  One has ${}^{h_{ij}(w)}c_{kj}'(u, v) = c_{kj}'(u, w)^{-1} c_{kj}'(u, vw)$;
-\item \label{item-lem33-conj2} One has ${}^{h_{ij}(w)} c'_{ij}(u, v) = c'_{ij}(uw, v) c'_{ij}(w, v)^{-1}$
+\item \label{item-lem33-comm} One has $c'_{ij}(u, v) = [h_{ij}(u), h_{kj}(v)]$, $k\neq i, j$;
+\item \label{item-lem33-conj}  One has ${}^{h_{ij}(w)}c_{kj}'(u, v) = c_{kj}'(u, w)^{-1} c_{kj}'(u, vw)$, $k\neq i, j$;
+\item \label{item-lem33-conj2} One has ${}^{h_{ij}(w)} c'_{ij}(u, v) = c'_{ij}(uw, v) c'_{ij}(w, v)^{-1}$.
 %\item \label{item-lem33-uum}  One has $c_{ij}(u, u^{-1}) = c_{ij}(u, u)^{-1}$;
 %\item \label{item-lem33-um}  One has $c_{ij}(u, u^{-1}) = c_{ij}(u^{-1}, u)$.
  \end{lemlist}
@@ -513,6 +520,14 @@ using~\cref{item-lem33-cntr} we get that ${}^{h_{ij}(u)}h_{ik}(v) = {}^{c_{ij}(u
 Thus,~\eqref{RH3} turns out to be equivalent to equality $h_{ik}(uv) h_{ik}(u)^{-1} = h_{ik}(u^{-1})^{-1} h_{ik}(vu^{-1})$, or what is the same
 \[c'_{ik}(u^{-1}, uv) = h_{ik}(u^{-1}) h_{ik}(uv) =  h_{ik}(vu^{-1}) h_{ik}(u) = c'_{ik}(vu^{-1}, u).\]
 It is clear that the last equality is an equivalent reformulation of $(5)$.
+\end{proof}
+
+\begin{proof}[Proof of~\cref{prop:simpler}]
+It is easy to check that \eqref{RH2} and \eqref{RH4} are implied by \eqref{H0}--\eqref{H2}. 
+For $n\geq 4$ the third statement of the previous lemma follows from~\cref{item-lem33-comm}, 
+ hence by the first statement, the relation \eqref{RH3} also holds.
+
+It remains to check that \eqref{H0} follows from \eqref{RH4}, while \eqref{H2} follows from \eqref{RH1}, \eqref{RH2} and \eqref{RH4}.
 \end{proof}
 
 \begin{comment}
@@ -663,12 +678,11 @@ Thus we obtain the following result.
 \end{comment}
 
 
-\section{Topological motivation} \label{sec:topo-prelim}
-\subsection{Weak equivalence of $F_{h_\infty}$ and $h_\infty^{-1}(0)$} \label{sec:topo-weak-equiv}
-
-\begin{lemma} If $X$ is fibrant and connected then $F_{h_\infty}$ and $h^{-1}(0)$ are weakly equivalent. \end{lemma}
+\section{Proof of main results} \label{sec:main}
+%\subsection{Weak equivalence of $F_{h_\infty}$ and $h_\infty^{-1}(0)$} \label{sec:topo-weak-equiv}
+\begin{lemma} \label{lm:weak-equiv}If $X$ is fibrant and connected then $F_{h_\infty}$ and $h^{-1}(0)$ are weakly equivalent. \end{lemma}
 \begin{proof}
- {\bf To be done later}
+ {\bf ???}
 \end{proof}
 
 \begin{comment}
@@ -682,7 +696,7 @@ The fact that the above square is cocartesian is equivalent to the surjectivity 
 \begin{equation} \xymatrix{                            & X  \ar[d]^\gamma             &     \\
                             h^{-1}(0)  \ar@{^{(}->}[r] & Y^\infty  \ar[r]^{h_\infty}  & A(Y) } \end{equation}
 \end{comment} 
-Recall that for arbitrary set $X$ one can define the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
+Recall that for arbitrary set $X$ one defines the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
  is $X^{k+1}$ and whose faces and degeneracies are obtained by omitting and repeating components. 
 For a group $G$ we denote by $\pi_G$ the canonical map $EG \to BG$ sending $(g, h) \in EG_1$ to $g^{-1}h \in BG_1$.
  
