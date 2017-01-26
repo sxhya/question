@@ -667,6 +667,11 @@ Thus we obtain the following result.
 \subsection{Weak equivalence of $F_{h_\infty}$ and $h_\infty^{-1}(0)$} \label{sec:topo-weak-equiv}
 
 \begin{lemma} If $X$ is fibrant and connected then $F_{h_\infty}$ and $h^{-1}(0)$ are weakly equivalent. \end{lemma}
+\begin{proof}
+ {\bf To be done later}
+\end{proof}
+
+\begin{comment}
 From the proof of~\cite[Lemma~10.1]{Po17} it follows that the following square of abelian groups is cocartesian in the case $Y$ is fibrant and connected.
 \begin{equation} \xymatrix{ \ZZ[\catname{sSets}(X, Y)] \ar[r]  \ar@{->>}_{\alpha}[d] & \catname{sSets}(X, A(Y)) \ar@{->>}_{\beta}[d]  \\
                             \ZZ[\catname{hsSets}(X, Y)] \ar[r] & \catname{hsSets}(X, A(Y))  } 
@@ -676,8 +681,7 @@ The fact that the above square is cocartesian is equivalent to the surjectivity 
 
 \begin{equation} \xymatrix{                            & X  \ar[d]^\gamma             &     \\
                             h^{-1}(0)  \ar@{^{(}->}[r] & Y^\infty  \ar[r]^{h_\infty}  & A(Y) } \end{equation}
- 
-\subsection{Computation of the kernel} 
+\end{comment} 
 Recall that for arbitrary set $X$ one can define the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
  is $X^{k+1}$ and whose faces and degeneracies are obtained by omitting and repeating components. 
 For a group $G$ we denote by $\pi_G$ the canonical map $EG \to BG$ sending $(g, h) \in EG_1$ to $g^{-1}h \in BG_1$.
@@ -745,7 +749,6 @@ Thus, $N_h\cong S_n$, $\pi_1(S)$ is isomorphic to the group $S_n(G)$ and the map
   \gamma_{x,y} = (x[1], x[1]) \circ (x^{-1}[1], x^{-1}[2]) \circ (y[1], y[1]) \circ (y^{-1}[1], y^{-1}[3]) \circ \\ \circ (x[1], x[2]) \circ (x^{-1}[1], x^{-1}[1]) \circ (y[1], y[3]) \circ (y^{-1}[1], y^{-1}[1])).
  \end{multline}  
 \end{example}
-
 
 \begin{proof}[Proof of~\cref{thm:main}]
 Factor $h_n$ as a composition of a trivial cofibration followed by a fibration: 
