@@ -53,8 +53,9 @@
 \newcommand{\pushoutcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
 \newcommand{\pullbackcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 
-\title{TBA}
-\keywords {$\mathfrak{U}(G)$-extensions, $\mathfrak{H}_n(G)$-extensions, amalgamated products, van Kampen theorem}
+\title{Homotopy invariants, amalgams of symmetric groups and $\mathfrak{H}_n$-extensions}
+\keywords {$\mathfrak{U}(G)$-extensions, $\mathfrak{H}_n(G)$-extensions, amalgamated products, van Kampen theorem,
+ {\em Mathematical Subject Classification (2010):} 55Q05, 20B30, 20E06, 20J06}
 
 \author {Sergey Sinchuk}
 
@@ -91,12 +92,12 @@ Unsurprisingly, the main motivation for the definition of the group $S_n(G)$ com
 More specifically, our initial question was to describe the fiber of the ''alternating map`` $X^{2n} \to \mathbb{Z}[X]$ in the special case $X=BG$.
 \end{comment}
 
-For a pointed simplicial set $(X, x_0)$ one denotes by $\ZZ[X]$ its associated free simplicial abelian group,
- i.\,e. the simplicial group whose group of $n$-simplices $\ZZ[X]_n$ is the quotient of free abelian group $\ZZ[X_n]$ modulo relation $x_0=0$.
-There is a unique map of simplicial sets $h_n\colon X^{2n} \to \ZZ(X)$ defined on $0$-simplices by the identity:
+For a pointed simplicial set $(X, x_0)$ one denotes by $\ZZ[X]$ the associated free simplicial abelian group.
+ %i.\,e. the simplicial group whose group of $n$-simplices $\ZZ[X]_n$ is the quotient of free abelian group $\ZZ[X_n]$ modulo relation $x_0=0$.
+Define the map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the identity:
  \[h_n(x_1, x_2, \ldots x_{2n}) = \sum\limits_{i=1}^{2n}(-1)^ix_i.\]
 Denote by $X^\infty$ the colimit of $X^n$ with respect to the natural embeddings $X^{n} \hookrightarrow X^{n+1}$
-Taking colimit of $h_n$ we get the map $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to A(X)$.
+Taking colimit of $h_n$ we get the map $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$.
 
 Based on a recent result of S.~Podkorytov one can deduce that the natural map $h^{-1}_\infty(0) \to F_{h_\infty}$
  between the fiber and the homotopy fiber of $h_\infty$ over $0$ is a weak equivalence provided $X$ is fibrant and connected, see~\cref{lm:weak-equiv}.
@@ -104,17 +105,20 @@ Based on a recent result of S.~Podkorytov one can deduce that the natural map $h
 %For example, one can show that the natural map  is a homotopy equivalence, see~\cref{sec:topology}.
 For finite $n$ this no longer remains true, however one may expect that the homotopy groups of $h^{-1}_n(0)$ and $F_{h_n}$ are still
  isomorphic in small degrees. % for some sufficiently good $X$, say $X$ fibrant and connected.
-One can even expect that the natural map $h^{-1}_n(0) \to F_{h_n}$ is $c_n$-connected where $c_n$ tends to infinity as $n\to \infty$,
- however in this note we show only the following result.
-\begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$ the natural map $h_n^{-1}(0) \to F_{h_n}$ induces an isomorphism of fundamental groups
-$\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n})$. \end{thm}
+S. Podkorytov conjectured that the natural map $h^{-1}_n(0) \to F_{h_n}$ is $c_n$-connected where $c_n$ tends to infinity as $n\to \infty$.
+The main goal of this note is to show the following result which confirms this conjecture in one special case.
+\begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$
+ the natural map $h_n^{-1}(0) \to F_{h_n}$ induces an isomorphism of fundamental groups
+ $\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n})$. \end{thm}
 
-The proof of our main results goes as follows. 
-We start by defining an extension $S_n(G)$ of the symmetric group $S_n$ which we call a {\it parametrized symmetric group} by analogy
- with parametrized braid groups of M.~Stein and J.-L.~Loday (cf.~\cite{LS05}).
-We then show that these groups are directly related with the theory of $\mathfrak{U}(G)$ and $\mathfrak{H}_n(G)$-extensions developed by K.~Dennis and U.~Rehmann in 1970's.
-We find a presentation of a $\mathfrak{H}_n(G)$-extension that is simpler than the one used by Rehmann in~\cite{Reh78}, 
- which is another main result of the paper, see~\cref{prop:simpler}.
+The proof of Theorem 1 is interesting on its own and goes as follows. 
+Using Quillen theorem A and van Kampen theorem we reduce the original question to some purely group-theoretic problem of 
+ the description of the extension $S_n(G)$, which is defined as a certain amalgamated products of copies of the symmetric group $S_n$.
+It turns out that this extension can be naturally described in terms of the theory of $\mathfrak{U}(G)$ 
+ and $\mathfrak{H}_n(G)$-extensions developed by K.~Dennis and U.~Rehmann in 1970's.
+ 
+In course of the proof we also find a presentation of the universal $\mathfrak{H}_n(G)$-extension 
+ that is simpler than the original presentation introduced by Rehmann in~\cite{Reh78}, see~\cref{prop:simpler}.
 
 \subsection{Acknowledgements}
 I wish to thank S.~Podkorytov for suggesting the problem and also for his kind permission to use some of his unpublished results.
@@ -212,9 +216,9 @@ Proposition now follows by induction on the length of permutations $s$, $t$.
 \end{proof}
 
 \subsection{An explicit presentation of $S_n(G)$}
-In this section we obtain an explicit presentation of $S_n(G)$. % by means of generators and relations.
+In this section we obtain an explicit presentation of $S_n(G)$ similar in appearance to the presentation of parametrized braid groups from~\cite{LS05}. % by means of generators and relations.
 This presentation turns out to be much more economical than the original definition given in section~\ref{sec:QnG-def}.
-Then via Reidemeister-Schreier method we derive a presentation for the subgroup $HS_n(G)$.
+An explicit presentation for the subgroup $HS_n(G)$ is derived from this presentation via Reidemeister-Schreier method.
 
 We start with the following simple lemma which is, in essence, a variant of the standard presentation of a Weyl group in terms of reflections
  with some redundant generators and relations added (cf.~\cite[Theorem~2.4.3]{Ca89}).
@@ -387,12 +391,11 @@ It is not hard to see that the cokernel of $\mu$ is $\HH_1(G, \ZZ) = G_{ab}$.
 % to an element of the form $(h, 1, \ldots, 1)$ with $h\in [G, G]$. It remains to see that $([a, b], 1, \ldots, 1)$ can be presented as a commutator $[h_{12}(a), h_{13}(b)]$.
 
 \section{Relationship with extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}}
-The group $S_n(G)$ defined in the previous section turns out to be directly related with the theory
- of extensions of type $\mathfrak{H_n}$ developed by Rehmann in~\cite{Reh78}.
-It turns out, that some of the relations from~\cref{prop:HSpres} can be used to give a simpler presentation for the ``universal'' extension $H_n(G)$.
-
-\subsection{Extensions of type $\mathfrak{H}_n(G)$ and $\mathfrak{U}(G)$} \label{ssec:extensions}
-We start by reviewing the material of \S~1--3 of~\cite{Reh78}. 
+%The group $S_n(G)$ defined in the previous section turns out to be directly related with the theory
+% of extensions of type $\mathfrak{H_n}$ developed by Rehmann in~\cite{Reh78}.
+%It turns out, that some of the relations from~\cref{prop:HSpres} can be used to give a simpler presentation for the ``universal'' extension $H_n(G)$.
+%\subsection{Extensions of type $\mathfrak{H}_n(G)$ and $\mathfrak{U}(G)$} \label{ssec:extensions}
+We start by briefly reviewing the material of \S~1--3 of~\cite{Reh78}. 
 Let $n \geq 3$ be a natural number. By definition, the group $H_n(G)$ is given by generators
 $h_{ij}(u)$, $u\in G$, $i\neq j$ and the following relations (cf. \cite[H1--H5~of~\S~2]{Reh78}):
 \begin{align}
@@ -411,7 +414,7 @@ By definition, {\it an extension of type $\mathfrak{H}_n(G)$} is an extension $H
  the extension that fits into the following diagram.
 \[ \xymatrix{ H_n(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ H \ar@{->>}[r] & D_n(G)} \]
 %Any $\mathfrak{H}_n(G)$-extension is central, see~\cite[Proposition~2.3]{Reh78}.
-We now recall the notion of an extension of type $\mathfrak{U}(G)$ given by Rehmann in~\cite[\S~1]{Reh78}.
+We now recall the notion of \emph{an extension of type $\mathfrak{U}(G)$} introduced by Rehmann in~\cite[\S~1]{Reh78}.
 Let $G$ be a group. Denote by $U(G)$ the group presented by generators $(u, v)$, $u,v\in G$ and relations:
 \begin{align}
  ({}^{u} v, {}^{u}w) (u,  w) = &\, (uv, w), \tag{U1} \label{U1} \\
@@ -430,22 +433,20 @@ By definition, an {\it extension of type $\mathfrak{U}(G)$} is simply a quotient
  that fits into the following commutative diagram with $G$-equivariant arrows.
 \[ \xymatrix{ U(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ U \ar@{->>}[r] & [G, G]} \]
 
-\begin{comment}
 There is a correspondence between extensions of type $\mathfrak{H}_n(G)$ and $\mathfrak{U}(G)$.
 One can obtain a $\mathfrak{U}(G)$-extension from given $\mathfrak{H}_n(G)$-extension via restriction.
 Indeed, let $H$ be an extension of type $\mathfrak{H}_n(G)$ and $k$ be arbitrary number $1\leq k\leq n$.
 Denote by $\iota_k$ the inclusion map $[G, G] \to D_n(G)$ that inserts an element $g \in [G, G]$ at the $k$-th position.
-Then the corresponding extension $U$ is simply the pull-back of $H$ with respect to $\iota_k$.
-\[ \xymatrix{ U \ar[d] \ar@{->>}[r]^{\pi_U} & [G, G] \ar[d]^{\iota_k} \\ H \ar@{->>}[r]^{\pi_H} & D_n(G).} \]
+Then the corresponding extension $U_H$ is simply the pull-back of $H$ with respect to $\iota_k$.
+\[ \xymatrix{ U_H \pullbackcorner \ar[d] \ar@{->>}[r]^{\pi_U} & [G, G] \ar[d]^{\iota_k} \\ H \ar@{->>}[r]^{\pi_H} & D_n(G).} \]
 
-In more down-to-earth terms $U$ can be described as the subgroup of $H$ generated by 
+In other words, $U_H$ is simply the subgroup of $H$ generated by 
 symbols $c_{k}(u, v)=h_{kj}(u) \cdot h_{kj}(v) \cdot h_{kj}(vu)^{-1}$ 
  (here $j$ is any index not equal $k$, $c_k(u,v)$ does not depend on $j$, see~\cite[Proposition~2.1]{Reh78}).
 It can be shown that $U$ is an extension of type $\mathfrak{U}(G)$ with kernel~$\mathrm{Ker}(\pi_U)$ 
  isomorphic to $\mathrm{Ker}(\pi_H)$, see~\cite[Propositions~2.2--2.3]{Reh78}.
 In~\cite[\S~3]{Reh78} Rehmann also describes the inverse construction which assign to every $\mathfrak{U}(G)$-extension
- $U\twoheadrightarrow [G, G]$ and a number $n\geq 3$ an extension $H$ of type $\mathfrak{H}_n(G)$ that fits into the same pull-back diagram.
-\end{comment}
+ $U\twoheadrightarrow [G, G]$ and a number $n\geq 3$ some extension $H_U$ of type $\mathfrak{H}_n(G)$ that fits into the pull-back diagram above.
 % TODO: Is this correspondence one-to-one?
 % TODO: Does $G\otimes G$ correspond to $H_n(G)$ via this construction (and vice-versa)?
 
@@ -455,11 +456,11 @@ Our main result is the following.
 \begin{prop} \label{prop:simpler} For $n\geq 4$ % the group $H_n(G)$ admits presentation with generators $h_{ij}(a)$, $1\leq i, j\leq n$, $i\neq j$, $a\in G$ and relations \eqref{H0}--\eqref{H3}. 
 relations \eqref{H0}--\eqref{H3} are equivalent to \eqref{RH1}--\eqref{RH5}.
 \end{prop}
-The proof is based on several technical lemmas whose proof uses arguments similar to those in Rehmann's paper~\cite{Reh78}.
+%The proof is based on several technical lemmas whose proof uses arguments similar to those in Rehmann's paper~\cite{Reh78}.
 For $u, v\in G$ we define the following two symbols:
 \[c_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(vu)^{-1}, c'_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(uv)^{-1}.\]
 Notice that~\eqref{RH4} implies $h_{ij}(1)=1$ therefore $c_{ij}(u, u^{-1}) = c'_{ij}(u, u^{-1})$.
-Let us show that one of the relations~\eqref{RH3}, \eqref{RH4} can be excluded from the definition of $H_n(G)$.
+Our goal is to show that~\eqref{RH3} can be omitted from the definition of $H_n(G)$ provided $n \geq 4$.
 \begin{lemma} \label{item-lem33} If one excludes relation~\eqref{RH3} from the list of defining relations for the group $H_n(G)$, $n\geq 3$,
  the following facts still remain true:
  \begin{lemlist}
@@ -472,10 +473,10 @@ Let us show that one of the relations~\eqref{RH3}, \eqref{RH4} can be excluded f
  \end{lemlist}
 \end{lemma}
 \begin{proof}
-First one shows using~\eqref{RH4} that $h_{kj}(v)$ centralizes $c_{ij}(u, u^{-1})$ (cf. with the proof of~\cite[Lemma~2.1(2)]{Reh78}).
+First one shows using~\eqref{RH4} that $c_{ij}(u, u^{-1})$ centralizes $h_{kj}(v)$ (cf. with the proof of~\cite[Lemma~2.1(2)]{Reh78}).
 Since in any group $[a, b]=1$ implies $[a^{-1}, b] = [a, b^{-1}] = [a^{-1}, b^{-1}] = 1$ we get that $c_{ij}(u, u^{-1})$ also centralizes $h_{kj}(v)^{-1} = h_{jk}(v)$ and
  $c_{ij}(u^{-1}, u)^{-1} = c_{ji}(u, u^{-1})$ centralizes both $h_{kj}(v)$ and $h_{jk}(v)$.
-This together with~\eqref{RH2} and~\eqref{RH5} imply that $c_{ij}(u, u^{-1})$ centralize all the generators of $H_n(G)$ and hence lie in the center of $H_n(G)$.
+Together with~\eqref{RH2} and~\eqref{RH5} this implies that $c_{ij}(u, u^{-1})$ centralizes all the generators of $H_n(G)$ and hence lies in the center of $H_n(G)$.
 
 The second and third assertions are straightforward corollaries of~\eqref{RH4}.
 The fourth assertion follows from the third one:
@@ -489,7 +490,7 @@ The fourth assertion follows from the third one:
 \end{proof}
 
 \begin{lemma}
-If one excludes relation~\eqref{RH3} from the list of defining relations for the group $H_n(G)$, $n\geq 3$, the following statements turn out to be equivalent:
+If one excludes relation~\eqref{RH3} from the list of defining relations for the group $H_n(G)$, $n\geq 3$, the following statements are equivalent:
 \begin{enumerate}
 \item \label{item1} \eqref{RH3} holds;
 %\item \label{item2} for $j\neq k$ one has ${}^{h_{ij}(u)} h_{ik}(u) = h_{ik}(u^2) h_{ik}(u)^{-1}$;
@@ -524,13 +525,19 @@ or what is the same
 It is clear that the last equality is an equivalent reformulation of $(5)$.
 \end{proof}
 
+For $n\geq 4$ the third statement of the previous lemma follows from~\cref{item-lem33-comm}, 
+ hence, the relation \eqref{RH3} can be omitted from the definition of $H_n(G)$.
+
 \begin{proof}[Proof of~\cref{prop:simpler}]
 It is easy to check that \eqref{RH2} and \eqref{RH4} are implied by \eqref{H0}--\eqref{H2}. 
-For $n\geq 4$ the third statement of the previous lemma follows from~\cref{item-lem33-comm}, 
- hence by the first statement, the relation \eqref{RH3} also holds.
-
-Finally, \eqref{H0} follows from \eqref{RH4}, while \eqref{H2} follows from \eqref{RH1}, \eqref{RH2} and \eqref{RH4}.
+It remains to see that \eqref{H0} follows from \eqref{RH4}, while \eqref{H2} follows from \eqref{RH1}, \eqref{RH2} and \eqref{RH4}.
 \end{proof}
+
+From this and~\cite[Proposition~5]{De76} it is easy to conclude the following {\bf ???}.
+\begin{cor} \label{cor:main} For $n \geq 3$ the group $HS_n(G)$ is the quotient of the extension $H_n(G)$ by~\eqref{H3} and, in particular, is an $\mathfrak{H}_n(G)$-extension.
+The associated $\mathfrak{U}(G)$ extension $U_{HS_n(G)}$ is isomophic to the quotient of $U(G)$ modulo single relation \begin{equation} \nonumber (u, u) = 1, u\in G. \end{equation}
+In particular, we have the following natural isomorphism:
+\begin{equation} \Ker(HS_n(G) \to D_n(G)) = \Ker(S_n(G) \to G \wr S_n) \cong \HH_2(G, \ZZ). \end{equation} \end{cor}
 
 \begin{comment}
 Implication $(1) \implies (2) $ is obtained by setting $u=v$. 
@@ -680,7 +687,7 @@ Thus we obtain the following result.
 \end{comment}
 
 
-\section{Proof of main results} \label{sec:main}
+\section{Proof of Theorem 1} \label{sec:main}
 %\subsection{Weak equivalence of $F_{h_\infty}$ and $h_\infty^{-1}(0)$} \label{sec:topo-weak-equiv}
 \begin{lemma} \label{lm:weak-equiv}If $X$ is fibrant and connected then $F_{h_\infty}$ and $h^{-1}(0)$ are weakly equivalent. \end{lemma}
 \begin{proof}
@@ -780,8 +787,8 @@ If we denote by $K$ the kernel of the map $\nu\colon \pi_1(T) \to G^{2n}$ induce
  come to the following commutative diagram.
 \[ \xymatrix{1 \ar[r] & K       \ar[d]_{\psi} \ar[r] & \pi_1(T) \ar[d]_{\phi} \ar[r]_{\nu}     & G^{2n} \ar[rd] \ar[d]_{\cong} &                      & \\
              1 \ar[r] & \HH_2(G, \ZZ) \ar[r] & \pi_1(F_{h_n})           \ar[r]  & \pi_1(E_{h_n}) \ar[r]  & \HH_1(G, \ZZ) \ar[r] & 1}\]
-We already know by~\cref{cor:ker-iso} and {\bf ???} that $K$ is isomorphic to $\HH_2(G, \ZZ)$ provided $n\geq 3$.
-Notice that this isomorphism is natural in $G$.
+We already know by Corollaries~\ref{cor:main} and~\ref{cor:ker-iso} that $K$ is naturally isomorphic to $\HH_2(G, \ZZ)$ provided $n\geq 3$.
+%Notice that this isomorphism is natural in $G$.
 
 Let us show that $\psi$ is an isomorphism. Assume for a momemnt that $G$ is an abelian group.
 In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentation corresponds to the class of 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}), which,
@@ -998,7 +1005,6 @@ q = \{ a_1, a_2\}_1 \cdot h_{12}(a_2a_1) \cdot \prod_{i=3}^N h_{12}(a_i) = \ldot
 Since $1 = \mu(q)_2 = \mu(h_{12}(a_N\cdot\ldots\cdot a_1))_2 = (a_N\cdot\ldots\cdot a_1)^{-1}$, we obtain the assertion of the proposition.
 \end{comment}
 
-
-\printbibliography
+\newpage \printbibliography
 
 \end{document}
