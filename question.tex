@@ -3,7 +3,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage[capitalize]{cleveref}
 \usepackage[hyperref=true, backend=bibtex, firstinits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
-%\usepackage[notref,notcite]{showkeys}
+\usepackage[notref,notcite]{showkeys}
 \usepackage[matrix,arrow,curve]{xy}
 
 \addbibresource{question.bib}
@@ -53,7 +53,7 @@
 \newcommand{\pushoutcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
 \newcommand{\pullbackcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 
-\title{Amalgams of symmetric groups, $\mathfrak{H}_n$-extensions and homotopy invariants}
+\title{A note on amalgams of symmetric groups and $\mathfrak{H}_n$-extensions}
 \keywords {$\mathfrak{U}(G)$-extensions, $\mathfrak{H}_n(G)$-extensions, amalgamated products, van Kampen theorem,
  {\em Mathematical Subject Classification (2010):} 55Q05, 20B30, 20E06, 20J06}
 
@@ -71,29 +71,15 @@ We also give a topological application of this construction by describing the fu
 \maketitle
 
 \section{Introduction}
-\begin{comment}
-Let $G$ be a group. In~\cite{De76} K.~Dennis defined certain central extension $(G, G)$ of the derived subgroup $[G, G]$ 
- (see section~\ref{ssec:extensions} below for the definition).
-This extension is a quotient of the nonabelian tensor square $G \otimes G$ (but is itself an extension of $\bigwedge^2G$) such that the kernel of the natural map $(G, G) \to [G, G]$ 
- is Dennis functor $\widetilde{H}_2(G, \mathbb{Z})$.
-Under the notation $U(G)$ the same extension appears in U.~Rehmann's paper~\cite{Reh78}, where it is used to formulate the noncommutative version of Matsumoto theorem.
-Recall that this theorem asserts for a skew-field $D$ that the group $K_2(D)$ is precisely the quotient of $\widetilde{H}_2(D^*, \mathbb{Z})$ modulo Steinberg relations $\{u, 1-u\} = 1$, $u\in D^*$.
 
-The aim of this note is to describe yet another situation in which the groups $(G, G)$ and $\Lambda^2(G)$ make an appearance.
-
-{\bf TODO: Mention new simpler presentation of Rehmann's extensions for $n\geq 4$}
-%We then decompose $S_n(G)$ as $H_n(G)\times S_n(G)$, where $H_n(\Lambda^2G)$ is an extension of the $ $.
-
-%For a based topological space $X$ the {\it infinite symmetric product} of $X$ is a free commutative topological monoid defined as the colimit
-%$SP(X):=\colim_{n\to\infty}SP^n(X)$ of finite symmetric products $SP^n(X)=X^n/S_n$ (the colimit is taken with respect to obvious inclusions).
-%If $X$ happens to be connected then $SP(X)$ becomes homotopy equivalent to the free abelian topological group $AG(X)$ with basis $X$.
-
-Unsurprisingly, the main motivation for the definition of the group $S_n(G)$ comes from algebraic topology.
-More specifically, our initial question was to describe the fiber of the ''alternating map`` $X^{2n} \to \mathbb{Z}[X]$ in the special case $X=BG$.
-\end{comment}
+$\mathfrak{H}_n$-extensions are certain extensions of a certain subgroup of the direct product $G^n$.
+For the first time they have appeared in U.~Rehmann's paper~\cite{Reh78}, 
+ where they are used as a noncommutative analogues in the proof of the noncommutative version of Matsumoto's theorem.
+ 
+Discovery of noncommutative Steinberg symbols in the proof of the latter led to the
+ definition of noncommutative tensor and exterior products in~\cite{De76}. 
 
 For a pointed simplicial set $(X, x_0)$ one denotes by $\ZZ[X]$ the associated free simplicial abelian group.
- %i.\,e. the simplicial group whose group of $n$-simplices $\ZZ[X]_n$ is the quotient of free abelian group $\ZZ[X_n]$ modulo relation $x_0=0$.
 Define the map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the identity:
  \[h_n(x_1, x_2, \ldots x_{2n}) = \sum\limits_{i=1}^{2n}(-1)^ix_i.\]
 Denote by $X^\infty$ the colimit of $X^n$ with respect to the natural embeddings $X^{n} \hookrightarrow X^{n+1}$
@@ -101,10 +87,8 @@ Taking colimit of $h_n$ we get the map $h_\infty = \mathrm{colim}_n(h_n) \colon 
 
 Based on a recent result of S.~Podkorytov one can deduce that the natural map $h^{-1}_\infty(0) \to F_{h_\infty}$
  between the fiber and the homotopy fiber of $h_\infty$ over $0$ is a weak equivalence provided $X$ is fibrant and connected, see~\cref{lm:weak-equiv}.
-%%One might be interested in the description of its homotopy fiber $F_{h_\infty}$.
-%For example, one can show that the natural map  is a homotopy equivalence, see~\cref{sec:topology}.
 For finite $n$ this no longer remains true, however one may expect that the homotopy groups of $h^{-1}_n(0)$ and $F_{h_n}$ are still
- isomorphic in small degrees. % for some sufficiently good $X$, say $X$ fibrant and connected.
+ isomorphic in small degrees.
 S. Podkorytov conjectured that the natural map $h^{-1}_n(0) \to F_{h_n}$ is $c_n$-connected where $c_n$ tends to infinity as $n\to \infty$.
 The main goal of this note is to show the following result which confirms this conjecture in one special case.
 \begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$
@@ -167,20 +151,6 @@ From the fact that $\mu$ is a crossed module one can deduce that $\Ker(\mu)$ is 
 It is not hard to show that the group $S_2(G)$ is isomorphic to a free product of copies of $S_2$ (whose center is always trivial).
 Therefore, the requirement $n\geq 3$ in the statement of~\cref{thm:cms} is essential.
 
-%To give $\mu$ the structure of a precrossed module we must first specify an action of $G \wr S_n$ on $Q_n(G)$.
-%We accomplish this by means of the following relation:
-
-%Clearly the above formula defines an action of $G \wr S_n$ on $\widetilde{Q}$. We must check that relations~\eqref{eq:main_rel} are preserved by this action.
-%Indeed, assume that $g$ and $g'$ are such that $s$ fixes $g' g^{-1}$, we must check that in $Q_n(G)$ one has ${s^t}_{(g'h)^t} = {s^t}_{(gh)^t}$.
-%But this is true again by~\eqref{eq:main_rel} since $(g'h)^t \cdot (gh)^{-t} = {(g'g^{-1})}^t$ is fixed by $s^t$, indeed:
-%\begin{equation} \nonumber {(g'g^{-1})}^{t \cdot s^t} = {(g'g^{-1})}^{s t} = {(g'g^{-1})}^t.\end{equation}
-
-%To check that $\mu$ is a precrossed module, it suffices to show that relation~\eqref{eq:precrossed} holds for all generators of $Q$.
-%Apart from expansion of definitions this only involves the formula for conjugation of elements of a semidirect product $(a, b)^{(c, d)} = (c^{-d} \cdot a^d \cdot c^{b^{-1}d}, b^d)$:
-%\begin{multline} \nonumber
-%\mu\left((s_g)^{(h, t)}\right) = \mu\left({s^t}_{(gh)^t}\right) = ((gh)^{-t} (gh)^{ts^{-t}}, s^t) = ((gh)^{-t} (gh)^{s^{-1}t}, s^t) = \\ 
-%= (h^{-t} \cdot (g^{-1}g^{(s^{-1})})^t \cdot h^{s^{-1}t}, s^t) = (g^{-1}g^{(s^{-1})}, s)^{(h, t)} = \mu(s_g)^{(h, t)}.
-%\end{multline}
 Verification of the fact that formula~\eqref{eq:action} gives a well-defined action of $G\wr S_n$ on $S_n(G)$ 
  that satisfies~\eqref{eq:precrossed} is lengthy but straightforward. Let us show that~\eqref{eq:Peiffer} holds. 
 It suffices to verify Peiffer identities only for the generators of $S_n(G)$, for which it takes the form:
@@ -233,18 +203,6 @@ transpositions as the set of generators and the following list of defining relat
 \end{align}
 \end{lemma}
 
-%\begin{proof}
-% Denote by $\widetilde{S}_n$ the group with the above presentation. 
-% It is clear this presentation contains only those relations which already hold for the elements of $S_n$, 
-%  i.\,e. there is an obvious map $\widetilde{S}_n \to S_n$.
- 
-% For $1\leq i\leq n-1$ set $s_i=(i,i+1)$. 
-% The elements $s_i$ satisfy all the standard Coxeter relations (e\,g. from \eqref{Sym2} one easily gets the identity $(s_i \cdot s_{i+1})^3 = (i,i+2)^2 = 1$). 
-% Thus, the subgroup $S$ of $\widetilde{S}_n$ generated by $s_i$ coincides with $S_n$. 
- 
-% Finally, to see that every generator $(ij)$ of $\widetilde{S}_n$ is contained in $S$ it remains to use induction on $|i-j|$ and the identity~\eqref{Sym2}.
-%\end{proof}
-
 Now we are ready to formulate the main result of this subsection.
 \begin{prop} \label{prop:Q-pres} For $n\geq 3$ and arbitrary group $G$ the group $S_n(G)$ admits presentation with the set of generators 
 $\{(ij)_a \mid i\neq j, 1\leq i,j,\leq n, a\in G\}$ and the following list of relations (as before, distinct letters denote distinct indices):
@@ -278,7 +236,6 @@ For example, if $s$ is a cycle of length $p$, i.\,e. $s=(i_1, i_2, \ldots i_p)$ 
  \prod\limits_{k=1}^{p-1}\left(i_k, i_{k+1}\right)_{h_{i_k}^{-1} h_{i_{k+1}}} = \psi_h(s).
 \end{multline}
 The proof for a general $s$ is almost the same.
-%It is straightforward to deduce from the above formula a similar statement for general $s$.
 Verification of the fact that $\psi$ and $\varphi$ are mutually inverse is also immediate.
 \end{proof}
 
@@ -336,65 +293,7 @@ h_{ij}(a)^{-1}                = &\, h_{ij}(a^{-1}). \tag{R4} \label{H4}
 \end{align}
 \end{prop}
 
-\begin{comment}
-\begin{proof}
- Again we work with $Q_n(G)$ presented as in~\cref{prop:Q-pres}. 
- By~\cite[Theorem~2.6]{MKS76} the group $HQ_n(G)$ can be presented by generators $HX_n(G)$ and the following four families of relations:
-\begin{align}
-h_{ij}(a)              = &\, \tau((ij)_a \cdot (ij)_1)     \label{Th261} \\
-\tau(U)                = &\, \tau(U^*)                     \label{Th262} \\
-\tau(U_1 \cdot U_2)    = &\, \tau(U_1) \cdot \tau(U_2)     \label{Th263} \\
-\tau(WRW^{-1})              = &\, 1.                       \label{Th264}
-\end{align}
-Here $U$, $U^*$, $U_1$ and $U_2$ are words in $X_n(G)$ defining some elements of $HQ_n(G)$ such that $U$ and $U^*$ are freely equal,
-$W$ is an arbitrary word in $X_n(G)$ and $R$ is any of the relations~\eqref{Q0}--\eqref{Q3}.
-
-Using the rewriting process~\eqref{eq:rewr-proc} we rewrite the relation~\eqref{Th261} as \[h_{ij}(a) = h_{ij}(a) \cdot h_{ji}(1).\] 
-It is clear that this relations implies~\eqref{H00}.
-
-The relations~\eqref{H0}--\eqref{H3} are corollaries of~\eqref{Th264} in the special case $W=1$.
-Indeed, if $R_1 = (ij)_a (ij)_a$ is the word corresponding to relation~\eqref{Q1} then again using the rewriting process~\eqref{eq:rewr-proc} we get that
-\[ 1 = \tau(R_1) = h_{ij}(a) \cdot {}^{(ij)}\! h_{ij}(a) =  h_{ij}(a) h_{ji}(a).\]
-Thus, we obtain relation~\eqref{H1}. Similarly, if we start from the word 
-\[R_2 = (jk)_b \cdot (ij)_a \cdot (jk)_b \cdot (ik)_{ab}\]
-corresponding to relation~\eqref{Q2} we come to relation
-\begin{multline} \nonumber
- 1 = \tau(R_2) = h_{jk}(b) \cdot {}^{(jk)}\!h_{ij}(a) \cdot {}^{(jk)(ij)}\!h_{jk}(b) \cdot {}^{(jk)(ij)(jk)}\! h_{ik}(ab) = \\
- = h_{jk}(b) \cdot h_{ik}(a) \cdot h_{ij}(b) \cdot h_{ki}(ab),
-\end{multline}
-which is a reformulation of~\eqref{H2}.
-The check for the two remaining relations is similar and we leave it to the reader.
-
-By~\cref{rm:tau-property} we have $\tau(WRW^{-1}) = \tau(W) \cdot {}^\sigma\!\tau(R) \cdot {}^\sigma\tau(W^{-1})$ for $\sigma=\pi(W)$.
-The central factor ${}^\sigma\!\tau(R)$ is already included into the list of relations~\eqref{H0}--\eqref{H3}.
-It is also clear that $\tau(W) {}^\sigma\tau(W^{-1})$ can be contracted to identity bu successive application of~\eqref{H1}.
-Thus the relations obtained from~\eqref{Th264} in the case when $W$ is nontrivial are consequences of relations from the statement of the proposition.
-
-The same is true for the relations obtained from~\eqref{Th262}--\eqref{Th263}.
-For example, if $U$ is obtained from $U^*$ by insertion or deletion of $(ij)_a \cdot (ij)_a$ then by~\cref{rm:tau-property}
-$\tau(U)$ is obtained from $\tau(U^*)$ by insertion or deletion of $h_{kl}(a) \cdot h_{lk}(a)$ for some $k\neq l$.
-Since $\pi(U_1)$ is a trivial permutation, it also follows from~\cref{rm:tau-property} that expressions in both sides of~\eqref{Th263} are equal words.
-\end{proof}
-
-\subsection{Computation of $\pi_1$ and $\pi_2$}
-
-Now let us compute the cokernel of $\mu$.
-We claim that $\mathrm{Im}(G) = D_n(G) \ltimes S_n$, where $D_n(G)$ denotes the subgroup of $G^n$ consisting of vectors
- $(g_1,\ldots, g_n)$ for which the product $g_1\cdot \ldots \cdot g_n$ lies in $[G, G]$. 
-The inclusion $\subseteq$ is immediately obvious from the definition of $\mu$.
-To prove the inverse inclusion notice that $D_n(G)$ is generated by elements $d_{ij}(g)$, $i\neq j$, $g\in G$ (cf.~\cite[\S~2]{Reh78}).
-Here $d_{ij}(g)$ is the element of $G^n$ defined as follows: 
- the $k$-th component of $d_{ij}(g)$ equals $g$ for $k=i$, $g^{-1}$ for $k=j$ and is $1$ otherwise.
-It is not hard to see that the cokernel of $\mu$ is $\HH_1(G, \ZZ) = G_{ab}$.
-\end{comment}
-% To see this first multiply $(g_1,\ldots, g_n)\in D_n(G)$ by suitable $d_{ij}(g)$'s so that it is reduced
-% to an element of the form $(h, 1, \ldots, 1)$ with $h\in [G, G]$. It remains to see that $([a, b], 1, \ldots, 1)$ can be presented as a commutator $[h_{12}(a), h_{13}(b)]$.
-
-\section{Relationship with extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}}
-%The group $S_n(G)$ defined in the previous section turns out to be directly related with the theory
-% of extensions of type $\mathfrak{H_n}$ developed by Rehmann in~\cite{Reh78}.
-%It turns out, that some of the relations from~\cref{prop:HSpres} can be used to give a simpler presentation for the ``universal'' extension $H_n(G)$.
-%\subsection{Extensions of type $\mathfrak{H}_n(G)$ and $\mathfrak{U}(G)$} \label{ssec:extensions}
+\section{Relationship with extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}} \label{sec:Hnextensions}
 We start by briefly reviewing the material of \S~1--3 of~\cite{Reh78}. 
 Let $n \geq 3$ be a natural number. By definition, the group $H_n(G)$ is given by generators
 $h_{ij}(u)$, $u\in G$, $i\neq j$ and the following relations (cf. \cite[H1--H5~of~\S~2]{Reh78}):
@@ -413,7 +312,8 @@ Here $d_{ij}(g)$ stands for the element of $G^n$ whose
 By definition, {\it an extension of type $\mathfrak{H}_n(G)$} is an extension $H$ of $D_n(G)$ that is also a quotient of $H_n(G)$, i.\,e. 
  the extension that fits into the following diagram.
 \[ \xymatrix{ H_n(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ H \ar@{->>}[r] & D_n(G)} \]
-%Any $\mathfrak{H}_n(G)$-extension is central, see~\cite[Proposition~2.3]{Reh78}.
+Any $\mathfrak{H}_n(G)$-extension is central, see~\cite[Proposition~2.3]{Reh78}.
+
 We now recall the notion of \emph{an extension of type $\mathfrak{U}(G)$} introduced by Rehmann in~\cite[\S~1]{Reh78}.
 Let $G$ be a group. Denote by $U(G)$ the group presented by generators $(u, v)$, $u,v\in G$ and relations:
 \begin{align}
@@ -421,14 +321,16 @@ Let $G$ be a group. Denote by $U(G)$ the group presented by generators $(u, v)$,
  (u,  vw) (v,  wu) (w,  uv)  = &\, 1.       \tag{U2} \label{U2}
 \end{align}
 There is a left action of $G$ on $U(G)$ given by ${}^x (u, v) = ({}^{x}u, {}^{x}v).$
-Equivalently, $U(G)$ can be defined by the following relations, see~\cite[p.~8]{De76} (where $U(G)$ is denoted $(G, G)$).
+Equivalently, $U(G)$ can be defined by the following relations, see~\cite[p.~8]{De76}.
 \begin{align} 
  (u, v) (v, u)     = &\, 1,          \label{U4} \\
  (u, v) \ {}^v(u, w) = &\, (u, vw),  \label{U6} \\
  {}^u(v, w)(w, v)  = &\, (u, [v, w]).\label{U9} \end{align}
- 
 It is clear from the definition that $U(G)$ is a quotient of the nonabelian tensor square $G\otimes G$ and that
 the map $(u, v) \mapsto [u, v]$ defines a $G$-equivariant map $U(G) \twoheadrightarrow [G, G]$.
+Notice that in the literature one can find alternative notations for $U(G)$ which emphasize its
+ connection with nonabelian tensor products e.\,g. $(G, G)$ or $G \mathbin{\widetilde{\wedge}} G$.
+ 
 By definition, an {\it extension of type $\mathfrak{U}(G)$} is simply a quotient of $U(G)$
  that fits into the following commutative diagram with $G$-equivariant arrows.
 \[ \xymatrix{ U(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ U \ar@{->>}[r] & [G, G]} \]
@@ -457,8 +359,6 @@ Our main result is the following.
 For $n\geq 3$ relations \eqref{H0}--\eqref{H4} imply \eqref{RH1}--\eqref{RH5}.
 Moreover, for $n\geq 4$ relations \eqref{H0}--\eqref{H3} are equivalent to \eqref{RH1}--\eqref{RH5}.
 \end{prop}
-% the group $H_n(G)$ admits presentation with generators $h_{ij}(a)$, $1\leq i, j\leq n$, $i\neq j$, $a\in G$ and relations \eqref{H0}--\eqref{H3}. 
-%The proof is based on several technical lemmas whose proof uses arguments similar to those in Rehmann's paper~\cite{Reh78}.
 For $u, v\in G$ we define the following two symbols:
 \[c_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(vu)^{-1}, c'_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(uv)^{-1}.\]
 Notice that~\eqref{RH4} implies $h_{ij}(1)=1$ therefore $c_{ij}(u, u^{-1}) = c'_{ij}(u, u^{-1})$.
@@ -470,8 +370,6 @@ Our goal is to show that~\eqref{RH3} can be omitted from the definition of $H_n(
 \item \label{item-lem33-comm} One has $c'_{ij}(u, v) = [h_{ij}(u), h_{kj}(v)]$, $k\neq i, j$;
 \item \label{item-lem33-conj}  One has ${}^{h_{ij}(w)}c_{kj}'(u, v) = c_{kj}'(u, w)^{-1} c_{kj}'(u, vw)$, $k\neq i, j$;
 \item \label{item-lem33-conj2} One has ${}^{h_{ij}(w)} c'_{ij}(u, v) = c'_{ij}(uw, v) c'_{ij}(w, v)^{-1}$.
-%\item \label{item-lem33-uum}  One has $c_{ij}(u, u^{-1}) = c_{ij}(u, u)^{-1}$;
-%\item \label{item-lem33-um}  One has $c_{ij}(u, u^{-1}) = c_{ij}(u^{-1}, u)$.
  \end{lemlist}
 \end{lemma}
 \begin{proof}
@@ -483,35 +381,16 @@ Together with~\eqref{RH2} and~\eqref{RH5} this implies that $c_{ij}(u, u^{-1})$ 
 The second and third assertions are straightforward corollaries of~\eqref{RH4}.
 The fourth assertion follows from the third one:
 \[{}^{h_{ij}(w)} c'_{ij}(u, v) = {}^{h_{ij}(w)} c'_{kj}(v, u)^{-1} = (c'_{kj}(v, w)^{-1} c'_{kj}(v, uw))^{-1} = c'_{ij}(uw, v) c'_{ij}(w, v)^{-1}.\]
-%Fifth assertion follows from the first and third one (letting $w=u$, $v=u^{-1}$).
-
-%For any distinct $i$, $j$ and $k$ we have $c'_{ij}(u, v)^{-1} = c'_{kj}(v, u)$, therefore by the fifth assertion we have:
-%\begin{multline} \nonumber
-% c_{ij}(u, u^{-1}) = c_{kj}(u^{-1}, u)^{-1} = c_{kj}(u^{-1}, u^{-1}) = c_{ij}(u^{-1}, u^{-1})^{-1} = c_{ij}(u^{-1}, u). \qedhere
-%\end{multline}
 \end{proof}
 
 \begin{lemma}
 If one excludes relation~\eqref{RH3} from the list of defining relations for the group $H_n(G)$, $n\geq 3$, the following statements are equivalent:
 \begin{enumerate}
 \item \label{item1} \eqref{RH3} holds;
-%\item \label{item2} for $j\neq k$ one has ${}^{h_{ij}(u)} h_{ik}(u) = h_{ik}(u^2) h_{ik}(u)^{-1}$;
-%\item \label{item3} one has $h_{ij}(u^{-1}) h_{ij}(u)^{-1} = h_{ij}(u^2)^{-1}$;
-%\item \label{item4} one has $c'_{ij}(u, u^{-1})^2 = 1$;
-%\item \label{item5} one has $c'_{ij}(u, v)^{-1} = c'_{ij}(v, u)$;
-%\item \label{item6} symbols $c'_{ij}(u, v)$ do not depend on the choice of index $i$;
-%\item \label{item5} symbols $c'_{ij}(u, u^{-1})$ are independent of $i$ and $j$;
 \item \label{item4} one has $c'_{ij}(u, v)^{-1} = c'_{ij}(v, u)$;
 \item \label{item5} symbols $c'_{ij}(u, v)$ do not depend on $i$;
 \item \label{item5} one has $c'_{ij}(u, vw) = c'_{ij}(wu, v) \cdot c'_{ij}(uv, w)$;
 \item \label{item6} one has $c'_{ij}(u, vu^{-1}) = c'_{ij}(uv, u^{-1})$.
-%  \item Symbols $c_{ij}(u,v)$ do not depend on the choice of $j$ (resp. $c'_{ij}(u, v)$ do not depend on the choice of $i$).
-%  \item Symbols $c_{i*}(u, v)$ (resp. $c'_{*j}(u, v)$) satisfy identity~\eqref{U2}, in particular, one has $c_{i*}(ab, a^{-1}) = c_{i*}(a, ba^{-1})$ (resp. $c'()$).
- %\item one has $h_{ij}(1)=1$;
- %\item for distinct $i,j$ and $k$ one has $c_{ij}(u, v) = [h_{ij}(u), h_{ik}(v)]$; (resp. $c'_{ij}(u, v) = [h_{ij}(u), h_{kj}(v)]$),
- %      moreover $c_{ij}(u,v)^{-1} = c_{ik}(v, u)$ (resp. $c'_{ij}(u, v)^{-1} = c'_{kj}(v, u)$);
- %\item one has ${}^{h_{ij}(w)}c_{ik}(u, v) = c_{ik}(u, w)^{-1} c_{ik}(u, wv)$ (respectively, ${}^{h_{ij}(w)}c_{kj}'(u, v) = c_{kj}'(u, w)^{-1} c_{kj}'(u, vw)$);
- %\item $c_{ij}(u, u^{-1}) = c'_{ij}(u, u^{-1})$ is a central element in $H_n(G)$ for any $u\in G$;
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -548,162 +427,12 @@ Most of the assertions follow from~\cref{prop:simpler} and~\cite[Proposition~5]{
 One also has to use the formula $c_{ij}(u, u) = c_{ij}(u, u^{-1})$ (see~\cite[p.~87]{Reh78}).
 \end{proof}
 
-\begin{comment}
-Implication $(1) \implies (2) $ is obtained by setting $u=v$. 
-
-Implication $(2) \implies (3)$ is what is really proved before formula~(6)~on~\cite[p.~86]{Reh78}.
-
-Implication $(3) \implies (4)$ is obtained via the same calculation as in formula~(8) on page~96 ibid.
-The reader should refer to (1) and (4) of Lemma~\ref{item-lem33} instead of the corresponding assertions of~\cite[Lemma~2.1]{Reh78}.
-
-Let us show $(4) \implies (5)$. By (4), \eqref{RH1} and~\cref{item-lem33-um} we have 
-\begin{equation} c'_{ij}(u, u^{-1}) = c'_{ij}(u, u^{-1})^{-1} = c'_{ji}(u^{-1}, u) = c'_{ji}(u, u^{-1}). \end{equation}
-  Moreover, for distinct $i$,$j$ and $k$ we have 
-  \begin{equation} \nonumber c_{ij}(u, u^{-1}) = c_{kj}(u^{-1}, u)^{-1} = c_{kj}(u^{-1}, u) = c_{kj}(u, u^{-1}).\end{equation}
-Together these two equalities imply (5).
-
-Let us show $(5) \implies (6)$. Using appropriate assertions of \cref{item-lem33} we can partially mimick Rehmann's derivation of~\eqref{U2} 
- (cf. \cite[Lemma~2.2]{Reh78}) with the difference that now we cannot refer to~\cite[Proposition~2.1]{Reh78}.
-\begin{multline} \nonumber
- c'_{ij}(u, vw) = [h_{ij}(u), h_{kj}(vw)] = [h_{ij}(u), c'_{ij}(w, v) h_{kj}(v) h_{kj}(w)] = \\
- = [h_{ij}(u), c'_{ij}(w, v)] \cdot {}^{c'_{ij}(w, v)} \! \left([h_{ij}(u), h_{kj}(v)] \cdot {}^{h_{kj}(v)}[h_{ij}(u), h_{kj}(w)]\right) = \\
- = {}^{h_{ij}(u)} c'_{ij}(w, v) \cdot c'_{ij}(u, v) \cdot {}^{h_{kj}(v)} c'_{ij}(u, w) \cdot c'_{ij}(w, v)^{-1} = \\
- = c'_{ij}(wu, v) \cdot {}^{h_{kj}(v)}c'_{ij}(u, w) \cdot c'_{ij}(w, v)^{-1} = \\
- = c'_{ij}(wu, v) \cdot c'_{kj}(uv, w) \cdot c'_{kj}(v, w)^{-1} \cdot c'_{ij}(w, v)^{-1} = c'_{ij}(wu, v) \cdot c'_{kj}(uv, w).
-\end{multline}
-
-Setting $w=u^{-1}$ and using our assumption we get
-By our assumption 
-\begin{multline}
-c'_{ij}(u, vu^{-1}) = 
-{}^{h_{kj}(v)} c'_{ij}(u, u^{-1}) c'_{ij}(u^{-1}, v)^{-1} = \\
-{}^{h_{kj}(v)} c'_{kj}(u, u^{-1}) c'_{ij}(u^{-1}, v)^{-1} = 
-c'_{kj}(uv, u^{-1})c'_{kj}(v, u^{-1})^{-1} c'_{ij}(u^{-1}, v)^{-1} 
-\end{multline}
-\end{comment}
-                                             
-\begin{comment}
- \begin{multline}
-  c_{ij}(u, vw) = [h_{ij}(u), h_{ik}(vw)] = [h_{ij}(u), c_{ij}(v, w) h_{ik}(w)h_{ik}(v)] = \\
-   = [h_{ij}(u), c_{ij}(v, w)] \cdot {}^{c_{ij}(v, w)} ([h_{ij}(u), h_{ik}(w)] \cdot {}^{h_{ik}(w)}[h_{ij}(u), h_{ik}(v)]) = \\
-   = {}^{h_{ij}(u)} c_{ij}(v, w) \cdot c_{ij}(u, w) \cdot {}^{h_{ik}(w)} c_{ij}(u, v) \cdot c_{ij}(v, w)^{-1} = \\
-   = c_{ij}(uv, w) \cdot {}^{h_{ik}(w)} c_{ij}(u, v) \cdot c_{ij}(v, w)^{-1}.
- \end{multline}
-
- The first three assertions easily follow from~\eqref{RH3} (resp.~\eqref{RH4}).
- 
- We only prove fourth assertion under the assumption that~\eqref{RH4} is skipped (the proof for the other case is similar).
- It suffices to show that $h_{ij}(u)h_{ij}(u^{-1})$ centralizes all generators $h_{kl}(v)$ of $H_n(G)$.
- In view of~\eqref{RH2} and~\eqref{RH5} it suffices to only consider the case when $h_{ij}(u)$ and $h_{kl}(v)$ have exactly one common index.
- Suppose, for example, that $k=i$, then by~\eqref{RH3} we have
- \[{}^{h_{ij}(u) h_{ij}(u^{-1})} h_{il}(v) = {}^{h_{ij}(u)}(h_{il}(u^{-1}v) h_{il}(u^{-1})^{-1}) = h_{il}(v),\]
- In any group $[a, b]=1$ implies $[a^{-1}, b] = [a, b^{-1}] = [a^{-1}, b^{-1}] = 1$ therefore $c_{ij}(u, u^{-1})$ also centralizes $h_{ik}(v)^{-1} = h_{ki}(v)$ and
- $c_{ij}(u^{-1}, u)^{-1} = c_{ji}(u, u^{-1})$ centralizes both $h_{ik}(v)$ and $h_{ki}(v)$.
-
-\begin{multline} {}^{h_{ij}(u)} c_{ij}(v, w) = {}^{h_{ij}(u)}c_{ik}(w, v)^{-1} = c_{ik}(w, uv)^{-1} c_{ik}(w, u) = c_{ij}(uv, w) c_{ij}(u, w)^{-1}. \end{multline} 
-
-$h_{ik}(vw) = c_{ij}(v, w) h_{ik}(w)h_{ik}(v)$
- 
- 
-Substituting $v = u^{-1}$ we get
-\begin{multline}
-   c_{ij}(u, u^{-1}w) =  {}^{h_{ik}(w)} c_{ij}(u, u^{-1}) c_{ij}(u^{-1}, w)^{-1} = {}^{h_{ij}(w)} c_{ij}(u, u^{-1}) c_{ij}(u^{-1}, w)^{-1} = \\
-    = c_{ij}(wu, u^{-1}) c_{ij}(w, u^{-1})^{-1} c_{ij}(u^{-1}, w)^{-1}
-\end{multline}
-
-\end{proof}
-\begin{rem}
- In the case $n=3$ the above argument does not work. 
- TODO: Can we provide a counterexample?
-\end{rem}
-
-\begin{lemma} Relations \eqref{RH1} and \eqref{RH4} are equivalent in the presence of \eqref{RH1}, \eqref{RH2} and \eqref{RH5}. \end{lemma}
-\end{comment}
-
-
-\begin{comment}
-We mention an example which plays a key role in the sequel.
-\begin{example}
-Denote by $\Lambda^2(G)$ the group defined by generators $c(x, y)$, $a, b\in G$ and the following relations
- \begin{align}
-c(x, x)                   = &\, 1,          \label{R1} \\
-c(x, y) \cdot c(y, x)     = &\, 1,          \label{R2} \\
-{}^z\!c(x,y) \cdot c(z,y) = &\, c(zx,y),    \label{R3} \\
-{}^z\!c(x,y) \cdot c(y,x) = &\, c(z,[x,y]). \label{R4}
-\end{align}
-By a classical result of C.~Miller there is an exact sequence (see~\cite{Mi52}):
-\begin{equation} \label{eq:Miller} \xymatrix{1 \ar[r] & \mathrm{H}_2(G,\mathbb{Z}) \ar[r] &  \Lambda^2(G) \ar[r] &  [G, G] \ar[r] & 1.} \end{equation}
-
-It can be shown that the defining relations~\eqref{R2}--\eqref{R4} of $\Lambda^2(G)$ are equivalent
-to~\eqref{U1}--\eqref{U2}, see e.\,g. the discussion on page~7 of~\cite{De76}.
-Thus, the group $\Lambda^2(G)$ is a $\mathfrak{U}(G)$-extension with only one additional family of relations imposed, namely~\eqref{R1}.
-\end{example}
-\end{comment}
-
-\begin{comment}
-\begin{example} \label{ex:HQ}
- The extension $HQ_n(G)\twoheadrightarrow D_n(G)$ from~\eqref{eq:comm-diagram} is an $\mathfrak{H}_n(G)$-extension.
- To see this notice, first, that relations~\eqref{RH1} and~\eqref{H1} (resp.~\eqref{RH5} and~\eqref{H3}) are identical.
- Relation~\eqref{RH2} follows from~\eqref{H00} and~\eqref{H2}.
- Relation~\eqref{RH3} is equivalent to~\eqref{H2} in the presence of~\eqref{RH2}.
- Finally, relation~\eqref{RH4} is implied by~\eqref{RH3} and~\eqref{H0}.
-\end{example}
-\begin{example}
- For $n\geq 3$ we denote by $H_n(\Lambda^2G)$ the group obtained from the ``universal`` $\mathfrak{H}_n(G)$-extension $H_n(G)$ by modding out symbols $c_n(x,x)$.
- It is easy to see that $\mathfrak{U}(G)$-extension obtained from $H_n(\Lambda^2G)$ is precisely $\Lambda^2(G)$.
-\end{example}
-\end{comment}
-
-\begin{comment}
- It is clear that $\mathfrak{U}(G)$-extensions and $\mathfrak{H}_n(G)$-extensions form categories $\mathfrak{U}\mathrm{Ext}(G)$ and $\mathfrak{H}_n\mathrm{Ext}(G)$.
- The restriction $H\mapsto U(H)$ clearly defines a functor $U(-)\colon \mathfrak{H}_n\mathrm{Ext}(G) \to \mathfrak{U}\mathrm{Ext}(G)$.
- It can be shown that the construction from the previous proposition is also functorial and defines a functor 
-  $H_n(-)\colon \mathfrak{U}\mathrm{Ext}(G) \to \mathfrak{H}_n\mathrm{Ext}(G)$. These two functors establish an equivalence of categories 
-  $\mathfrak{U}\mathrm{Ext}(G)$ and $\mathfrak{H}_n\mathrm{Ext}(G)$.
-\end{comment}
-
-\begin{comment}
-Now we are ready to formulate the main result of this section.
-To avoid confusion we reserve notation $h_{ij}(a)$ for elements of $HQ_n(G)$ and denote elements of $H_n(\Lambda^2G)$ by $\hh_{ij}(a)$.  
-\begin{prop} \label{thm:main} For $n\geq 3$ the extensions $HQ_n(G)$ and $H_n(\Lambda^2G)$ are isomorphic. \end{prop}
-\begin{proof} 
- First of all we want to show that the mapping $\phi(h_{ij}(a)) = \hh_{ij}(a)$ gives a well-defined map $\phi\colon HQ_n(G) \to H_n(\Lambda^2G)$.
- Since $H_n(\Lambda^2(G)$ is an $\mathfrak{H}_n(G)$-extension the elements~$\hh_{ij}(a)$ satisfy relations~\eqref{RH1}--\eqref{RH5}.
- We need to check that $\hh_{ij}(a)$ satisfy~\eqref{H00}--\eqref{H3}. 
- Relations~\eqref{H1} and~\eqref{H3} are automatically true for $\hh_{ij}(a)$ (cf. with~\eqref{RH1},\eqref{RH5}).
- It is also easy to see that~\eqref{H2} is a consequence of~\eqref{RH2} and~\eqref{RH3}.
- 
- It remains to check that~\eqref{H00}--\eqref{H0} are also true for $\hh_{ij}(a)$.
- In any $\mathfrak{U}(G)$-extension one has $c_n(u, u) = c_n(u, u^{-1})$, see the first formula on page~87 of~\cite{Reh78}.
- %Notice that by~\eqref{U1} and~\eqref{R1} we have the following identities for elements of $\Lambda^2G$:  
- %  \[c(x^{-1}, x) = {}^x\!c(x^{-1}, x) \cdot c(x, x) = c(x x^{-1}, x) = c(1, x).\]
- %On the other hand, by~\eqref{U2} and~\eqref{R2} we have \[ 1 = c(1, x)\cdot c(1, x) \cdot c(x, 1) = c(1, x).\]
- From this identity and the definition of the symbol $c_n(u,v)$ we get that
- \[\hh_{nj}(x) \cdot \hh_{nj}(x^{-1}) \cdot \hh_{nj}(1)^{-1} = 1,\]
- from which it follows that the elements $\hh_{nj}(u)$ satisfy relations~\eqref{H00}--\eqref{H0} for all $j\neq n$.
- Using~\eqref{RH1}--\eqref{RH2} it is not hard to deduce from this that~\eqref{H00}--\eqref{H0} hold for all $\hh_{ij}(a)$, $i\neq j$.
- 
- To construct the inverse map $\psi\colon H_n(\Lambda^2G) \to HQ_n(G)$ it suffices to check that $c_n(u, u) = 1$.
- But this follows from~\eqref{H00}--\eqref{H0}:
- \[c_n(u, u) = c_n(u, u^{-1}) = h_{nj}(u) \cdot h_{nj}(u^{-1}) \cdot h_{nj}(1)^{-1} = 1. \qedhere\] 
-\end{proof}
-
-Thus we obtain the following result.
-\begin{cor}
-  For $n\geq 3$ the group $Q_n(G)$ is a central extension of $G \wr S_n$ isomorphic to $H_n(\Lambda^2G)\rtimes S_n$.
-  The kernel of $\mu$ is isomorphic to $\HH_2(G, \mathbb{Z})$.  
-\end{cor}
-\end{comment}
-
-
-\section{Proof of Theorem 1} \label{sec:main}
-%\subsection{Weak equivalence of $F_{h_\infty}$ and $h_\infty^{-1}(0)$} \label{sec:topo-weak-equiv}
+\section{Topological applications} \label{sec:main}
 \begin{lemma} \label{lm:weak-equiv}If $X$ is fibrant and connected then $F_{h_\infty}$ and $h^{-1}(0)$ are weakly equivalent. \end{lemma}
 \begin{proof}
  {\bf ???}
 \end{proof}
 
-\begin{comment}
 From the proof of~\cite[Lemma~10.1]{Po17} it follows that the following square of abelian groups is cocartesian in the case $Y$ is fibrant and connected.
 \begin{equation} \xymatrix{ \ZZ[\catname{sSets}(X, Y)] \ar[r]  \ar@{->>}_{\alpha}[d] & \catname{sSets}(X, A(Y)) \ar@{->>}_{\beta}[d]  \\
                             \ZZ[\catname{hsSets}(X, Y)] \ar[r] & \catname{hsSets}(X, A(Y))  } 
@@ -713,7 +442,7 @@ The fact that the above square is cocartesian is equivalent to the surjectivity 
 
 \begin{equation} \xymatrix{                            & X  \ar[d]^\gamma             &     \\
                             h^{-1}(0)  \ar@{^{(}->}[r] & Y^\infty  \ar[r]^{h_\infty}  & A(Y) } \end{equation}
-\end{comment} 
+
 Recall that for arbitrary set $X$ one defines the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
  is $X^{k+1}$ and whose faces and degeneracies are obtained by omitting and repeating components. 
 For a group $G$ we denote by $\pi_G$ the canonical map $EG \to BG$ sending $(g, h) \in EG_1$ to $g^{-1}h \in BG_1$.
@@ -791,15 +520,14 @@ For example, we can define $E_{h_n}$ and the homotopy fiber $F_{h_n}$ via the us
               BG^{2n} \ar[r]_{h_n} & \ZZ[BG] } \ \ \ 
    \xymatrix{ F_{h_n}  \ar[r] \ar[d] \pullbackcorner & \ar[d]^{ev_1\,\circ\,\pi_2} E_{h_n} \\
               pt \ar[r]_{0} & \ZZ[BG]}  \]
-Now write down the starting portion of the long homotopy exact sequence of the fibration $E_{h_n} \twoheadrightarrow \ZZ[BG]$.
-If we denote by $K$ the kernel of the map $\nu\colon \pi_1(T) \to G^{2n}$ induced by the embedding $h_n^{-1}(0)=T \subseteq BG^{2n}$ we 
- come to the following commutative diagram.
+Now write down the starting portion of the long homotopy exact sequence of the fibration $E_{h_n} \twoheadrightarrow \ZZ[BG]$ and
+ denote by $K$ the kernel of the map $\nu\colon \pi_1(T) \to G^{2n}$ induced by the embedding $h_n^{-1}(0)=T \subseteq BG^{2n}$.
+We come to the following commutative diagram:
 \[ \xymatrix{1 \ar[r] & K       \ar[d]_{\psi} \ar[r] & \pi_1(T) \ar[d]_{\phi} \ar[r]_{\nu}     & G^{2n} \ar[r] \ar[d]_{\cong} & \HH_1(G, \ZZ) \ar[r] \ar@{=}[d] & 1 \\
              1 \ar[r] & \HH_2(G, \ZZ) \ar[r] & \pi_1(F_{h_n})           \ar[r]  & \pi_1(E_{h_n}) \ar[r]                       & \HH_1(G, \ZZ) \ar[r] & 1}\]
 We already know by Corollaries~\ref{cor:main} and~\ref{cor:ker-iso} that $K$ is naturally isomorphic to $\HH_2(G, \ZZ)$ provided $n\geq 3$.
-%Notice that this isomorphism is natural in $G$.
 
-Let us show that $\psi$ is an isomorphism. Assume for a momemnt that $G$ is an abelian group.
+Let us show that $\psi$ is an isomorphism. Assume for a moment that $G$ is an abelian group.
 In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentation corresponds to the class of 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}), which,
   in turn, corresponds to the following normalized 2-cycle:
 \begin{equation} \label{eq:normalized} c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, 0) +(y, 0) + (0, x) - (0, y). \end{equation}
@@ -846,172 +574,6 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
 \end{proof}
 
-
-
-\begin{comment}                           
-\section{Algebraic computatation of $Q_n(G)$}
-
-
-\subsection{A presentation for $S_n(G)$ and $HS_n(G)$} \label{sec:QHQ-pres}
-
-It it easy to check that $\mu(h_{ij}(a)) = d_{ij}(g)$.
-Thus, the groups defined in section~\ref{sec:QnG-def} fit into the following commutative diagram.
-\begin{equation} \xymatrix{1 \ar[r] & \mathrm{Ker}(\mu) \ar[r] \ar@{=}[d] & HQ_n(G) \ar[r] \ar@{^{(}->}[d] &  D_n(G)   \ar[r] \ar@{^{(}->}[d] & 1      &   \\
-                           1 \ar[r] & \mathrm{Ker}(\mu) \ar[r]            & Q_n(G)  \ar[r]                 & G \wr S_n \ar[r]                 & G_{ab} \ar[r] & 1} 
-\label{eq:comm-diagram} \end{equation}
-
-
-
-
-\section{Comparison with $\HH_2(G, \mathbb{Z})$.}
-
-We are now going to compare $C_n(G)$ with the second homology group $\HH_2(G, \mathbb{Z})$.
-More precisely, we construct a surjective map $\theta\colon \HH_2(G, \mathbb{Z}) \to C_n(G)$ for $n\geq 3$.
-This construction is heavily inspired by \cite[\S~4.3]{Lo76}, cf. also with~\cite[\S~4F]{KKM}.
-
-\begin{lemma}\label{lm:hprop} The elements $h_{ij}(a)$ satisfy the following properties.
-\begin{lemlist}
-  \item \label{item-h-mu}    One has $\mu(h_{ij}(a)) = a[i] \cdot a^{-1}[j] \in G^n$.
-  \item \label{item-h-inv}   One has $h_{ij}(g)= h_{ji}(g^{-1}) = h_{ji}(g)^{-1}$.  
-  \item \label{item-h-conj}  If $g, g' \in G^n$ are such that $g_i = g'_i$ and $g_j=g'_j$ then $h_{ij}(a)^g = h_{ij}(a)^{g'}$.
-  \item \label{item-h-comm}  If $q_1, q_2 \in \mu^{-1}(G^n)\leq Q_n(G)$ and $1 \leq i\neq j\leq n$ are such that $\mu(q_1)_i=\mu(q_2)_i$ and $\mu(q_1)_j=\mu(q_2)_j$, then for $a\in G$ one has
-        $[q_1, h_{ij}(a)] = [q_2, h_{ij}(a)]$.
-  \item \label{item-h-comm2} For $a,b,c \in G$ and arbitrary distinct indices $i,j,k$ one has
-        \[[h_{ij}(ab),\ h_{ik}(c)] = [h_{ij}(a) h_{ij}(b),\ h_{ik}(c)].\]
-\end{lemlist} \end{lemma}
-\begin{proof}
-The first two assertions of the lemma are straightforward.
-The third assertion follows from relations~\eqref{eq:action} and~\eqref{eq:main_rel2}.
-Indeed for $g\in G^n$ we have $h_{ij}(a) ^{g} = (ij)_{a[j] \cdot g} (ij)_{g} = (ij)_{g_i[i] (ag_j)[j]} \cdot (ij)_{g_i[i] g_j[j]},$
-and it is clear that the last expression depends only on the $i$-th and $j$-th components of $g$.
-
-Combining the third assertion with Peiffer identity yields the fourth assertion:
-\[ [q_1, h_{ij}(a)] = h_{ij}(a)^{q_1^{-1}} h_{ij}(a)^{-1} = h_{ij}(a)^{\mu(q_1)^{-1}} h_{ij}(a)^{-1} =  h_{ij}(a)^{\mu(q_2)^{-1}} h_{ij}(a)^{-1} = [q_2, h_{ij}(a)]. \]
-
-It remains to prove the last assertion. Direct computation shows that
-\[\mu(h_{ij}(ab)) = (ab)[i] (ab)^{-1}[j],\ \mu(h_{ij}(a) h_{ij}(b)) = (ab)[i] (ba)^{-1}[j].\]
-Since the $i$-th and $k$-th components of these vectors are equal we get the required statement as a corollary of the fourth assertion.
-\end{proof}
-
-Now one can define the symbol $\{a, b\}_i$ as the commutator $[h_{ij}(a), h_{ik}(b)]$, where
-$i$, $j$ and $k$ are distinct indices and $a, b$ are elements of $G$.
-\begin{lemma}\label{lm:symbprop} The symbols $\{a,b\}_i$ possess the following properties.
-\begin{lemlist}
- \item \label{item-symb-mu}    One has $\mu(\{a, b\}_i) = [a,\ b][i].$
- \item \label{item-symb-corr}  The symbol $\{a, b\}_i$ is fixed by any permutation $s\in S_n$ which fixes $i$, in particular $\{a, b\}_i$ does not depend on the choice of indices $j,k$.
- \item \label{item-symb-def1}  For arbitrary $j\neq i$ one has $\{a, b\}_i = (ij)_{(ab)[j]} (ij)_{a[j]} (ij)_1 (ij)_{b[j]}.$
- \item \label{item-symb-asymm} One has $\{a, b\}_i^{-1} = \{b, a\}_i$, moreover $\{a, a\}_i=1$.
- \item \label{item-symb-def2}  One has $\{a, b\}_i = h_{ij}(ab) \cdot h_{ij}(a^{-1}) h_{ij}(b^{-1}).$
-\end{lemlist}
-\end{lemma}
-\begin{proof}
-The second assertion follows from~\eqref{eq:action} and~\eqref{eq:main_rel2}, indeed:
- \[s_1^{\{ a, b\}_i} = s_1^{[a, b][i]} = s_{[a,b][i]} = s_1.\]
-The third assertion can be obtained by repeated application of~\eqref{eq:Peiffer-gen} and~\eqref{eq:main_rel2}:
- \begin{multline}\label{eq:h-conj}
- h_{ij}(b)^{h_{ik}(a)^{-1}} = (ik)_{a[k]} \cdot \left( (ik)_1 \cdot (ij)_{b[j]} (ij)_1 \cdot (ik)_1 \right) \cdot (ik)_{a[k]} = \\
-= \left((ik)_{a[k]} \cdot (kj)_{b[j]} (kj)_1 \cdot (ik)_{a[k]} \right) = (ij)_{b[j](a^{-1})[i] a[k]} (ij)_{(a^{-1})[i] a[k]} =
- (ij)_{(ab)[j]} (ij)_{a[j]}.
-\end{multline}
-
-For a sequence $a_1,\ldots, a_p$ of elements of $G$ we denote by $[[a_1,\ldots, a_p]]_{ij}$ the product $(ij)_{a_1[j]}\ldots (ij)_{a_p[j]}$.
-With this notation, we can rewrite the third assertion of the lemma as
-\[\{a, b\}_i = [[ab, a, 1, b]]_{ij}.\]
-It is clear that $[[a, a]]_{ij}=1$. From~\eqref{eq:Peiffer-gen} we also get that $[[a,b,a]]_{ij} = [[ab^{-1}a]]_{ij}$. 
-Now using these two identities we can demonstrate the last two assertions of the lemma.
-\begin{equation} \nonumber \{a, a\}_i = [[a^2, a, 1, a]]_{ij} =[[a^2, a^2]]_{ij} = 1; \end{equation} 
-\begin{multline} \nonumber \{a, b\}_i \cdot \{b, a\}_i = [[ab, a, 1, b, ba, b, 1, a]]_{ij} = [[ab, a, b^{-1}, (ba)^{-1}, b^{-1}, a]]_{ij} = \\ =[[ab, a, ab^{-1}, a]]_{ij} = [[ab, ab]]_{ij} = 1; \end{multline}
-\[h_{ij}(ab) \cdot h_{ij}(a^{-1}) h_{ij}(b^{-1}) = [[ ab, 1, a^{-1}, 1, b^{-1}, 1 ]]_{ij} = [[ ab, a, 1, b ]]_{ij} = \{a, b\}_i. \qedhere\]
-\end{proof}
-
-
-Now choose arbitrary index $1 \leq i\leq n$ and consider the map $\theta_i\colon\Theta(G)\to Q_n(G)$ defined by $\theta_i((a,b)) = \{a, b\}_i$.
-\begin{prop} \label{prop:miller-rels} The image of $B(G)$ under $\theta_i$ is trivial. \end{prop}
-\begin{proof}
- By~\cref{item-symb-asymm} the relations~\eqref{R1}--\eqref{R2} are preserved by $\theta_i$.
- For the remaining two relations the proof is similar to~\cite[Prop.~4.9]{KKM}.
- By~\cref{item-h-comm2} we get that
- \[ \{ca, b\}_i = [h_{ij}(c) h_{ij}(a),\ h_{ik}(b)] = {}^{h_{ij}(c)}\![ h_{ij}(a),\ h_{ik}(b)] \cdot [h_{ij}(c), h_{ik}(b)]. \]
- 
- Now set 
- \begin{align} 
-  A = h_{ij}(cac^{-1}), & & & A' = h_{ij}(c) h_{ij}(a) h_{ij}(c)^{-1}, \nonumber \\ 
-  B = h_{ij}(c)^{-1} h_{ik}(cbc^{-1})h_{ij}(c), & & & B'=h_{ik}(b) \nonumber.
- \end{align}
- It is clear that 
- \begin{align} \nonumber
-  \mu(A)_i = cac^{-1} = \mu(A')_i, & & & \mu(A)_k = 1 = \mu(A')_k,\\ 
-  \mu(B)_i=b=\mu(B')_i, & & & \mu(B)_j = 1 = \mu(B')_j,
- \end{align}
- hence by~\cref{item-h-comm} we get that
-\begin{multline}\label{eq:A1}
-\{cac^{-1}, cbc^{-1} \}_i = [A, h_{ik}(cbc^{-1})] = [A',\ h_{ik}(cbc^{-1})] = {}^{h_{ij}(c)}[h_{ij}(a),\ h_{ik}(cbc^{-1})^{h_{ij}(c)}] = \\
-= {}^{h_{ij}(c)}\![h_{ij}(a),\ B] = {}^{h_{ij}(c)}\![h_{ij}(a),\ B'] = {}^{h_{ij}(c)}\![h_{ij}(a), h_{ik}(b)].
-\end{multline}
-hence~\eqref{R3} is preserved by~$\theta_i$. Finally, to show that $\theta_i$ preserves~\eqref{R4} it remains to use~\eqref{eq:A1},
-\cref{item-h-comm},\cref{item-symb-mu}~and~\ref{item-symb-corr}:
-\begin{multline}\nonumber \{cac^{-1},cbc^{-1}\}_i \cdot \{b, a\}_i = {}^{h_{ij}(c)}\![h_{ij}(a), h_{ik}(b)] \cdot [h_{ik}(b),\ h_{ij}(a)] = \\
- = [h_{ij}(c),\ [h_{ij}(a),\ h_{ik}(b)]] = [h_{ij}(c),\ h_{ik}([a,\ b])] = \{c, [a,\ b]\}_i. \qedhere \end{multline}
-\end{proof}
-
-\begin{cor}
- There is a map $\theta\colon \HH_2(G, \mathbb{Z})\to C_n(G)$ induced by $\theta_i$ which does not depend on the choice of $i$.
-\end{cor}
-\begin{proof}
-  By a theorem of Miller (see~\cite{Mi52}) the group $\HH_2(G, \mathbb{Z})$ can be presented as the quotient $Z(G)/B(G)$.
-  We have just shown that there is a well-defined map $\theta_i\colon \Theta(G)/B(G) \to Q_n(G)$. 
-  By~\cref{item-symb-mu} the image of $Z(G)$ lies in $C_n(G)$.
-  Since $C_n(G)$ is central in $Q_n(G)$ we see that the resulting map $Z(G)/B(G) \to C_n(G)$ does not depend on $i$.
-\end{proof}
-
-Our next goal is to show that the map $\theta$ is surjective. 
-We start with the following technical result (cf. with the relations P1', P4' from the proof of~\cite[Lemma~4.3.5]{Lo76}).
-\begin{lemma}\label{h-identities}
- The elements $h_{ij}(g)$ satisfy the following relations.
- \begin{enumerate}
-  \item For distinct indices $i,j,k$ one has $h_{jk}(g) = h_{ij}(g^{-1}) h_{ik}(g).$
-  \item The following identities hold:
-  \begin{equation} \nonumber \begin{aligned}[t]
-    h_{1i}(v) \cdot h_{1k}(u) & = h_{1k}(u)  \cdot h_{1i}(u^{-1}v) h_{1i}(u),            & i\neq 1, k; \\
-    h_{1k}(v) \cdot h_{1k}(u) & = h_{1k}(uv) \cdot h_{12}((uv)^{-1}) h_{12}(v) h_{12}(u),& k > 2.
-  \end{aligned} \end{equation}
- \end{enumerate} 
-\end{lemma}
-\begin{proof}
-To prove the first assertion compute the value of the commutator $[h_{ij}(g^{-1}), (jk)]$ in two different ways:
-\begin{multline} \nonumber
- h_{jk}(g) = (jk)_1^{g^{-1}[j]} \cdot (jk)_1 = (jk)_1^{h_{ij}(g)}(jk)_1 = \\ 
- = [h_{ij}(g^{-1}), (jk)_1] = h_{ij}(g^{-1}) \cdot h_{ij}(g)^{(jk)} = h_{ij}(g^{-1}) h_{ik}(g).
-\end{multline}
-The first formula in the second assertion of the lemma follows from~\eqref{eq:h-conj}:
- \[ h_{1i}(v)^{h_{1k}(u)} = (1i)_{(u^{-1}v)[i]} (1i)_{u^{-1}[i]} = [[u^{-1}v, u^{-1}]]_{1i} = [[ u^{-1}v, 1, u, 1 ]]_{1i} = h_{1i}(u^{-1}v) h_{1i}(u). \]
-The other formula follows from~\cref{item-symb-corr},~\ref{item-symb-def2} and~\cref{item-h-inv}.
-\end{proof}
-
-
-
-The proof of the next proposition is similar to~\cite[Lemma~4.3.5]{Lo76}.
-\begin{prop} For $n\geq 3$ the group $C_n(G)$ is generated by symbols $\{a, b\}_1$, $a, b\in G$. In particular, the map $\theta\colon \HH_2(G, \mathbb{Z})\to C_n(G)$ is surjective. \end{prop}
-\begin{proof}
-Combining the first assertion of~\cref{h-identities} with the previous lemma we get that any element $q$ of $C_n(G)$ can be
-written as a product of elements $h_{1i}(a)$ (where $a\in G$ and $1< i\leq n$).
-
-Denote by $k$ the largest index $i$ occuring in this expression for $q$. 
-The identities from the second assertion of~\cref{h-identities} allow us to ``move'' all the factors $h_{1k}(g)$ to the left-hand side of the expression
-until possibly one such factor is left, i.\,e. until $q$ has the form $q=h_{1k}(a) \cdot \left(h_{1i_1}(a_1) \cdot \ldots \cdot h_{1i_N}(a_N)\right)$ where all indices $i_1,\ldots i_N$ are less than $k$.
-Since $1 = \mu(q)_k = \mu(h_{1k}(a))_k = a^{-1}$ the element $h_{1k}(a)$ is trivial and the new expression for $q$ only contains $h_{1i}(g)$ with $i$ less than $k$.
-
-We can repeat the above argument several times until $k$ becomes equal to $2$, i.\,e. until $q$ is written as $\prod_{i=1}^N h_{12}(a_i)$.
-From~\cref{item-symb-asymm}~and~\ref{item-symb-def2} it follows that 
-\[ h_{12}(a) h_{12}(b) = \{a, b\}_1 \cdot h_{12}(ba).\]
-Thus, we can rewrite $q$ as follows:
-\begin{multline} \nonumber
-q = \{ a_1, a_2\}_1 \cdot h_{12}(a_2a_1) \cdot \prod_{i=3}^N h_{12}(a_i) = \ldots \\ 
-\ldots = \{a_1, a_2\}_1 \cdot \{a_2a_1, a_3 \}_1 \cdot \ldots \cdot \{a_{N-1}\cdot\ldots\cdot a_1, a_N\}_1 \cdot h_{12}(a_N\cdot\ldots\cdot a_1). 
-\end{multline}
-Since $1 = \mu(q)_2 = \mu(h_{12}(a_N\cdot\ldots\cdot a_1))_2 = (a_N\cdot\ldots\cdot a_1)^{-1}$, we obtain the assertion of the proposition.
-\end{comment}
-
-\newpage \printbibliography
+\printbibliography
 
 \end{document}
