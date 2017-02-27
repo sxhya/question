@@ -72,28 +72,43 @@ We also give a topological application of this construction by describing homoto
 \maketitle
 
 \section{Introduction}
-Let $G$ be a group. The nonabelian tensor square $G \otimes G$ of $G$ is an extension of the derived subgroup $[G, G]$ that was defined by ??? in ???.
-In this paper we will be mainly interested in the following two extensions of $[G, G]$ that are quotients of $G\otimes G$: the nonabelian exterior product $G \wedge G$ and
- its extension $G \mathbin{\widetilde{\wedge}} G$ defined by Dennis in ???.
+The aim of this paper is to obtain a new presentation for several extensions of type $\mathfrak{H}_n(G)$ and thereby
+ to establish a surprising connection between symmetric groups and noncommutative symbols.
+These presentations are then used to study homotopy invariants of infinite symmetric products {\bf ???}.
 
-More precisely, we will be interested in the so-called {\it extensions of type $\mathfrak{H}_n(G)$} associated to these extensions.
-Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
+Let $G$ be a group. Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
  $(g_1,\ldots, g_n)$ for which the product $g_1\cdot \ldots \cdot g_n$ lies in the derived subgroup $[G, G]$.
-By definition, an {\it $\mathfrak{H}_n$-extension} is an extension $H$ of the group $D_n(G)$ that fits into the following pullback square
- for $U = G \mathbin{\widetilde{\wedge}} G, G \wedge G.$
-\[ \xymatrix{ U \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H \ar@{->>}[r] & D_n(G)} \]
-Extensions of type $H_n(G)$ formalize the concept of the group of noncommutative Steinberg symbols and the purpose of their original invention
- was to formulate the Statement of the noncommutative version of Matsumoto theorem.
- first m
+The universal {\it extension of type $\mathfrak{H}_n$} $H_n(G)$ and its antisymmetrization $H^\wedge_n(G)$ are given by generators and relations (see ???).
+These extensions are the natural extensions of $D_n(G)$ that fit into the following pullback squares:
+\[ \xymatrix{ G \mathbin{\widetilde{\wedge}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H_n(G) \ar@{->>}[r] & D_n(G)} \]
+\[ \xymatrix{ G \wedge G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H^\wedge_n(G) \ar@{->>}[r] & D_n(G)} \]
+Here $G \wedge G$ denotes the nonabelian exterior product and $G \mathbin{\widetilde{\wedge}} G$ is the modern notation for the Dennis functor $(G, G)$, see ??? (also denoted $U_G$ by Rehmann in ???). 
+The map $\iota_k$ is the inclusion map that puts an element of $[G,G]$ on $k$-th position.
+ 
 
+\begin{comment}
+The main use of extensions of type $H_n(G)$ is that they formalize the concept of the group of noncommutative Steinberg symbols, see ???.
+The goal of their original invention was to provide the framework for the noncommutative version of Matsumoto theorem.
+
+More precisely, we will be interested in the so-called {\it extensions of type $\mathfrak{H}_n(G)$} associated to these extensions. 
+ 
+Let $G$ be a group. Recall that the nonabelian tensor square $G \otimes G$ of $G$ 
+is an extension of the derived subgroup $[G, G]$ that was defined by ??? in ???.
+In this paper we will be mainly interested in the following two extensions of $[G, G]$ 
+ that are quotients of $G\otimes G$: the nonabelian exterior product $G \wedge G$ and
+ its extension $G \mathbin{\widetilde{\wedge}} G$ defined by Dennis in ???.
+ 
+ 
 For the first time they have appeared in U.~Rehmann's paper~\cite{Reh78}, 
  where they are used as a noncommutative analogues in the proof of the noncommutative version of Matsumoto's theorem.
  
 Discovery of noncommutative Steinberg symbols in the proof of the latter led to the
  definition of noncommutative tensor and exterior products in~\cite{De76}. 
+\end{comment}
  
 \begin{thm} \label{thm:summary} Blah-blah-blah \end{thm}
 
+The presentation of Theorem 1 was discovered in attempt to solve some purely topological problem.
 
 For a pointed simplicial set $(X, x_0)$ one denotes by $\ZZ[X]$ the associated free simplicial abelian group.
 Define the map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the identity:
@@ -101,12 +116,14 @@ Define the map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the identity:
 Denote by $X^\infty$ the colimit of $X^n$ with respect to the natural embeddings $X^{n} \hookrightarrow X^{n+1}$
 Taking colimit of $h_n$ we get the map $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$.
 
-Based on a recent result of S.~Podkorytov one can deduce that the natural map $h^{-1}_\infty(0) \to F_{h_\infty}$
- between the fiber and the homotopy fiber of $h_\infty$ over $0$ is a weak equivalence provided $X$ is fibrant and connected, see~\cref{lm:weak-equiv}.
+Based on a recent result of S.~Podkorytov one can deduce that this map is a quasifibration provided $X$ is fibrant and connected.
+In particular, the natural map $h^{-1}_\infty(0) \to F_{h_\infty}$ between the fiber and the homotopy fiber of $h_\infty$ over $0$ is a weak equivalence, see~\cref{lm:weak-equiv}.
+\begin{comment}
 For finite $n$ this no longer remains true, however one may expect that the homotopy groups of $h^{-1}_n(0)$ and $F_{h_n}$ are still
  isomorphic in small degrees.
 S. Podkorytov conjectured that the natural map $h^{-1}_n(0) \to F_{h_n}$ is $c_n$-connected where $c_n$ tends to infinity as $n\to \infty$.
 The main goal of this note is to show the following result which confirms this conjecture in one special case.
+\end{comment}
 \begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$
  the natural map $h_n^{-1}(0) \to F_{h_n}$ induces an isomorphism of fundamental groups
  $\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n})$. \end{thm}
