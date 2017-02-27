@@ -53,7 +53,7 @@
 \newcommand{\pushoutcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
 \newcommand{\pullbackcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 
-\title{A note on amalgams of symmetric groups and $\mathfrak{H}_n$-extensions}
+\title{Amalgams of symmetric groups, $\mathfrak{H}_n$-extensions and homotopy invariants}
 \keywords {$\mathfrak{U}(G)$-extensions, $\mathfrak{H}_n(G)$-extensions, amalgamated products, van Kampen theorem,
  {\em Mathematical Subject Classification (2010):} 55Q05, 20B30, 20E06, 20J06}
 
@@ -65,16 +65,26 @@
 
 \begin{abstract} By amalgamating copies of symmetric group $S_n$ we construct a central extension $S_n(G)$ of a large subgroup of the wreath product $G \wr S_n$.
 We then establish a connection between this group and the theory of $\mathfrak{U}(G)$ and $\mathfrak{H}_n(G)$-extensions developed by K.~Dennis and U.~Rehmann in 1970's.
-We also give a topological application of this construction by describing the fundamental group of the fiber of the ``alternating`` map $BG^{2n}\to \mathbb{Z}[BG]$.
+We also give a topological application of this construction by describing homotopy invariants of blah-blah-blah...
+ %the fundamental group of the fiber of the ``alternating`` map $BG^{2n}\to \mathbb{Z}[BG]$.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-Let $G$ be a group. Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
+Let $G$ be a group. The nonabelian tensor square $G \otimes G$ of $G$ is an extension of the derived subgroup $[G, G]$ that was defined by ??? in ???.
+In this paper we will be mainly interested in the following two extensions of $[G, G]$ that are quotients of $G\otimes G$: the nonabelian exterior product $G \wedge G$ and
+ its extension $G \mathbin{\widetilde{\wedge}} G$ defined by Dennis in ???.
+
+More precisely, we will be interested in the so-called {\it extensions of type $\mathfrak{H}_n(G)$} associated to these extensions.
+Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
  $(g_1,\ldots, g_n)$ for which the product $g_1\cdot \ldots \cdot g_n$ lies in the derived subgroup $[G, G]$.
-By definition, an {\it $\mathfrak{H}_n$-extensions} is an extension $H$ of the group $D_n(G)$ that fits into the following diagram of groups.
-\[ \xymatrix{ G \mathbin{\widetilde{\wedge}} G \ar@{->>}[d] \ar@{->>}[rd] & \\ U_H \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H \ar@{->>}[r] & D_n(G)} \]
+By definition, an {\it $\mathfrak{H}_n$-extension} is an extension $H$ of the group $D_n(G)$ that fits into the following pullback square
+ for $U = G \mathbin{\widetilde{\wedge}} G, G \wedge G.$
+\[ \xymatrix{ U \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H \ar@{->>}[r] & D_n(G)} \]
+Extensions of type $H_n(G)$ formalize the concept of the group of noncommutative Steinberg symbols and the purpose of their original invention
+ was to formulate the Statement of the noncommutative version of Matsumoto theorem.
+ first m
 
 For the first time they have appeared in U.~Rehmann's paper~\cite{Reh78}, 
  where they are used as a noncommutative analogues in the proof of the noncommutative version of Matsumoto's theorem.
