@@ -53,7 +53,7 @@
 \newcommand{\pushoutcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
 \newcommand{\pullbackcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 
-\title{Amalgams of symmetric groups, $\mathfrak{H}_n$-extensions and homotopy invariants}
+\title{Amalgams of symmetric groups and $\mathfrak{H}_n$-extensions}
 \keywords {$\mathfrak{U}(G)$-extensions, $\mathfrak{H}_n(G)$-extensions, amalgamated products, van Kampen theorem,
  {\em Mathematical Subject Classification (2010):} 55Q05, 20B30, 20E06, 20J06}
 
@@ -72,46 +72,35 @@ We also give a topological application of this construction by describing homoto
 \maketitle
 
 \section{Introduction}
-The aim of this paper is to obtain a new presentation for several extensions of type $\mathfrak{H}_n(G)$ and thereby
- to establish a surprising connection between symmetric groups and noncommutative symbols.
-These presentations are then used to study homotopy invariants of infinite symmetric products {\bf ???}.
+The aim of this note is to establish a surprising connection between symmetric groups and (certain quotients of) nonabelian tensors squares.
 
 Let $G$ be a group. Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
  $(g_1,\ldots, g_n)$ for which the product $g_1\cdot \ldots \cdot g_n$ lies in the derived subgroup $[G, G]$.
-The universal {\it extension of type $\mathfrak{H}_n$} $H_n(G)$ and its antisymmetrization $H^\wedge_n(G)$ are given by generators and relations (see ???).
-These extensions are the natural extensions of $D_n(G)$ that fit into the following pullback squares:
-\[ \xymatrix{ G \mathbin{\widetilde{\wedge}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H_n(G) \ar@{->>}[r] & D_n(G)} \]
-\[ \xymatrix{ G \wedge G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H^\wedge_n(G) \ar@{->>}[r] & D_n(G)} \]
-Here $G \wedge G$ denotes the nonabelian exterior product and $G \mathbin{\widetilde{\wedge}} G$ is the modern notation for the Dennis functor $(G, G)$, see ??? (also denoted $U_G$ by Rehmann in ???). 
-The map $\iota_k$ is the inclusion map that puts an element of $[G,G]$ on $k$-th position.
- 
+Recall from Rehmann's paper~\cite{Reh78} that the universal {\it extension of type $\mathfrak{H}_n$} (denoted $H_n(G)$) 
+ is, by definition, a certain (central) extension of $D_n(G)$ explicitly presented by generators and relations 
+ (see section~\ref{sec:Hnextensions} below).
+The extension $H_n(G)$ and its ''antisymmetrization`` $H^\wedge_n(G)$ can be characterised by the property that 
+ they fit into the following pullback squares:
+\[ \xymatrix{ G \mathbin{\widetilde{\wedge}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H_n(G) \ar@{->>}[r] & D_n(G)}\ \ \
+   \xymatrix{ G \wedge G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H^\wedge_n(G) \ar@{->>}[r] & D_n(G)} \]
+Here $G \wedge G$ denotes the nonabelian exterior square of $G$ and  
+ $G \mathbin{\widetilde{\wedge}} G$ is the more modern notation for the Dennis group $(G, G)$ (also denoted $U_G$ by Rehmann), see~\cite{De76}, \cite{Reh78}.
+The map $\iota_1$ in the above diagrams is defined by $\iota_1(g) = (g, 1,\ldots, 1)$.
 
-\begin{comment}
-The main use of extensions of type $H_n(G)$ is that they formalize the concept of the group of noncommutative Steinberg symbols, see ???.
-The goal of their original invention was to provide the framework for the noncommutative version of Matsumoto theorem.
+Consider the family of copies of the symmetric group $S_n$ where each copy is indexed by an $n$-tuple $(g_1, \ldots, g_n) \in G^n$.
+Denote by $S_n(G)$ the free product of groups from this family amalgamated over single family of relations of the form
+$s_g$ = $s_h$, where $s\in S_n$, $g, h \in G^n$ are such that $hg^{-1}$ is fixed by the natural action of $S_n$ on $G^n$
+(here we denote by $s_g$ a permutation $s$ embedded into the copy with index $g$).
+ 
+Our first main result is the following theorem. 
+\begin{thm} \label{thm:summary} The group $S_n(G)$ is isomorphic to $S_n \ltimes H_n^\wedge(G)$. \end{thm}
+The presentation of Theorem is similar in spirit (although much simpler) than the presentation
 
-More precisely, we will be interested in the so-called {\it extensions of type $\mathfrak{H}_n(G)$} associated to these extensions. 
- 
-Let $G$ be a group. Recall that the nonabelian tensor square $G \otimes G$ of $G$ 
-is an extension of the derived subgroup $[G, G]$ that was defined by ??? in ???.
-In this paper we will be mainly interested in the following two extensions of $[G, G]$ 
- that are quotients of $G\otimes G$: the nonabelian exterior product $G \wedge G$ and
- its extension $G \mathbin{\widetilde{\wedge}} G$ defined by Dennis in ???.
- 
- 
-For the first time they have appeared in U.~Rehmann's paper~\cite{Reh78}, 
- where they are used as a noncommutative analogues in the proof of the noncommutative version of Matsumoto's theorem.
- 
-Discovery of noncommutative Steinberg symbols in the proof of the latter led to the
- definition of noncommutative tensor and exterior products in~\cite{De76}. 
-\end{comment}
- 
-\begin{thm} \label{thm:summary} Blah-blah-blah \end{thm}
-
-The presentation of Theorem 1 was discovered in attempt to solve some purely topological problem.
+Unsurprisingly, the presentation from Theorem~1 is obtained via van Kampen theorem and 
+was discovered during the attempt to answer some purely topological question, which we describe in detail below.
 
 For a pointed simplicial set $(X, x_0)$ one denotes by $\ZZ[X]$ the associated free simplicial abelian group.
-Define the map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the identity:
+Define the ''alternating`` map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the identity:
  \[h_n(x_1, x_2, \ldots x_{2n}) = \sum\limits_{i=1}^{2n}(-1)^ix_i.\]
 Denote by $X^\infty$ the colimit of $X^n$ with respect to the natural embeddings $X^{n} \hookrightarrow X^{n+1}$
 Taking colimit of $h_n$ we get the map $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$.
