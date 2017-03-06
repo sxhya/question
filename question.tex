@@ -81,10 +81,10 @@ Recall from Rehmann's paper~\cite{Reh78} that the universal {\it extension of ty
  (see section~\ref{sec:Hnextensions} below).
 The extension $H_n(G)$ and its ''antisymmetrization`` $H^\wedge_n(G)$ can be characterised by the property that 
  they fit into the following pullback squares:
-\[ \xymatrix{ G \mathbin{\widetilde{\wedge}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H_n(G) \ar@{->>}[r] & D_n(G)}\ \ \
+\[ \xymatrix{ G \mathbin{\widetilde{\wedge}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H_n(G) \ar@{->>}[r] & D_n(G)} \qquad
    \xymatrix{ G \wedge G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H^\wedge_n(G) \ar@{->>}[r] & D_n(G)} \]
 Here $G \wedge G$ denotes the nonabelian exterior square of $G$ and  
- $G \mathbin{\widetilde{\wedge}} G$ is the more modern notation for the Dennis group $(G, G)$ (also denoted $U_G$ by Rehmann), see~\cite{De76}, \cite{Reh78}.
+ $G \mathbin{\widetilde{\wedge}} G$ is the a more modern notation for the Dennis group $(G, G)$ defined in~\cite{De76} (also denoted $U_G$ by Rehmann in \cite{Reh78}).
 The map $\iota_1$ in the above diagrams is defined by $\iota_1(g) = (g, 1,\ldots, 1)$.
 
 Consider the family of copies of the symmetric group $S_n$ where each copy is indexed by an $n$-tuple $(g_1, \ldots, g_n) \in G^n$.
@@ -94,6 +94,7 @@ $s_g$ = $s_h$, where $s\in S_n$, $g, h \in G^n$ are such that $hg^{-1}$ is fixed
  
 Our first main result is the following theorem. 
 \begin{thm} \label{thm:summary} The group $S_n(G)$ is isomorphic to $S_n \ltimes H_n^\wedge(G)$. \end{thm}
+The proof of Theorem 1 proceeds as follows: 
 The presentation of Theorem is similar in spirit (although much simpler) than the presentation
 
 Unsurprisingly, the presentation from Theorem~1 is obtained via van Kampen theorem and 
@@ -117,11 +118,7 @@ The main goal of this note is to show the following result which confirms this c
  the natural map $h_n^{-1}(0) \to F_{h_n}$ induces an isomorphism of fundamental groups
  $\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n})$. \end{thm}
 
-The proof of Theorem 1 is interesting on its own and goes as follows. 
-Using Quillen theorem A and van Kampen theorem we reduce the original question to some purely group-theoretic problem of 
- the description of the extension $S_n(G)$, which is defined as a certain amalgamated product of copies of the symmetric group $S_n$.
-It turns out that this extension can be naturally described in terms of the theory of $\mathfrak{U}(G)$ 
- and $\mathfrak{H}_n(G)$-extensions developed by K.~Dennis and U.~Rehmann in 1970's.
+The proof of Theorem 2 goes as follows. ???
  
 In the course of the proof we also find a presentation of the universal $\mathfrak{H}_n(G)$-extension 
  that is simpler than the original presentation introduced by Rehmann in~\cite{Reh78}, see~\cref{prop:simpler}.
