@@ -447,13 +447,24 @@ One also has to use the formula $c_{ij}(u, u) = c_{ij}(u, u^{-1})$ (see~\cite[p.
 In this section we prove topological claims made in the introduction.
 We start by showing that $h_\infty$ is a quasifibration.
 In order to do this we use a simplicial version of the so-called ''delayed homotopy lifting property``, cf. {\bf ???}.
-\begin{lemma} Let $U$ be a compact polyhedral {\bf ???} simplicial set, $X$ be a fibrant connected simplicial set and $F$, $g$ be arbitrary maps. 
-There exists $\widetilde{F}$ making the following diagram commute.
-\begin{equation} \nonumber \xymatrix{ U \ar[rr]^{g}  \ar_{\iota_0}[d] & & X^{\infty} \ar_{h_\infty}[d]  \\
-                           U \times [0,2] \ar[r]_{id\times \tau} \ar@{-->}[rru]^{\widetilde{F}} & U \times [1,2] \ar[r]_{F} & \mathbb{Z}[X]}
+\begin{lemma} Let $U$ be a compact and $V$ a polyhedral simplicial sets and
+ let $\iota \colon U \hookrightarrow V$ be a map between them that is a trivial cofibration and
+ admits a retract $r \colon V \to U$ (i.\,e. $ri=id_U$). Let $X$ be a fibrant connected simplicial set and let $F$, $g$ be arbitrary maps
+ such that outer rectangle in the diagram below commutes strictly.
+\begin{equation} \nonumber \xymatrix{ 
+U \ar[rr]^{g}  \ar_{\iota}[d] & & X^{\infty} \ar^{h}[d]  \\
+V \ar[rr]_{F} \ar@{-->}[rru]^{\widetilde{F}} & & \mathbb{Z}[X]}
 \label{eq:plp} \end{equation}
-Here we denote by $\tau$ the simplicial map $[0,2] \to [1,2]$ sending $0,1 \mapsto 1$ and $2 \mapsto 2$.
+Then there exists $\widetilde{F}$ such that the bottom triangle commutes strictly and the upper triangle
+ commutes up to homotopy $H$ such that the map $hH \colon U \times [0,1] \to \ZZ[X]$ coincides with $hg \times id$.
 \end{lemma}
+\begin{proof}
+ Notice first that the original question can be reduced to the special case $g=0$.
+ Indeed, since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$. Set $F_0 = F - hgr$.
+ If we could find a lift $\widetiled{F}_0$ for a pair of maps $(g=0, F_0)$ then $\widetilde{F} = gr \oplus \widetilde{F}_0[N]$
+ would be a solution to the original lifting problem for $(g, F)$.
+\end{proof}
+
 
 \begin{cor} \label{lm:weak-equiv} For a fibrant connected $X$ the map $h_\infty$ is a quasifibration.
 In particular, the homotopy fiber $F_{h_\infty}$ and the fiber $h^{-1}(0)$ are weakly equivalent. \end{cor}
