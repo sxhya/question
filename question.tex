@@ -447,75 +447,6 @@ One also has to use the formula $c_{ij}(u, u) = c_{ij}(u, u^{-1})$ (see~\cite[p.
 
 \section{Topological applications} \label{sec:main}
 In this section we prove topological claims made in the introduction.
-We start by showing that $h_\infty$ is a quasifibration.
-In order to do this we use a simplicial version of the so-called ''delayed homotopy lifting property``, cf. {\bf ???}.
-\begin{lemma} \label{lm:dhlp} Given a commutative diagram
-\begin{equation} \nonumber \xymatrix{ 
-U \ar[rr]^{g}  \ar@{^{(}->}_{\iota}[d] & & X^{\infty} \ar^{h}[d]  \\
-V \ar[rr]_{F} & & \mathbb{Z}[X]}
-\label{eq:plp} \end{equation}
-where $U$, $V$ are compact polyhedral simplicial sets, $X$ is a fibrant connected simplicial set and 
-$\iota$ is a trivial cofibration that admits a retract $r \colon V \to U$ (i.\,e. $ri=id_U$).
-Then there exists a map $\widetilde{F} \colon V \to X^\infty$ such that the bottom triangle commutes strictly and the upper triangle
- commutes up to homotopy $H$ such that the map $hH \colon U \times [0,1] \to \ZZ[X]$ coincides with $hg \times id$.
-\end{lemma}
-\begin{proof}
- Notice first that the original question can be reduced to the special case $g=0$.
- Indeed, since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$. Set $F_0 = F - hgr$.
- If we could find a lift $\widetilde{F}_0$ for a pair of maps $(g=0, F_0)$ then $\widetilde{F} = gr \oplus \widetilde{F}_0[N]$
- would be a solution to the original lifting problem for $(g, F)$.
- 
- Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. set $W=\underline{\Hom}(\Delta[1], X)$ ???).
- Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a (Kan) fibration
-  and we can choose a lift $\widetilde{F}$ in the following diagram.
-\begin{equation} \nonumber \xymatrix{ 
-U \ar[r]^{0}  \ar@{^{(}->}_{\iota}[d] & \ZZ[W] \ar@{->>}[d]  \\
-V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
-\end{equation}
- Notice that if the lifting problem for $(0, \widetilde{F})$ and $h_W \colon W^\infty \to \ZZ[W]$ has a solution, 
-  then so does the original problem for $(0, F)$ and $h_\infty$.
-
- By~\cite[Lemma~9.1]{Po17} we can lift $\widetilde{F}$ along $h_W$ so that the bottom triangle in the diagram
-\begin{equation} \nonumber \xymatrix{ 
-U \ar[r]^{0}  \ar@{^{(}->}_{\iota}[d]                               & W^\infty \ar[d]^{h_W}  \\
-V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
-\end{equation}
- commutes strictly. It is clear that the image of $G\iota$ sits inside the fiber $F_{h_W, 0}$.
- It remains to see that $F_{h_W, 0}$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $F_{h_W, 0}$).
- Thus, we get that $H \colon G\iota \cong 0$ and, moreover, that $h_W H = 0$. \end{proof}
-
-
-\begin{cor} \label{lm:weak-equiv} For a fibrant connected $X$ the map $h_\infty$ is a quasifibration.
-In particular, the homotopy fiber $F_{h_\infty, b}$ and the fiber $h^{-1}(b)$ of any point $b$ are weak equivalent. \end{cor}
-\begin{proof}
- It suffices to show that all relative homotopy groups $\pi_k(F_{h_\infty, b}, h^{-1}(b))$, $k \geq 1$ are trivial.
- If we construct the homotopy fiber via the usual path space construction then one could represent an element of $k$-th relative homotopy group  
-  by a pair of maps $(a,A)$ making the following diagram commute.
-  \begin{equation} \nonumber \xymatrix{ 
-D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & |X^{\infty}| \ar^{|h|}[d]  \\
-D^k\times I \ar^{p}[r] & (D^k \times I) / J \ar^(.6){A}[r] & |\mathbb{Z}[X]|}
-\label{eq:plp} \end{equation}  
- Here $J$ denotes $(\partial D^k \times I \cup D^k \times \{1\})$ and $A$ sends $J$ to the point $b$.
- It is also easy to formulate in these terms what a homotopy of pairs $(a, A)$ and $(a', A')$ is.
- 
- Notice that that if the bottom arrow lifts along $h_\infty$ then the class defined by $(a, A)$ is trivial.
- To show that such lift $\widetilde{A}$ always exists we use the lifting property of~\cref{lm:dhlp} and the simplicial approximation theorem.
- 
- Indeed, applying~\cite[Corollary~4.8]{Jar04} twice we replace the pair $(a, A)$ by a pair $(a', A')$ representing the same element of 
- the relative homotopy group in such a way that $a'$ and $pA'$ are geometric realizations of simplicial maps 
-  $a''$, $A''$ which make the following diagram commute.
-  \begin{equation} \nonumber \xymatrix{ 
-F (D^k \ar@{^{(}->}_{F\iota_0}[d])  \ar_{a''}[r] & X^{\infty} \ar^{h}[d]  \\
-F( D^k\times I) \ar_{A''}[r] \ar@{-->}_{\widetilde{A}}[ru] & \mathbb{Z}[X]}
-\label{eq:plp} \end{equation}  
-Here $F$ denotes the subdivision functor $\sd^m \sd^* \sd \sd^*$.
-It is clear that $F\iota_0$ is still a trivial cofibration (WHY?).
-Since $F$ is a functor, the map $F\iota_0$ admits a retract and by~\cref{lm:dhlp} we obtain a lift $\widetilde{A}$ of $A''$ and
- a simplicial homotopy $H : \widetilde{A} \cdot F i_0 \cong a''$ such that $hH = a'' \times id_I$
-It remains to replace $A'$ with the delayed homotopy which stands still for the first half of the time and 
- then use $|H|$ and $|\widetilde{A}|$ to construct the neccessary lifting.
-\end{proof}
-
 \subsection{Proof of main results}
 Recall that for arbitrary set $X$ one defines the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
  is $X^{k+1}$ and whose faces and degeneracies are obtained by omitting and repeating components. 
@@ -646,6 +577,93 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
  From the left diagram it follows that $\eta_{\Gamma_k}$ is also the morphism of multiplication by $n$.
  For every element $x\in \HH_2(G, \ZZ)$ there exist an integer $k$ and a map $\chi\colon \Gamma_k\to G$ sending the generator of $\HH_2(\Gamma_k, \ZZ)$ to $x$.
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
+\end{proof}
+
+\subsection{Stable}
+We finish the paper by showing that the map $h_\infty$ is a quasifibration.
+In order to do this we use a simplicial version of the so-called ''delayed homotopy lifting property``, cf. {\bf ???}.
+\begin{lemma} \label{lm:dhlp} Given a commutative diagram
+\begin{equation} \nonumber \xymatrix{ 
+U \ar[rr]^{g}  \ar@{^{(}->}_{\iota}[d] & & X^{\infty} \ar^{h}[d]  \\
+V \ar[rr]_{F} & & \mathbb{Z}[X]}
+\label{eq:plp} \end{equation}
+where $U$, $V$ are compact polyhedral simplicial sets, $X$ is a fibrant connected simplicial set and 
+$\iota$ is a trivial cofibration that admits a retract $r \colon V \to U$ (i.\,e. $ri=id_U$)
+there exists a map $\widetilde{F} \colon V \to X^\infty$ such that the bottom triangle commutes strictly and the upper triangle
+ commutes up to homotopy $H$ such that the map $hH \colon U \times [0,1] \to \ZZ[X]$ coincides with $hg \times id$.
+\end{lemma}
+\begin{proof}
+ Notice first that the original question can be reduced to the special case $g=0$.
+ Indeed, since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$. Set $F_0 = F - hgr$.
+ If we could find a lift $\widetilde{F}_0$ for a pair of maps $(g=0, F_0)$ then $\widetilde{F} = gr \oplus \widetilde{F}_0[N]$
+ would be a solution to the original lifting problem for $(g, F)$.
+ 
+ Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. set $W=\underline{\Hom}(\Delta[1], X)$ ???).
+ Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a (Kan) fibration
+  and we can choose a lift $\widetilde{F}$ in the following diagram.
+\begin{equation} \nonumber \xymatrix{ 
+U \ar[r]^{0}  \ar@{^{(}->}_{\iota}[d] & \ZZ[W] \ar@{->>}[d]  \\
+V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
+\end{equation}
+ Notice that if the lifting problem for $(0, \widetilde{F})$ and $h_W \colon W^\infty \to \ZZ[W]$ has a solution, 
+  then so does the original problem for $(0, F)$ and $h_\infty$.
+
+ By~\cite[Lemma~9.1]{Po17} we can lift $\widetilde{F}$ along $h_W$ so that the bottom triangle in the diagram
+\begin{equation} \nonumber \xymatrix{ 
+U \ar[r]^{0}  \ar@{^{(}->}_{\iota}[d]                               & W^\infty \ar[d]^{h_W}  \\
+V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
+\end{equation}
+ commutes strictly. It is clear that the image of $G\iota$ sits inside the fiber $F_{h_W, 0}$.
+ It remains to see that $F_{h_W, 0}$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $F_{h_W, 0}$).
+ Thus, we get that $H \colon G\iota \cong 0$ and, moreover, that $h_W H = 0$. \end{proof}
+
+\begin{lemma} Let $p\colon E \to B$ be a map of based topological spaces and let $b\in B$ be a basepoint.
+Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the obvious map between the fiber and the homotopy fiber of $p$.
+Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b))$ by $G_k$.
+\begin{enumerate}
+ \item An element of $G_k$ can be represented by a pair of maps $(a, A)$ making the following diagram commute.
+   \begin{equation} \nonumber \xymatrix{ 
+    D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
+    D^k\times I \ar^{p}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
+    \label{eq:plp} \end{equation}
+    Moreover, $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a family of maps $(a_t, A_t)$
+     continously depending on $t\in [0, 1]$ so that $pa_t = A_t\iota_0$ holds for all $t$.
+ \item Assume there exists a map $H \colon D^k\times I\to E$ fitting in the above commutative diagram, then the element of $G_k$ represented by $(a, A)$ is trivial.
+ \item The claim of the previous assertion remains true if we allow the upper triangle in the diagram to commute up to homotopy (i.\,e. $H\iota_0\cong a$).
+\end{enumerate}
+
+\end{lemma}
+
+
+\begin{cor} \label{lm:weak-equiv} For a fibrant connected $X$ the map $h_\infty$ is a quasifibration.
+In particular, the homotopy fiber $F_{h_\infty, b}$ and the fiber $h^{-1}(b)$ of any point $b$ are weak equivalent. \end{cor}
+\begin{proof}
+ It suffices to show that all relative homotopy groups $\pi_k(F_{h_\infty, b}, h^{-1}(b))$, $k \geq 1$ are trivial.
+ If we construct the homotopy fiber via the usual path space construction then one could represent an element of $k$-th relative homotopy group  
+  by a pair of maps $(a,A)$ making the following diagram commute.
+  \begin{equation} \nonumber \xymatrix{ 
+D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & |X^{\infty}| \ar^{|h|}[d]  \\
+D^k\times I \ar^{p}[r] & (D^k \times I) / J \ar^(.6){A}[r] & |\mathbb{Z}[X]|}
+\label{eq:plp2} \end{equation}  
+ Here $J$ denotes $(\partial D^k \times I \cup D^k \times \{1\})$ and $A$ sends $J$ to the point $b$.
+ It is also easy to formulate in these terms what a homotopy of pairs $(a, A)$ and $(a', A')$ is.
+ 
+ Notice that that if the bottom arrow lifts along $h_\infty$ then the class defined by $(a, A)$ is trivial.
+ To show that such lift $\widetilde{A}$ always exists we use the lifting property of~\cref{lm:dhlp} and the simplicial approximation theorem.
+ 
+ Indeed, applying~\cite[Corollary~4.8]{Jar04} twice we replace the pair $(a, A)$ by a pair $(a', A')$ representing the same element of 
+ the relative homotopy group in such a way that $a'$ and $pA'$ are geometric realizations of simplicial maps 
+  $a''$, $A''$ which make the following diagram commute.
+  \begin{equation} \nonumber \xymatrix{ 
+F (D^k \ar@{^{(}->}_{F\iota_0}[d])  \ar_{a''}[r] & X^{\infty} \ar^{h}[d]  \\
+F( D^k\times I) \ar_{A''}[r] \ar@{-->}_{\widetilde{A}}[ru] & \mathbb{Z}[X]}
+\label{eq:plp} \end{equation}  
+Here $F$ denotes the subdivision functor $\sd^m \sd^* \sd \sd^*$.
+It is clear that $F\iota_0$ is still a trivial cofibration (WHY?).
+Since $F$ is a functor, the map $F\iota_0$ admits a retract and by~\cref{lm:dhlp} we obtain a lift $\widetilde{A}$ of $A''$ and
+ a simplicial homotopy $H : \widetilde{A} \cdot F i_0 \cong a''$ such that $hH = a'' \times id_I$
+It remains to replace $A'$ with the delayed homotopy which stands still for the first half of the time and 
+ then use $|H|$ and $|\widetilde{A}|$ to construct the neccessary lifting.
 \end{proof}
 
 \printbibliography
