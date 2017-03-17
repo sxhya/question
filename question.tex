@@ -579,18 +579,26 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
 \end{proof}
 
-\subsection{Stable}
+\subsection{Concluding remarks}
 We finish the paper by showing that the map $h_\infty$ is a quasifibration.
 In order to do this we use a simplicial version of the so-called ''delayed homotopy lifting property``, cf. {\bf ???}.
-\begin{lemma} \label{lm:dhlp} Given a commutative diagram
+
+\begin{df}
+ Let $C$ be a class of injective maps in the category of simplicial sets.
+ We say that a map of simplicial sets $p\colon E \to B$ satisfies (simplicial) {\it delayed homotopy lifting property} with respect to $C$ if 
+  for every commutative square
 \begin{equation} \nonumber \xymatrix{ 
-U \ar[rr]^{g}  \ar@{^{(}->}_{\iota}[d] & & X^{\infty} \ar^{h}[d]  \\
-V \ar[rr]_{F} & & \mathbb{Z}[X]}
+U \ar[rr]^{g}  \ar@{^{(}->}_{i}[d] & & E \ar^{p}[d] \\
+V \ar[rr]_{F} \ar@{-->}[rru]^{\widetilde{F}} & & B}
 \label{eq:plp} \end{equation}
-where $U$, $V$ are compact polyhedral simplicial sets, $X$ is a fibrant connected simplicial set and 
-$\iota$ is a trivial cofibration that admits a retract $r \colon V \to U$ (i.\,e. $ri=id_U$)
-there exists a map $\widetilde{F} \colon V \to X^\infty$ such that the bottom triangle commutes strictly and the upper triangle
- commutes up to homotopy $H$ such that the map $hH \colon U \times [0,1] \to \ZZ[X]$ coincides with $hg \times id$.
+in which $i \in C$ there exists a map $\widetilde{F}$ so that the lower triangle commutes strictly and the upper one commutes up to homotopy $H$
+ such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{g} B $.
+\end{df}
+
+Denote by $C_{pr}$ the class of retractible inclusions between compact polyhedral simplicial sets.
+In other words, for polyhedral $U$ and $V$ an inclusion $i\colon U\to V$ lies in $C_{pr}$ if there is a map $r\colon V\to U$ such that $ri=id_U$.
+\begin{lemma} \label{lm:dhlp} Let $X$ be a fibrant connected simplicial set.
+The map $h \colon X^\infty \to \ZZ[X]$ satisfies the delayed homotopy lifting property with respect to the class $C_{pr}$.
 \end{lemma}
 \begin{proof}
  Notice first that the original question can be reduced to the special case $g=0$.
@@ -617,35 +625,37 @@ V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
  It remains to see that $F_{h_W, 0}$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $F_{h_W, 0}$).
  Thus, we get that $H \colon G\iota \cong 0$ and, moreover, that $h_W H = 0$. \end{proof}
 
-\begin{lemma} Let $p\colon E \to B$ be a map of based topological spaces and let $b\in B$ be a basepoint.
-Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the obvious map between the fiber and the homotopy fiber of $p$.
-Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b))$ by $G_k$.
+\begin{lemma} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
+Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
+Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
 \begin{enumerate}
- \item An element of $G_k$ can be represented by a pair of maps $(a, A)$ making the following diagram commute.
+ \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondece with pairs of maps $(a, A)$ making the following diagram commute.
    \begin{equation} \nonumber \xymatrix{ 
     D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
-    D^k\times I \ar^{p}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
+    D^k\times I \ar^{\pi}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
     \label{eq:plp} \end{equation}
-    Moreover, $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a family of maps $(a_t, A_t)$
-     continously depending on $t\in [0, 1]$ so that $pa_t = A_t\iota_0$ holds for all $t$.
- \item Assume there exists a map $H \colon D^k\times I\to E$ fitting in the above commutative diagram, then the element of $G_k$ represented by $(a, A)$ is trivial.
- \item The claim of the previous assertion remains true if we allow the upper triangle in the diagram to commute up to homotopy (i.\,e. $H\iota_0\cong a$).
+    Here $J$ denotes $\partial (D^k \times I) \cup (D^k \times \{1\})$.
+ \item Two pairs $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a family of maps $(a_t, A_t)$
+     continously depending on $t\in [0, 1]$ so that $pa_t = A_t\iota_0$ holds for all $t$ (we call such family a homotopy of pairs).
+ \item Assume $A\pi$ lifts with respect to $p$ (i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$), then the element of $G_k$ represented by $(a, A)$ is trivial.
+ \item Let $(a, A)$ be a pair as above and $H$ be a homotopy between two maps $a, a'\colon D^k \to E$ relative to $S^k$. 
+       Then there exists a map $A'$ such that $(a', A')$ is a pair homotopic to $(a, A)$.
+ \item The claim of the third assertion remains true if we require the weaker condition $\widetilde{A}\iota_0\cong a$ instead of the corresponding strict equality.
 \end{enumerate}
-
 \end{lemma}
 
 
-\begin{cor} \label{lm:weak-equiv} For a fibrant connected $X$ the map $h_\infty$ is a quasifibration.
-In particular, the homotopy fiber $F_{h_\infty, b}$ and the fiber $h^{-1}(b)$ of any point $b$ are weak equivalent. \end{cor}
+\begin{lemma} \label{lm:weak-equiv} If a map $p\colon E \to B$ possesses the delayed homotopy lifting property with respect to $C_{pr}$ 
+ then its geometric realization is a quasifibration, i.\,e. for every point $b$ of $B$ the inclusion $p^{-1}(b) \hookrightarrow F_{p}(0)$ is a weak equivalence. \end{lemma}
 \begin{proof}
- It suffices to show that all relative homotopy groups $\pi_k(F_{h_\infty, b}, h^{-1}(b))$, $k \geq 1$ are trivial.
+ It suffices to show that all relative homotopy groups $\pi_k(F_{p}(b), p^{-1}(b))$, $k \geq 1$ are trivial.
  If we construct the homotopy fiber via the usual path space construction then one could represent an element of $k$-th relative homotopy group  
   by a pair of maps $(a,A)$ making the following diagram commute.
   \begin{equation} \nonumber \xymatrix{ 
 D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & |X^{\infty}| \ar^{|h|}[d]  \\
 D^k\times I \ar^{p}[r] & (D^k \times I) / J \ar^(.6){A}[r] & |\mathbb{Z}[X]|}
 \label{eq:plp2} \end{equation}  
- Here $J$ denotes $(\partial D^k \times I \cup D^k \times \{1\})$ and $A$ sends $J$ to the point $b$.
+ 
  It is also easy to formulate in these terms what a homotopy of pairs $(a, A)$ and $(a', A')$ is.
  
  Notice that that if the bottom arrow lifts along $h_\infty$ then the class defined by $(a, A)$ is trivial.
