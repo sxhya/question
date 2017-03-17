@@ -628,7 +628,7 @@ V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
 \begin{lemma} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
 Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
-\begin{enumerate}
+\begin{lemlist}
  \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondece with pairs of maps $(a, A)$ making the following diagram commute.
    \begin{equation} \nonumber \xymatrix{ 
     D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
@@ -640,23 +640,21 @@ Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
  \item Assume $A\pi$ lifts with respect to $p$ (i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$), then the element of $G_k$ represented by $(a, A)$ is trivial.
  \item Let $(a, A)$ be a pair as above and $H$ be a homotopy between two maps $a, a'\colon D^k \to E$ relative to $S^k$. 
        Then there exists a map $A'$ such that $(a', A')$ is a pair homotopic to $(a, A)$.
- \item The claim of the third assertion remains true if we require the weaker condition $\widetilde{A}\iota_0\cong a$ instead of the corresponding strict equality.
-\end{enumerate}
+ \item \label{item:weaker} The claim of the third assertion remains true if we require the weaker condition $\widetilde{A}\iota_0\cong a$ instead of the corresponding strict equality.
+\end{lemlist}
 \end{lemma}
 
 
 \begin{lemma} \label{lm:weak-equiv} If a map $p\colon E \to B$ possesses the delayed homotopy lifting property with respect to $C_{pr}$ 
- then its geometric realization is a quasifibration, i.\,e. for every point $b$ of $B$ the inclusion $p^{-1}(b) \hookrightarrow F_{p}(0)$ is a weak equivalence. \end{lemma}
+ then its geometric realization is a quasifibration, i.\,e. for every point $b$ of $B$ the inclusion $p^{-1}(b) \hookrightarrow F_{p}(b)$ is a weak equivalence. \end{lemma}
 \begin{proof}
- It suffices to show that all relative homotopy groups $\pi_k(F_{p}(b), p^{-1}(b))$, $k \geq 1$ are trivial.
- If we construct the homotopy fiber via the usual path space construction then one could represent an element of $k$-th relative homotopy group  
-  by a pair of maps $(a,A)$ making the following diagram commute.
-  \begin{equation} \nonumber \xymatrix{ 
-D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & |X^{\infty}| \ar^{|h|}[d]  \\
-D^k\times I \ar^{p}[r] & (D^k \times I) / J \ar^(.6){A}[r] & |\mathbb{Z}[X]|}
-\label{eq:plp2} \end{equation}  
- 
- It is also easy to formulate in these terms what a homotopy of pairs $(a, A)$ and $(a', A')$ is.
+
+ It suffices to show that $\pi_k(F_{p}(b), p^{-1}(b))$ are all trivial for $k \geq 1$.
+ By~\cref{item:weaker} it suffices to show the existence of lifting $\widetilde{A}$ for every pair of maps $(a, A)$ in the following diagram:
+ \begin{equation} \nonumber \xymatrix{ 
+ D^k          \ar[r]^{a}  \ar@{^{(}->}_{\iota}[d] & E \ar@{->>}[d]  \\
+ D^k \times I \ar[r]_{A}  \ar@{-->}[ru]_{\widetilde{A}} & B}
+\end{equation}
  
  Notice that that if the bottom arrow lifts along $h_\infty$ then the class defined by $(a, A)$ is trivial.
  To show that such lift $\widetilde{A}$ always exists we use the lifting property of~\cref{lm:dhlp} and the simplicial approximation theorem.
