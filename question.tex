@@ -589,47 +589,47 @@ In order to do this we use a simplicial version of the so-called ''weak covering
  Let $C$ be a subclass of cofibrations in the category of simplicial sets.
  We say that a map of simplicial sets $p\colon E \to B$ satisfies {\it weak homotopy covering property} with respect to $C$ if 
   for every commutative square
-\begin{equation} \nonumber \xymatrix{ 
-U \ar[rr]^{g}  \ar@{^{(}->}_{i}[d] & & E \ar^{p}[d] \\
-V \ar[rr]_{F} \ar@{-->}[rru]^{\widetilde{F}} & & B}
-\label{eq:plp} \end{equation}
-for which $i \in C$ there exists a map $\widetilde{F}$ so that the lower triangle commutes strictly and the upper one commutes up to a fiberwise homotopy $H$
+\begin{equation} \xymatrix{ 
+U \ar[r]^{g}  \ar@{^{(}->}_{i}[d] & E \ar^{p}[d] \\
+V \ar[r]_{F} \ar@{-->}[ru]^{\widetilde{F}} & B}
+\label{eq:plp-def} \end{equation}
+for which $i \in C$ there exists a map $\widetilde{F}$ such that the lower triangle commutes strictly and the upper one commutes up to a fiberwise homotopy $H$
  (i.\,e. a homotopy $H$ such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{pg} B$).
 \end{df}
 
-Denote by $C_{pr}$ the class of retractible inclusions between compact polyhedral simplicial sets.
-In other words, for polyhedral $U$ and $V$ an inclusion $i\colon U\to V$ lies in $C_{pr}$ if there is a map $r\colon V\to U$ such that $ri=id_U$.
+Denote by $C_{pr}$ the class consisting of all the inclusions $i\colon U\hookrightarrow V$ of finite polyhedral simplicial sets 
+ posessing a retract $r\colon V\to U$.  
 \begin{lemma} \label{lm:dhlp} Let $X$ be a fibrant connected simplicial set.
-The map $h \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
+The map $h_\infty \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
 \end{lemma}
 \begin{proof}
- Notice first that the problem can be reduced to the special case $g=0$.
- Indeed, since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
- If we could find a lift $\widetilde{F}_0$ for a pair of maps $(g=0, F - hgr)$ then $\widetilde{F} = gr \oplus \widetilde{F}_0[N]$
- would be a solution to the original lifting problem for $(g, F)$.
- 
- Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. set $W=\underline{\Hom}(\Delta[1], X)$ ???).
+ Notice first that the problem can be reduced to the special case when $g=0$.
+ Since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
+ Assume that $\widetilde{F}_0$ is a lift for the diagram~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom is $F_0 = F - h_\infty gr$.
+ For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define the product map $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$.  
+ Clearly, then $\widetilde{F} = gr \times \widetilde{F}_0[2N]$ would be a solution to the original lifting problem for $g$ and $F$. 
+  
+ Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. take $W$ to be the path space fibration).
  Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration
-  and we can choose a lift $\widetilde{F}$ in the following diagram.
+  and we can choose a lift $\widetilde{F}$ in the following diagram
 \begin{equation} \nonumber \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d] & \ZZ[W] \ar@{->>}[d]  \\
 V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
 \end{equation}
- Notice that if the lifting problem for $(0, \widetilde{F})$ and $h_W \colon W^\infty \to \ZZ[W]$ has a solution, 
-  then so does the original problem for $(0, F)$ and $h_\infty$.
+ Obviously, if there exists a lift $G$ for the diagram \eqref{eq:W-lift} below then there is a lift for the original diagram (e.\,g. the diagram with $F$ and $h_\infty$).
 
  By~\cite[Lemma~9.1]{Po17} we can lift $\widetilde{F}$ along $h_W$ so that the bottom triangle in the diagram
-\begin{equation} \nonumber \xymatrix{ 
+\begin{equation} \label{eq:W-lift} \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d]                               & W^\infty \ar[d]^{h_W}  \\
 V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
 \end{equation}
- commutes strictly. It is clear that the image of $Gi$ sits inside the fiber $F_{h_W, 0}$.
- It remains to see that $F_{h_W, 0}$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $F_{h_W, 0}$).
- Thus, we get that $H \colon Gi \cong 0$ and, moreover, that $h_W H = 0$. \end{proof}
+ commutes strictly. It is clear that the image of $Gi_0$ is contained in the fiber $h_W^{-1}(0)$.
+ Since $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$)
+  we get that $Gi_0$ is fiberwise homotopic to $0$. \end{proof}
 
 \begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
-Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
+Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
 \begin{lemlist}
  \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the form
    \begin{equation} \xymatrix{ 
@@ -645,7 +645,7 @@ Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
      (i.\,e. homotopic via some $H$ satisfying $pH(S^k\times I) = \{b\}$).
      Then there exists a map $A'$ such that $(a', A')$ is diagram homotopic to $(a, A)$.
  \item \label{item:weaker} The third assertion remains true if instead of the strict equality $\widetilde{A} i_0 = a$ 
-       we require that $\widetilde{A}i_0$ and $a$ are fiberwise homotopic.
+       we require $\widetilde{A}i_0$ and $a$ to be fiberwise homotopic.
 \end{lemlist}
 \end{lemma}
 
@@ -666,7 +666,7 @@ Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
    Using the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}
     we find a simplicial map $a_0'\colon \sd^m (S^k) \to p^{-1}(b)$ such that $a|\gamma^m| \cong |a'_0|$
      (here $\sd$ is the subdivision functor and $\gamma^m$ denotes the canonical natural transformation $\sd^m X \to X$)
-  \item It is clear that there exists a map $a'\colon D^k\to |E|$ that extends $|a'_0|$ and is fiberwise homotopic to $a$.
+  \item It is clear that there is a map $a'\colon D^k\to |E|$ extending $|a'_0|$ that is fiberwise homotopic to $a$.
   \item Invoke the approximation theorem once again (with the initial condition specified by $|a'_0|$) and find $q>m$ and $a''\colon \sd^{q}(D_k) \to E$
     such that $a'|\gamma^{q}| \cong a'$ rel $S^k$.
   \item Applying \cref{item:continue} we extend the homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
