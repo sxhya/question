@@ -5,6 +5,7 @@
 \usepackage[hyperref=true, backend=bibtex, firstinits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
 \usepackage[notref,notcite]{showkeys}
 \usepackage[matrix,arrow,curve]{xy}
+\usepackage[toc,page]{appendix}
 
 \addbibresource{question.bib}
 \renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
@@ -86,7 +87,7 @@ The extension $H_n(G)$ and its ''antisymmetrization`` $H^\wedge_n(G)$ can be cha
 \[ \xymatrix{ G \mathbin{\widetilde{\wedge}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H_n(G) \ar@{->>}[r] & D_n(G)} \qquad
    \xymatrix{ G \wedge G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H^\wedge_n(G) \ar@{->>}[r] & D_n(G)} \]
 Here $G \wedge G$ denotes the nonabelian exterior square of $G$ and  
- $G \mathbin{\widetilde{\wedge}} G$ is the a more modern notation for the Dennis group $(G, G)$ defined in~\cite{De76} (also denoted $U_G$ by Rehmann in \cite{Reh78}).
+ $G \mathbin{\widetilde{\wedge}} G$ is the modern notation for the Dennis group $(G, G)$ defined in~\cite{De76} (also denoted $U_G$ by Rehmann in \cite{Reh78}).
 The map $\iota_1$ in the above diagrams is defined by $\iota_1(g) = (g, 1,\ldots, 1)$.
 
 Consider the family of copies of the symmetric group $S_n$ where each copy is indexed by an $n$-tuple $(g_1, \ldots, g_n) \in G^n$.
@@ -97,7 +98,7 @@ $s_g$ = $s_h$, where $s\in S_n$, $g, h \in G^n$ are such that $hg^{-1}$ is fixed
 Our first main result is the following theorem. 
 \begin{thm} \label{thm:summary} The group $S_n(G)$ is isomorphic to $S_n \ltimes H_n^\wedge(G)$. \end{thm}
 The proof of Theorem 1 proceeds as follows: 
-The presentation of Theorem is similar in spirit (although much simpler) than the presentation
+The presentation of Theorem is similar in spirit (albeit simpler) than the presentation
 
 Unsurprisingly, the presentation from Theorem~1 is obtained via van Kampen theorem and 
 was discovered during the attempt to answer some purely topological question, which we describe in detail below.
@@ -577,35 +578,38 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
 \end{proof}
 
-\subsection{Concluding remarks}
+%\begin{appendices}
+\appendix
+\section{Concluding remarks}
 We finish the paper by showing that the map $h_\infty$ is a quasifibration.
-In order to do this we use a simplicial version of the so-called ''delayed homotopy lifting property``, cf. {\bf ???}.
+In order to do this we use a simplicial version of the so-called ''weak covering homotopy property``, cf.~\cite[\S~1.4.4]{KSz14}
+ (also called ''delayed homotopy lifting property`` in the literature).
 
 \begin{df} \label{df:dhlp}
- Let $C$ be a class of injective maps in the category of simplicial sets.
- We say that a map of simplicial sets $p\colon E \to B$ satisfies (simplicial) {\it delayed homotopy lifting property} with respect to $C$ if 
+ Let $C$ be a subclass of cofibrations in the category of simplicial sets.
+ We say that a map of simplicial sets $p\colon E \to B$ satisfies {\it weak homotopy covering property} with respect to $C$ if 
   for every commutative square
 \begin{equation} \nonumber \xymatrix{ 
 U \ar[rr]^{g}  \ar@{^{(}->}_{i}[d] & & E \ar^{p}[d] \\
 V \ar[rr]_{F} \ar@{-->}[rru]^{\widetilde{F}} & & B}
 \label{eq:plp} \end{equation}
-in which $i \in C$ there exists a map $\widetilde{F}$ so that the lower triangle commutes strictly and the upper one commutes up to homotopy $H$
- such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{g} B $.
+for which $i \in C$ there exists a map $\widetilde{F}$ so that the lower triangle commutes strictly and the upper one commutes up to a fiberwise homotopy $H$
+ (i.\,e. a homotopy $H$ such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{pg} B$).
 \end{df}
 
 Denote by $C_{pr}$ the class of retractible inclusions between compact polyhedral simplicial sets.
 In other words, for polyhedral $U$ and $V$ an inclusion $i\colon U\to V$ lies in $C_{pr}$ if there is a map $r\colon V\to U$ such that $ri=id_U$.
 \begin{lemma} \label{lm:dhlp} Let $X$ be a fibrant connected simplicial set.
-The map $h \colon X^\infty \to \ZZ[X]$ satisfies the delayed homotopy lifting property with respect to the class $C_{pr}$.
+The map $h \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
 \end{lemma}
 \begin{proof}
- Notice first that the original question can be reduced to the special case $g=0$.
- Indeed, since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$. Set $F_0 = F - hgr$.
- If we could find a lift $\widetilde{F}_0$ for a pair of maps $(g=0, F_0)$ then $\widetilde{F} = gr \oplus \widetilde{F}_0[N]$
+ Notice first that the problem can be reduced to the special case $g=0$.
+ Indeed, since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
+ If we could find a lift $\widetilde{F}_0$ for a pair of maps $(g=0, F - hgr)$ then $\widetilde{F} = gr \oplus \widetilde{F}_0[N]$
  would be a solution to the original lifting problem for $(g, F)$.
  
  Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. set $W=\underline{\Hom}(\Delta[1], X)$ ???).
- Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a (Kan) fibration
+ Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration
   and we can choose a lift $\widetilde{F}$ in the following diagram.
 \begin{equation} \nonumber \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d] & \ZZ[W] \ar@{->>}[d]  \\
@@ -627,55 +631,59 @@ V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
 Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
 \begin{lemlist}
- \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the following form.
+ \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the form
    \begin{equation} \xymatrix{ 
     D^k \ar@{^{(}->}_{i_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
     D^k\times I \ar^{\pi}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
     \label{eq:plp} \end{equation}
-    Here $J$ denotes $(S^k \times I) \cup (D^k \times \{1\})$. In the sequel we denote such diagrams by $(a, A)$.
+    Here $J$ denotes $(S^k \times I) \cup (D^k \times \{1\})$. In the sequel we denote such a diagram by $(a, A)$.
  \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a family of maps $(a_t, A_t)$
-     continously depending on $t\in [0, 1]$ so that $pa_t = A_t i_0$ holds for all $t$ (we call such family a homotopy of diagrams).
- \item Assume $A\pi$ lifts with respect to $p$ (i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$), then the element of $G_k$ represented by $(a, A)$ is trivial.
- \item \label{item:continue} Let $(a, A)$ be a diagram and and $H$ be a homotopy between $a$ and any map $a'\colon D^k \to E$ such that $pH$ maps $S^k\times I$ to the point $b$.
-       Then there exists a map $A'$ such that $(a', A')$ is diagram homotopic to $(a, A)$.
- \item \label{item:weaker} The claim of the third assertion remains true if instead of the strict equality $\widetilde{A} i_0 = a$ 
-       we require that $\widetilde{A}i_0$ and $a$ are homotopic via some homotopy $H$ satisfying $pH(S^k\times I) = \{b\}$.
+     continously depending on $t\in [0, 1]$ such that $pa_t = A_t i_0$ holds for all $t$ (we call such family a homotopy of diagrams).
+ \item If $A\pi$ lifts with respect to $p$ %(i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$)
+     then the element of $G_k$ given by $(a, A)$ is trivial.
+ \item \label{item:continue} Let $(a, A)$ be a diagram and $a'$ be any other map fiberwise homotopic to $a$ 
+     (i.\,e. homotopic via some $H$ satisfying $pH(S^k\times I) = \{b\}$).
+     Then there exists a map $A'$ such that $(a', A')$ is diagram homotopic to $(a, A)$.
+ \item \label{item:weaker} The third assertion remains true if instead of the strict equality $\widetilde{A} i_0 = a$ 
+       we require that $\widetilde{A}i_0$ and $a$ are fiberwise homotopic.
 \end{lemlist}
 \end{lemma}
 
 
-\begin{lemma} \label{lm:weak-equiv} If a map $p\colon E \to B$ of simplicial sets satisfies simplicial delayed homotopy lifting property with respect to $C_{pr}$ 
- then its geometric realization is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a weak equivalence. \end{lemma}
+\begin{lemma} \label{lm:weak-equiv} Let $p\colon E \to B$ be a map of simplicial sets satisfying the weak covering homotopy property with respect to the class $C_{pr}$.
+ Then the geometric realization of $p$ is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a weak equivalence. \end{lemma}
 \begin{proof}
 
  We want to prove that $\pi_k(F_{|p|}(b), |p|^{-1}(b))$ are all trivial for $k \geq 1$.
  Clearly, it suffices to show that for every diagram $(a, A)$ of the form~\eqref{eq:plp} the map $|p|$ 
   has a lift $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
  
- We are going to approxime $(a, A)$ with a simplicial map and then invoke the lifting property of \ref{df:dhlp}.
+ The idea of the proof is to replace $(a, A)$ with a homotopic pair of simplicial maps and then invoke the weak covering homotopy property.
  This is accomplished in a series of steps. %by means of the simplicial approximation theorem which we have to apply three times.
  \begin{itemize}
   \item Denote the restriction of $a$ to $S^k$ by $a_0$.
    Notice that the image of $a_0$ is contained in $|p^{-1}(b)|$.
-   Using the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04} (without initial conditions)
+   Using the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}
     we find a simplicial map $a_0'\colon \sd^m (S^k) \to p^{-1}(b)$ such that $a|\gamma^m| \cong |a'_0|$
      (here $\sd$ is the subdivision functor and $\gamma^m$ denotes the canonical natural transformation $\sd^m X \to X$)
-  \item It is clear that there exists a map $a'\colon D^k\to |E|$ which continues $|a'_0|$ and is homotopic to $a$ via some homotopy $H$ satisfying $pH(S^k\times I) = \{b\}$.
+  \item It is clear that there exists a map $a'\colon D^k\to |E|$ that extends $|a'_0|$ and is fiberwise homotopic to $a$.
   \item Invoke the approximation theorem once again (with the initial condition specified by $|a'_0|$) and find $q>m$ and $a''\colon \sd^{q}(D_k) \to E$
     such that $a'|\gamma^{q}| \cong a'$ rel $S^k$.
-  \item Applying \cref{item:continue} we can continue the homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
-  \item Applying the approximation theorem to $A'$ (with the initial condition on the boundary $\partial (D_k \times I) = D^k\times \{0\} \cup J$ given by 
-    $a''$ and $const_b$, respectively) we find an integer $r>q$ and the approximation $A''\colon \sd^{r}(D_k \times I) \to B$ homotopic to $A'$ rel $\partial (D_k \times I)$
-     so that $(a'', A'')$ form the following commutative diagram of simplicial sets
+  \item Applying \cref{item:continue} we extend the homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
+  \item Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D_k \times I) = D^k\times \{0\} \cup J$ given by 
+    $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon \sd^{r}(D_k \times I) \to B$ such that
+    $A'|\gamma^r|\cong |A''|$ rel $\partial (D_k \times I)$.
+ \end{itemize}
+ Thus, we have obtained the following commutative diagram of simplicial sets
    \begin{equation} \nonumber \xymatrix{ 
     \sd^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{\sd^{r}(i)}[d] & E \ar[d]^{p}  \\
     \sd^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
    \end{equation}
- \end{itemize}
-
- Since $\sd(-)$ is a functor the map $\sd^{r}(i)$ is retractible and
-  by the assumption there exists a lift $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
+ By functoriality of $\sd$ the map $\sd^{r}(i)$ is retractible and
+  by the assumption of the lemma there exists a lift $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
  \end{proof}
+ 
+%\end{appendices} 
 
 \printbibliography
 
