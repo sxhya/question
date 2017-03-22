@@ -603,29 +603,29 @@ Denote by $C_{pr}$ the class consisting of all the inclusions $i\colon U\hookrig
 The map $h_\infty \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
 \end{lemma}
 \begin{proof}
- Notice first that the problem can be reduced to the special case when $g=0$.
+ Notice that the problem can be reduced to the special case $g=0$.
  Since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
- Assume that $\widetilde{F}_0$ is a lift for the diagram~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom is $F_0 = F - h_\infty gr$.
- For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define the product map $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$.  
- Clearly, then $\widetilde{F} = gr \times \widetilde{F}_0$ would be a solution to the original lifting problem for $g$ and $F$. 
+ Assume that $\widetilde{F}_0$ is a lifting for the diagram~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom is $F_0 = F - h_\infty gr$.
+ For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define their product $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$.  
+ Clearly, then $\widetilde{F} = gr \times \widetilde{F}_0$ would be the desired lifting of $F$.
   
  Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. take $W$ to be the path space fibration).
  Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration
-  and we can choose a lift $\widetilde{F}$ in the following diagram
+  and we can choose a lifting $\widetilde{F}$ in the following diagram
 \begin{equation} \nonumber \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d] & \ZZ[W] \ar@{->>}[d]  \\
 V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
 \end{equation}
- Obviously, if there exists a lift $G$ for the diagram \eqref{eq:W-lift} below then there is a lift for the original diagram (e.\,g. the diagram with $F$ and $h_\infty$).
+ %It is clear that $F$ has the desired lifting if so does $\widetilde{F}$  a lift in the diagram \eqref{eq:W-lift} below implies the existence of a lift for the original diagram with $F$ and $h_\infty$.
 
- By~\cite[Lemma~9.1]{Po17} we can lift $\widetilde{F}$ along $h_W$ so that the bottom triangle in the diagram
-\begin{equation} \label{eq:W-lift} \xymatrix{ 
+ By~\cite[Lemma~9.1]{Po17} the map $\widetilde{F}$ can be lifted along $h_W$ in such a way that the bottom triangle in following diagram commutes strictly.
+\begin{equation} \nonumber \label{eq:W-lift} \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d]                               & W^\infty \ar[d]^{h_W}  \\
 V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
 \end{equation}
- commutes strictly. It is clear that the image of $Gi_0$ is contained in the fiber $h_W^{-1}(0)$.
- Since $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$)
-  we get that $Gi_0$ is fiberwise homotopic to $0$. \end{proof}
+ Notice that the image of $Gi_0$ is contained in the fiber $h_W^{-1}(0)$.
+ It is not hard to show that $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$).
+ We get that $Gi_0$ is fiberwise homotopic to $0$ hence the composite map $V \xrightarrow{G} W^\infty \to X^\infty$ is the desired lifting of $F$. \end{proof}
 
 \begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
@@ -658,29 +658,29 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
  Clearly, it suffices to show that for every diagram $(a, A)$ of the form~\eqref{eq:plp} the map $|p|$ 
   has a lift $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
  
- The idea of the proof is to replace $(a, A)$ with a homotopic pair of simplicial maps and then invoke the weak covering homotopy property.
- This is accomplished in a series of steps. %by means of the simplicial approximation theorem which we have to apply three times.
+ The idea of the proof is to approximate $(a, A)$ with a homotopic pair of simplicial maps and then invoke the weak covering homotopy property. 
+ This is accomplished in a series of steps by means of the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}.
+ For brevity we denote the subdivision functor $\sd^m\sd_*(-)$ by $s^m(-)$ and denote the canonical natural transformation $s^m X \to X$ by $\delta^m$
+  (instead of $\gamma_*\gamma^m$).
  \begin{itemize}
   \item Denote the restriction of $a$ to $S^k$ by $a_0$.
    Notice that the image of $a_0$ is contained in $|p^{-1}(b)|$.
-   Using the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}
-    we find a simplicial map $a_0'\colon \sd^m (S^k) \to p^{-1}(b)$ such that $a|\gamma^m| \cong |a'_0|$
-     (here $\sd$ is the subdivision functor and $\gamma^m$ denotes the canonical natural transformation $\sd^m X \to X$)
-  \item It is clear that there is a map $a'\colon D^k\to |E|$ extending $|a'_0|$ that is fiberwise homotopic to $a$.
-  \item Invoke the approximation theorem once again (with the initial condition specified by $|a'_0|$) and find $q>m$ and $a''\colon \sd^{q}(D_k) \to E$
-    such that $a'|\gamma^{q}| \cong a'$ rel $S^k$.
-  \item Applying \cref{item:continue} we extend the homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
+   Using the approximation theorem we find a simplicial map $a_0'\colon s^m (S^k) \to p^{-1}(b)$ such that $a|\delta^m| \cong |a'_0|$.     
+  \item It is clear that there exists a map $a'\colon D^k\to |E|$ extending $|a'_0|$ and fiberwise homotopic to $a$.
+  \item Invoke the approximation theorem once again (with the initial condition specified by $|a'_0|$) and find $q>m$ and $a''\colon s^{q}(D_k) \to E$
+    such that $a'|\delta^{q}| \cong |a''|$ rel $S^k$.
+  \item Using \cref{item:continue} we extend the homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
   \item Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D_k \times I) = D^k\times \{0\} \cup J$ given by 
-    $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon \sd^{r}(D_k \times I) \to B$ such that
-    $A'|\gamma^r|\cong |A''|$ rel $\partial (D_k \times I)$.
+    $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon s^{r}(D_k \times I) \to B$ such that
+    $A'|\delta^r|\cong |A''|$ rel $\partial (D_k \times I)$.
  \end{itemize}
  Thus, we have obtained the following commutative diagram of simplicial sets
    \begin{equation} \nonumber \xymatrix{ 
-    \sd^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{\sd^{r}(i)}[d] & E \ar[d]^{p}  \\
-    \sd^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
+    s^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{s^{r}(i)}[d] & E \ar[d]^{p}  \\
+    s^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
    \end{equation}
- By functoriality of $\sd$ the map $\sd^{r}(i)$ is retractible and
-  by the assumption of the lemma there exists a lift $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
+ By the functoriality of simplicial approximation the map $s^{r}(i)$ is retractible hence
+  by the assumption of the lemma there is a lifting $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
  \end{proof}
  
 %\end{appendices} 
