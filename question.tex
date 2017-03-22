@@ -484,20 +484,18 @@ Its $k$-simplices $W_k$ are matrices $\left(\begin{smallmatrix}x_0 & x_1 & \ldot
 \end{proof}
 
 Now suppose that $X=H$ is also a group upon which $N$ acts on the left.
-It is clear that an element $n \in N$ induces a simplicial map $E(n.-)\colon EH \to EH$.
-We consider its graph $\Gamma_{E(n.-)}$ as a subset of $E(H \times H) = EH \times EH$.
-
 \begin{cor} \label{cor:ker-iso}
 Consider the following two simplicial sets:
 \[ S = \bigcup\limits_{h\in H} BN_h \subseteq BN,\ \ \ T = \pi_N(U) \subseteq B(H \times H).\]
 There is an isomorphism $\Ker(\pi_1(S) \to N) \cong \Ker(\pi_1(T) \to H \times H).$
 Moreover, the higher homotopy groups of $S$ and $T$ are isomorphic. \end{cor}
 \begin{proof}
-The required isomorphism can be obtained from the homotopy long exact sequence applied to left arrows of the following two pull-back squares.
+Consider the following two pull-back squares:
 \[ \xymatrix{ V  \ar@{^{(}->}[r] \ar[d] \pullbackcorner & \ar[d]^{\pi_N} EN \\
               S \ar@{^{(}->}[r] & BN } \ \ \ 
    \xymatrix{ U  \ar@{^{(}->}[r] \ar[d] \pullbackcorner & \ar[d]^{\pi_{H \times H}} E(H \times H) \\
-              T \ar@{^{(}->}[r] & B(H \times H)}  \] \end{proof}
+              T \ar@{^{(}->}[r] & B(H \times H)}\] 
+The required isomorphism can be obtained from the homotopy long exact sequence applied to the left arrows of these diagrams.\end{proof}
 
 Now let $G$ be a group. Set $N = G \wr S_n$, $H = G^n$ and consider the left action of $N$ on $H$ given by $(g, s) \cdot h = gh^{s^{-1}}$, $g, h\in G^n$, $s\in S_n$.
 If one reorders the components of $BG^{2n}$ accordingly, the simplicial subset $T \subset BG^{2n}$ from the above corollary
@@ -583,7 +581,7 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
 We finish the paper by showing that the map $h_\infty$ is a quasifibration.
 In order to do this we use a simplicial version of the so-called ''delayed homotopy lifting property``, cf. {\bf ???}.
 
-\begin{df}
+\begin{df} \label{df:dhlp}
  Let $C$ be a class of injective maps in the category of simplicial sets.
  We say that a map of simplicial sets $p\colon E \to B$ satisfies (simplicial) {\it delayed homotopy lifting property} with respect to $C$ if 
   for every commutative square
@@ -610,7 +608,7 @@ The map $h \colon X^\infty \to \ZZ[X]$ satisfies the delayed homotopy lifting pr
  Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a (Kan) fibration
   and we can choose a lift $\widetilde{F}$ in the following diagram.
 \begin{equation} \nonumber \xymatrix{ 
-U \ar[r]^{0}  \ar@{^{(}->}_{\iota}[d] & \ZZ[W] \ar@{->>}[d]  \\
+U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d] & \ZZ[W] \ar@{->>}[d]  \\
 V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
 \end{equation}
  Notice that if the lifting problem for $(0, \widetilde{F})$ and $h_W \colon W^\infty \to \ZZ[W]$ has a solution, 
@@ -618,61 +616,66 @@ V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
 
  By~\cite[Lemma~9.1]{Po17} we can lift $\widetilde{F}$ along $h_W$ so that the bottom triangle in the diagram
 \begin{equation} \nonumber \xymatrix{ 
-U \ar[r]^{0}  \ar@{^{(}->}_{\iota}[d]                               & W^\infty \ar[d]^{h_W}  \\
+U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d]                               & W^\infty \ar[d]^{h_W}  \\
 V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
 \end{equation}
- commutes strictly. It is clear that the image of $G\iota$ sits inside the fiber $F_{h_W, 0}$.
+ commutes strictly. It is clear that the image of $Gi$ sits inside the fiber $F_{h_W, 0}$.
  It remains to see that $F_{h_W, 0}$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $F_{h_W, 0}$).
- Thus, we get that $H \colon G\iota \cong 0$ and, moreover, that $h_W H = 0$. \end{proof}
+ Thus, we get that $H \colon Gi \cong 0$ and, moreover, that $h_W H = 0$. \end{proof}
 
-\begin{lemma} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
+\begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
 Denote $k$-th relative homotopy group $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
 \begin{lemlist}
- \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondece with pairs of maps $(a, A)$ making the following diagram commute.
-   \begin{equation} \nonumber \xymatrix{ 
-    D^k \ar@{^{(}->}_{\iota_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
+ \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the following form.
+   \begin{equation} \xymatrix{ 
+    D^k \ar@{^{(}->}_{i_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
     D^k\times I \ar^{\pi}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
     \label{eq:plp} \end{equation}
-    Here $J$ denotes $\partial (D^k \times I) \cup (D^k \times \{1\})$.
- \item Two pairs $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a family of maps $(a_t, A_t)$
-     continously depending on $t\in [0, 1]$ so that $pa_t = A_t\iota_0$ holds for all $t$ (we call such family a homotopy of pairs).
+    Here $J$ denotes $(S^k \times I) \cup (D^k \times \{1\})$. In the sequel we denote such diagrams by $(a, A)$.
+ \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a family of maps $(a_t, A_t)$
+     continously depending on $t\in [0, 1]$ so that $pa_t = A_t i_0$ holds for all $t$ (we call such family a homotopy of diagrams).
  \item Assume $A\pi$ lifts with respect to $p$ (i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$), then the element of $G_k$ represented by $(a, A)$ is trivial.
- \item Let $(a, A)$ be a pair as above and $H$ be a homotopy between two maps $a, a'\colon D^k \to E$ relative to $S^k$. 
-       Then there exists a map $A'$ such that $(a', A')$ is a pair homotopic to $(a, A)$.
- \item \label{item:weaker} The claim of the third assertion remains true if we require the weaker condition $\widetilde{A}\iota_0\cong a$ instead of the corresponding strict equality.
+ \item \label{item:continue} Let $(a, A)$ be a diagram and and $H$ be a homotopy between $a$ and any map $a'\colon D^k \to E$ such that $pH$ maps $S^k\times I$ to the point $b$.
+       Then there exists a map $A'$ such that $(a', A')$ is diagram homotopic to $(a, A)$.
+ \item \label{item:weaker} The claim of the third assertion remains true if instead of the strict equality $\widetilde{A} i_0 = a$ 
+       we require that $\widetilde{A}i_0$ and $a$ are homotopic via some homotopy $H$ satisfying $pH(S^k\times I) = \{b\}$.
 \end{lemlist}
 \end{lemma}
 
 
-\begin{lemma} \label{lm:weak-equiv} If a map $p\colon E \to B$ possesses the delayed homotopy lifting property with respect to $C_{pr}$ 
- then its geometric realization is a quasifibration, i.\,e. for every point $b$ of $B$ the inclusion $p^{-1}(b) \hookrightarrow F_{p}(b)$ is a weak equivalence. \end{lemma}
+\begin{lemma} \label{lm:weak-equiv} If a map $p\colon E \to B$ of simplicial sets satisfies simplicial delayed homotopy lifting property with respect to $C_{pr}$ 
+ then its geometric realization is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a weak equivalence. \end{lemma}
 \begin{proof}
 
- It suffices to show that $\pi_k(F_{p}(b), p^{-1}(b))$ are all trivial for $k \geq 1$.
- By~\cref{item:weaker} it suffices to show the existence of lifting $\widetilde{A}$ for every pair of maps $(a, A)$ in the following diagram:
- \begin{equation} \nonumber \xymatrix{ 
- D^k          \ar[r]^{a}  \ar@{^{(}->}_{\iota}[d] & E \ar@{->>}[d]  \\
- D^k \times I \ar[r]_{A}  \ar@{-->}[ru]_{\widetilde{A}} & B}
-\end{equation}
+ We want to prove that $\pi_k(F_{|p|}(b), |p|^{-1}(b))$ are all trivial for $k \geq 1$.
+ Clearly, it suffices to show that for every diagram $(a, A)$ of the form~\eqref{eq:plp} the map $|p|$ 
+  has a lift $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
  
- Notice that that if the bottom arrow lifts along $h_\infty$ then the class defined by $(a, A)$ is trivial.
- To show that such lift $\widetilde{A}$ always exists we use the lifting property of~\cref{lm:dhlp} and the simplicial approximation theorem.
- 
- Indeed, applying~\cite[Corollary~4.8]{Jar04} twice we replace the pair $(a, A)$ by a pair $(a', A')$ representing the same element of 
- the relative homotopy group in such a way that $a'$ and $pA'$ are geometric realizations of simplicial maps 
-  $a''$, $A''$ which make the following diagram commute.
-  \begin{equation} \nonumber \xymatrix{ 
-F (D^k \ar@{^{(}->}_{F\iota_0}[d])  \ar_{a''}[r] & X^{\infty} \ar^{h}[d]  \\
-F( D^k\times I) \ar_{A''}[r] \ar@{-->}_{\widetilde{A}}[ru] & \mathbb{Z}[X]}
-\label{eq:plp} \end{equation}  
-Here $F$ denotes the subdivision functor $\sd^m \sd^* \sd \sd^*$.
-It is clear that $F\iota_0$ is still a trivial cofibration (WHY?).
-Since $F$ is a functor, the map $F\iota_0$ admits a retract and by~\cref{lm:dhlp} we obtain a lift $\widetilde{A}$ of $A''$ and
- a simplicial homotopy $H : \widetilde{A} \cdot F i_0 \cong a''$ such that $hH = a'' \times id_I$
-It remains to replace $A'$ with the delayed homotopy which stands still for the first half of the time and 
- then use $|H|$ and $|\widetilde{A}|$ to construct the neccessary lifting.
-\end{proof}
+ We are going to approxime $(a, A)$ with a simplicial map and then invoke the lifting property of \ref{df:dhlp}.
+ This is accomplished in a series of steps. %by means of the simplicial approximation theorem which we have to apply three times.
+ \begin{itemize}
+  \item Denote the restriction of $a$ to $S^k$ by $a_0$.
+   Notice that the image of $a_0$ is contained in $|p^{-1}(b)|$.
+   Using the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04} (without initial conditions)
+    we find a simplicial map $a_0'\colon \sd^m (S^k) \to p^{-1}(b)$ such that $a|\gamma^m| \cong |a'_0|$
+     (here $\sd$ is the subdivision functor and $\gamma^m$ denotes the canonical natural transformation $\sd^m X \to X$)
+  \item It is clear that there exists a map $a'\colon D^k\to |E|$ which continues $|a'_0|$ and is homotopic to $a$ via some homotopy $H$ satisfying $pH(S^k\times I) = \{b\}$.
+  \item Invoke the approximation theorem once again (with the initial condition specified by $|a'_0|$) and find $q>m$ and $a''\colon \sd^{q}(D_k) \to E$
+    such that $a'|\gamma^{q}| \cong a'$ rel $S^k$.
+  \item Applying \cref{item:continue} we can continue the homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
+  \item Applying the approximation theorem to $A'$ (with the initial condition on the boundary $\partial (D_k \times I) = D^k\times \{0\} \cup J$ given by 
+    $a''$ and $const_b$, respectively) we find an integer $r>q$ and an approximation $A''\colon \sd^{r}(D_k \times I) \to B$ homotopic to $A'$ rel $\partial (D_k \times I)$
+     so that $(a'', A'')$ is a commutative diagram of the following form
+   \begin{equation} \nonumber \xymatrix{ 
+    \sd^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{\sd^{r}(i)}[d] & E \ar[d]^{p}  \\
+    \sd^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
+   \end{equation}
+ \end{itemize}
+
+ Since $\sd(-)$ is a functor the map $\sd^{r}(i)$ is retractible and
+  by the assumption there exists a lift $\widetilde{A}$ satisfying the assumptions of~\cref{item:weaker}.
+ \end{proof}
 
 \printbibliography
 
