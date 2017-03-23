@@ -580,11 +580,13 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
 
 %\begin{appendices}
 \appendix
-\section{Concluding remarks}
-We finish the paper by showing that the map $h_\infty$ is a quasifibration.
-In order to do this we use a simplicial version of the so-called ''weak covering homotopy property``, cf.~\cite[\S~1.4.4]{KSz14}
- (also called ''delayed homotopy lifting property`` in the literature).
+\section{Simplicial Dold---Serre fibrations}
+The aim of this appendix is to show that the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ is a quasifibration under suitable assumptions on $X$.
 
+We start with the definition of the simplicial analogue of the so-called ''Dold---Serre fibration``, i.\,e.
+a map posessing ''weak covering homotopy property`` (also called ''delayed homotopy lifting property``), cf.~\cite[\S~1.4.4]{KSz14}.
+We show in~\cref{lm:dhlp,lm:weak-equiv} that the map $h_\infty$ has this lifting property and that every map with this property is a quasifibration.
+ 
 \begin{df} \label{df:dhlp}
  Let $C$ be a subclass of cofibrations in the category of simplicial sets.
  We say that a map of simplicial sets $p\colon E \to B$ satisfies {\it weak homotopy covering property} with respect to $C$ if 
@@ -603,7 +605,7 @@ Denote by $C_{pr}$ the class consisting of all the inclusions $i\colon U\hookrig
 The map $h_\infty \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
 \end{lemma}
 \begin{proof}
- Notice that the problem can be reduced to the special case $g=0$.
+ We reduce the original problem to the special case $g=0$.
  Since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
  Assume that $\widetilde{F}_0$ is a lifting for the diagram~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom is $F_0 = F - h_\infty gr$.
  For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define their product $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$.  
@@ -626,7 +628,7 @@ V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
  It is not hard to show that $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$).
  We get that $Gi_0$ is fiberwise homotopic to $0$ hence the composite map $V \xrightarrow{G} W^\infty \to X^\infty$ is the desired lifting of $F$. \end{proof}
 
-All the assertions of the following lemma are standard and are given without proof.
+The assertions of the following lemma are straightforward and are given without proof.
 \begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
 Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
@@ -669,7 +671,7 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
   \item It is clear that there exists a map $a'\colon D^k\to |E|$ extending $|a'_0|$ and fiberwise homotopic to $a$.
   \item Invoking the approximation theorem once again (with the initial condition specified by $|a'_0|$) we find $q>m$ and $a''\colon s^{q}(D_k) \to E$
     such that $a'|\delta^{q}| \cong |a''|$ rel $S^k$.
-  \item Using \cref{item:continue} we extend the homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
+  \item Using \cref{item:continue} we extend the (topological) homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
   \item Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D_k \times I) = D^k\times \{0\} \cup J$ given by 
     $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon s^{r}(D_k \times I) \to B$ such that
     $A'|\delta^r|\cong |A''|$ rel $\partial (D_k \times I)$.
@@ -679,7 +681,7 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
     s^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{s^{r}(i)}[d] & E \ar[d]^{p}  \\
     s^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
    \end{equation}
- By the functoriality of simplicial approximation the map $s^{r}(i)$ is retractible hence
+ By the functoriality of simplicial approximation the map $s^{r}(i)$ has a retract hence
   by our assumption there exists the desired lifting $\widetilde{A}$.
  \end{proof}
  
