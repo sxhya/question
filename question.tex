@@ -3,7 +3,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage[capitalize]{cleveref}
 \usepackage[hyperref=true, backend=bibtex, firstinits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
-\usepackage[notref,notcite]{showkeys}
+%\usepackage[notref,notcite]{showkeys}
 \usepackage[matrix,arrow,curve]{xy}
 \usepackage[toc,page]{appendix}
 
@@ -77,7 +77,8 @@ We also give a topological application of this construction by describing homoto
 \section{Introduction}
 The aim of this note is to establish a surprising connection between symmetric groups and (certain quotients of) nonabelian tensors squares.
 
-Let $G$ be a group. Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
+\begin{comment}
+Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
  $(g_1,\ldots, g_n)$ for which the product $g_1\cdot \ldots \cdot g_n$ lies in the derived subgroup $[G, G]$.
 Recall from Rehmann's paper~\cite{Reh78} that the universal {\it extension of type $\mathfrak{H}_n$} (denoted $H_n(G)$) 
  is, by definition, a certain (central) extension of $D_n(G)$ explicitly presented by generators and relations 
@@ -89,24 +90,43 @@ The extension $H_n(G)$ and its ''antisymmetrization`` $H^\wedge_n(G)$ can be cha
 Here $G \wedge G$ denotes the nonabelian exterior square of $G$ and  
  $G \mathbin{\widetilde{\wedge}} G$ is the modern notation for the Dennis group $(G, G)$ defined in~\cite{De76} (also denoted $U_G$ by Rehmann in \cite{Reh78}).
 The map $\iota_1$ in the above diagrams is defined by $\iota_1(g) = (g, 1,\ldots, 1)$.
+\end{comment}
+Let $G$ be a group. Consider the family of copies of the symmetric group $S_n$ in which each copy is indexed by an $n$-tuple $(g_1, \ldots, g_n) \in G^n$.
+Denote by $S_n(G)$ the free product of groups from this family amalgamated over the single family of relations
+$s_{(g)}$ = $s_{(h)}$, where $s\in S_n$, $g, h \in G^n$ are such that $hg^{-1}$ is fixed by $s$
+ (here $s_{(g)}$ denotes a permutation $s \in S_n$ embedded into the copy with index $g$).
 
-Consider the family of copies of the symmetric group $S_n$ where each copy is indexed by an $n$-tuple $(g_1, \ldots, g_n) \in G^n$.
-Denote by $S_n(G)$ the free product of groups from this family amalgamated over single family of relations of the form
-$s_g$ = $s_h$, where $s\in S_n$, $g, h \in G^n$ are such that $hg^{-1}$ is fixed by the natural action of $S_n$ on $G^n$
-(here we denote by $s_g$ a permutation $s$ embedded into the copy with index $g$).
- 
+Consider the wreath product $G \wr S_n = G^n \rtimes S_n$. 
+By the definition of $S_n(G)$ there is a well defined map $\mu_n \colon S_n(G)\to G \wr S_n$ given by $s_{(g)} \mapsto s^g = (g^{-1} g^{s^{-1}}, s)$.
+
 Our first main result is the following theorem. 
-\begin{thm} \label{thm:summary} The group $S_n(G)$ is isomorphic to $S_n \ltimes H_n^\wedge(G)$. \end{thm}
-The proof of Theorem 1 proceeds as follows: 
-The presentation of Theorem is similar in spirit (albeit simpler) than the presentation
+\begin{thm} \label{thm:summary} For $n \geq 3$ the map $\mu_n$ is a crossed module whose
+ cokernel and kernel are isomorphic to $H_1(G, \ZZ)$ and $H_2(G, \ZZ)$ respectively.
+Moreover, the group $S_n(G)$ is isomorphic to $S_n \ltimes H_n^\wedge(G)$. \end{thm}
+Here $H_n^\wedge(G)$ denotes the quotient of the universal extension of type $\mathfrak{H}_n(G)$ 
+modulo all symbols of the form $\{x, x\} = 1$, $x\in G$.
+Theory of extensions of type $\mathfrak{H_n}$ was developed by U.~Rehmann in~\cite{Reh78}
+ for the purpose of generalization of Matsumoto theorem to skew-fields (we refer the reader to Section~\ref{sec:Hnextensions} for more details).
 
-Unsurprisingly, the presentation from Theorem~1 is obtained via van Kampen theorem and 
-was discovered during the attempt to answer some purely topological question, which we describe in detail below.
+Theorem 1 and its proof (which itself involves little more than some basic combinatorial group theory) may be of interest for the following reasons.
+\begin{itemize}
+ \item The presentation is similar in spirit to results of Brown---Loday and Kassel---Reutenauer on the presentation of 
+   the linear Steinberg group in the form of an amalgam of braid groups. 
+ \item It gives a presentation of the universal extension $H_n(G)$ with generators and relations which is simpler than the original definition of $S_n(G)$ given in~\cite{Reh78}
+   and, moreover, is explicitly obtained from the Coxeter presentation of $S_n$.
+\end{itemize}
 
-For a pointed simplicial set $(X, x_0)$ one denotes by $\ZZ[X]$ the associated free simplicial abelian group.
+
+%The proof of Theorem 1 proceeds as follows: 
+%The presentation of Theorem is similar in spirit (albeit simpler) than the presentation
+
+%Unsurprisingly, the presentation from Theorem~1 is obtained via van Kampen theorem and 
+Theorem 1 was proved in an attempt to answer some purely topological question, which we describe in more detail below.
+
+For a pointed simplicial set $(X, x_0)$ denote by $\ZZ[X]$ the associated free simplicial abelian group.
 Define the ''alternating`` map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the identity:
  \[h_n(x_1, x_2, \ldots x_{2n}) = \sum\limits_{i=1}^{2n}(-1)^ix_i.\]
-Denote by $X^\infty$ the colimit of $X^n$ with respect to the natural embeddings $X^{n} \hookrightarrow X^{n+1}$
+Denote by $X^\infty$ the colimit of $X^n$ with respect to the natural embeddings $X^{n} \hookrightarrow X^{n+1}$.
 Taking colimit of $h_n$ we get the map $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$.
 
 Based on a recent result of S.~Podkorytov one can deduce that this map is a quasifibration provided $X$ is fibrant and connected.
@@ -208,7 +228,7 @@ Proposition now follows by induction on the length of permutations $s$, $t$.
 \end{proof}
 
 \subsection{An explicit presentation of $S_n(G)$}
-In this section we obtain an explicit presentation of $S_n(G)$ similar in appearance to the presentation of parametrized braid groups from~\cite{LS05}. % by means of generators and relations.
+%In this section we obtain an explicit presentation of $S_n(G)$ similar in appearance . % by means of generators and relations.
 This presentation turns out to be much more economical than the original definition given in section~\ref{sec:QnG-def}.
 An explicit presentation for the subgroup $HS_n(G)$ is derived from this presentation via Reidemeister-Schreier method.
 
@@ -315,7 +335,7 @@ h_{ij}(a)^{-1}                = &\, h_{ij}(a^{-1}). \tag{R4} \label{H4}
 \end{align}
 \end{prop}
 
-\section{Relationship with extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}} \label{sec:Hnextensions}
+\subsection{Extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}} \label{sec:Hnextensions}
 We start by briefly reviewing the material of \S~1--3 of~\cite{Reh78}. 
 Let $n \geq 3$ be a natural number. By definition, the group $H_n(G)$ is given by generators
 $h_{ij}(u)$, $u\in G$, $i\neq j$ and the following relations (cf. \cite[H1--H5~of~\S~2]{Reh78}):
@@ -329,7 +349,7 @@ There is a surjective group homomorphism $H_n(G) \twoheadrightarrow D_n(G)$ send
 Here $d_{ij}(g)$ stands for the element of $G^n$ whose
  $i$-th component equals $g$, $j$-th component equals $g^{-1}$ and all other components are trivial.
 
-By definition, {\it an extension of type $\mathfrak{H}_n(G)$} is an extension $H$ of $D_n(G)$ that is also a quotient of $H_n(G)$, i.\,e. 
+By definition, {\it an extension of type $\mathfrak{H}_n(G)$} is an extension $H$ of $D_n(G)$ which is also a quotient of $H_n(G)$, i.\,e. 
  the extension that fits into the following diagram.
 \[ \xymatrix{ H_n(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ H \ar@{->>}[r] & D_n(G)} \]
 Any $\mathfrak{H}_n(G)$-extension is central, see~\cite[Proposition~2.3]{Reh78}.
@@ -578,7 +598,7 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
 \end{proof}
 
-%\begin{appendices}
+\vfill \pagebreak 
 \appendix
 \section{Simplicial Dold---Serre fibrations}
 The aim of this appendix is to show that the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ is a quasifibration under suitable assumptions on $X$.
