@@ -598,17 +598,15 @@ Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is 
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
 \end{proof}
 
-\vfill \pagebreak 
-\appendix
-\section{Simplicial Dold---Serre fibrations}
+\appendix\section{Simplicial Dold---Serre fibrations}
 The aim of this appendix is to show that the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ is a quasifibration under suitable assumptions on $X$.
 
 We start with the definition of the simplicial analogue of the so-called ''Dold---Serre fibration``, i.\,e.
 a map posessing ''weak covering homotopy property`` (also called ''delayed homotopy lifting property``), cf.~\cite[\S~1.4.4]{KSz14}.
-We show in~\cref{lm:dhlp,lm:weak-equiv} that the map $h_\infty$ has this lifting property and that every map with this property is a quasifibration.
+We show in~\cref{lm:dhlp,lm:weak-equiv} that the map $h_\infty$ satisfies this property and that every map with this property is a quasifibration.
  
 \begin{df} \label{df:dhlp}
- Let $C$ be a subclass of cofibrations in the category of simplicial sets.
+ Let $C$ be a subclass of the class of acyclic cofibrations in the category of simplicial sets.
  We say that a map of simplicial sets $p\colon E \to B$ satisfies {\it weak homotopy covering property} with respect to $C$ if 
   for every commutative square
 \begin{equation} \xymatrix{ 
@@ -619,33 +617,36 @@ for which $i \in C$ there exists a map $\widetilde{F}$ such that the lower trian
  (i.\,e. a homotopy $H$ such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{pg} B$).
 \end{df}
 
-Denote by $C_{pr}$ the class consisting of all the inclusions $i\colon U\hookrightarrow V$ of finite polyhedral simplicial sets 
- posessing a retract $r\colon V\to U$.  
-\begin{lemma} \label{lm:dhlp} Let $X$ be a fibrant connected simplicial set.
-The map $h_\infty \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
+Denote by $C_{pr}$ the class consisting of all inclusions $i\colon U\hookrightarrow V$ of finite polyhedral simplicial sets 
+ for which there exists a deformation retract (i.\,e. a map $r\colon V\to U$ homotopic to $\mathrm{id}_V$).
+\begin{lemma} \label{lm:dhlp} For a fibrant and connected simplicial set $X$ the map $h_\infty \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
 \end{lemma}
 \begin{proof}
- We reduce the original problem to the special case $g=0$.
+ Let $i_0$ be a map from $C_{pr}$ and $r$ be the corresponding retraction.
+ We first reduce the problem to the special case when $g$ is the constant map at the basepoint of $X^\infty$ (which we denote by $0$).
+ Indeed, let $F, g$ be arbitrary maps as in~\eqref{eq:plp-def}.
  Since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
- Assume that $\widetilde{F}_0$ is a lifting for the diagram~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom is $F_0 = F - h_\infty gr$.
- For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define their product $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$.  
- Clearly, then $\widetilde{F} = gr \times \widetilde{F}_0$ would be the desired lifting of $F$.
+ If now $\widetilde{F}_0$ is a lifting in the diagram similar to~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom one is $F_0 = F - h_\infty gr$
+  then $\widetilde{F} = gr \times \widetilde{F}_0$ is the desired lifting of $F$.
+ %For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define their product $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$. Clearly, then .
   
  Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. take $W$ to be the path space fibration).
- Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration
-  and we can choose a lifting $\widetilde{F}$ in the following diagram
+ Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration.
+ Since $i_0$ is acyclic we can choose a lifting $\widetilde{F}$ in the following diagram
 \begin{equation} \nonumber \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d] & \ZZ[W] \ar@{->>}[d]  \\
 V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
 \end{equation}
 
- By~\cite[Lemma~9.1]{Po17} the map $\widetilde{F}$ can be lifted along $h_W$ in such a way that the bottom triangle in following diagram commutes strictly.
+ It is clear that the image of $\widetilde{F}$ is contained in the simplicial subgroup $\ZZ[W]_0 \leq \ZZ[W]$ which, by definition, consists of linear combinations $\sum_i n_i w_i$ for which $\sum_i n_i = 0$.
+ By~\cite[Lemma~9.1]{Po17} the canonical map $\ZZ[\underline{\Hom}(V, W)]_0 \to \underline{\Hom}(V, \ZZ[W]_0)$ is surjective, hence
+  the map $\widetilde{F}$ can be lifted along $h_W$ in such a way that the bottom triangle in following diagram commutes strictly.
 \begin{equation} \nonumber \label{eq:W-lift} \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d]                               & W^\infty \ar[d]^{h_W}  \\
 V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
 \end{equation}
  Notice that the image of $Gi_0$ is contained in the fiber $h_W^{-1}(0)$.
- It is not hard to show that $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$).
+ It is easy to see that $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$).
  We get that $Gi_0$ is fiberwise homotopic to $0$ hence the composite map $V \xrightarrow{G} W^\infty \to X^\infty$ is the desired lifting of $F$. \end{proof}
 
 The assertions of the following lemma are straightforward and are given without proof.
@@ -659,9 +660,9 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
     D^k\times I \ar^{\pi}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
     \label{eq:plp} \end{equation}
     Here $J$ denotes $(S^k \times I) \cup (D^k \times \{1\})$. In the sequel we denote such a diagram by $(a, A)$.
- \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a family of maps $(a_t, A_t)$
-     continously depending on $t\in [0, 1]$ such that $pa_t = A_t i_0$ holds for all $t$ (we call such family a homotopy of diagrams).
- \item If $A\pi$ lifts with respect to $p$ %(i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$)
+ \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff they can be extended to a family of maps $(a_t, A_t)$
+     continously depending on $t\in [0, 1]$ such that $pa_t = A_t \pi i_0$ holds for all $t$ (we call such family a homotopy of diagrams).
+ \item If $A\pi$ has a lifting $\widetilde{A}$ with respect to $p$ %(i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$)
      then the element of $G_k$ given by $(a, A)$ is trivial.
  \item \label{item:continue} Let $(a, A)$ be a diagram and $a'$ be any other map fiberwise homotopic to $a$ 
      (i.\,e. homotopic via some $H$ satisfying $pH(S^k\times I) = \{b\}$).
