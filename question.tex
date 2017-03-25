@@ -650,28 +650,41 @@ V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
  We get that $Gi_0$ is fiberwise homotopic to $0$ hence the composite map $V \xrightarrow{G} W^\infty \to X^\infty$ is the desired lifting of $F$. \end{proof}
 
 The assertions of the following lemma are straightforward and are given without proof.
-\begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of based topological spaces.
+\begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of pointed topological spaces.
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
 Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
 \begin{lemlist}
- \item Maps of triples $(D^k, S^k, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the form
+ \item Maps of triples $(D^k, S^{k-1}, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the form
    \begin{equation} \xymatrix{ 
     D^k \ar@{^{(}->}_{i_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
     D^k\times I \ar^{\pi}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
     \label{eq:plp} \end{equation}
-    Here $J$ denotes $(S^k \times I) \cup (D^k \times \{1\})$. In the sequel we denote such a diagram by $(a, A)$.
- \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff they can be extended to a family of maps $(a_t, A_t)$
-     continously depending on $t\in [0, 1]$ such that $pa_t = A_t \pi i_0$ holds for all $t$ (we call such family a homotopy of diagrams).
- \item If $A\pi$ has a lifting $\widetilde{A}$ with respect to $p$ %(i.\,e. there is $\widetilde{A}$ such that $\widetilde{A} \iota_0 = a$ and $p\widetilde{A}=A$)
-     then the element of $G_k$ given by $(a, A)$ is trivial.
- \item \label{item:continue} Let $(a, A)$ be a diagram and $a'$ be any other map fiberwise homotopic to $a$ 
-     (i.\,e. homotopic via some $H$ satisfying $pH(S^k\times I) = \{b\}$).
-     Then there exists a map $A'$ such that $(a', A')$ is diagram homotopic to $(a, A)$.
- \item \label{item:weaker} The third assertion remains true if instead of the strict equality $\widetilde{A} i_0 = a$ 
-       we require $\widetilde{A}i_0$ and $a$ to be fiberwise homotopic.
+    Here $J$ denotes $(S^{k-1} \times I) \cup (D^k \times \{1\})$. In the sequel we denote such a diagram by $(a, A)$.
+ \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a ''diagram homotopy`` that connects them.
+     By a diagram homotopy we mean a family of maps $(a_t, A_t)$ continously depending on $t\in [0, 1]$ such that $pa_t = A_t \pi i_0$ holds for all $t$.
+ \item \label{item:continue} Let $(a, A)$ be a diagram and $a'$ be any other map 
+     homotopic to $a$ via some homotopy $H$ such that $H(S^{k-1}\times I) \subseteq p^{-1}(b)$.
+     Then there exists a map $A'$ such that $(a', A')$ is a diagram homotopic to $(a, A)$.
+ \item \label{item:weaker} 
+     Assume that in the diagram~\eqref{eq:plp} there exists a diagonal map $\widetilde{A} \colon D^k\times I \to E$ 
+     such that the bottom triangle is commutative and the upper is commutative up to a fiberwise homotopy.
+     Then the element of $G_k$ given by $(a, A)$ is trivial.
 \end{lemlist}
 \end{lemma}
-
+\begin{comment}
+ Denote by $H$ the fiberwise homotopy between $a$ and $\widetilde{A}i_0$.
+ Consider the following family of diagrams:
+ \[ a_t(x) = \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}l@{}}
+    H(x, 2t)               & 0\leq t\leq \frac{1}{2}\\
+    \widetilde{A}(x, 2t-1) & \frac{1}{2}\leq t \leq 1\end{array}\right.;\  \
+  A_t(x, s) = \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}l@{}}
+    A(x, s)                & 0\leq t\leq \frac{1}{2} \\
+    A(x, s + (2t-1)(1-s)) &  \frac{1}{2}\leq t \leq 1
+  \end{array}\right.\]
+ It is clear that $a_0=a$ and $A_0=A$ while the image of $a_1$ is contained in $p^{-1}(b)$.
+\end{comment}
 
 \begin{lemma} \label{lm:weak-equiv} Let $p\colon E \to B$ be a map of simplicial sets satisfying the weak covering homotopy property with respect to the class $C_{pr}$.
  Then the geometric realization of $p$ is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a weak equivalence. \end{lemma}
@@ -681,29 +694,28 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
  Clearly, it suffices to show that for every diagram $(a, A)$ of the form~\eqref{eq:plp} the map $|p|$ 
   has a lifting $\widetilde{A}$ satisfying the requirements of~\cref{item:weaker}.
  
- The idea of the proof is to approximate $(a, A)$ with a homotopic pair of simplicial maps and then invoke the weak covering homotopy property. 
+ The idea of the proof is to approximate $(a, A)$ with a homotopic pair of geometric realizations of simplicial maps and then invoke the weak covering homotopy property. 
  The key inredient in the proof below is the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}.
  For brevity we denote the subdivision functor $\sd^m\sd_*(-)$ from its statement by $s^m(-)$ and the canonical natural transformation $s^m X \to X$ by $\delta^m$.
  We proceed in a number of steps.
  \begin{itemize}
-  \item Denote the restriction of $a$ to $S^k$ by $a_0$.
+  \item Denote the restriction of $a$ to $S^{k-1}$ by $a_0$.
    Notice that the image of $a_0$ is contained in $|p^{-1}(b)|$.
-   Using the approximation theorem we find a simplicial map $a_0'\colon s^m (S^k) \to p^{-1}(b)$ such that $a|\delta^m| \cong |a'_0|$.     
-  \item It is clear that there exists a map $a'\colon D^k\to |E|$ extending $|a'_0|$ and fiberwise homotopic to $a$.
-  \item Invoking the approximation theorem once again (with the initial condition specified by $|a'_0|$) we find $q>m$ and $a''\colon s^{q}(D_k) \to E$
+   Using the approximation theorem we find a simplicial map $a_0'\colon s^m (S^{k-1}) \to p^{-1}(b)$ such that $a|\delta^m| \cong |a'_0|$.     
+  \item We can find a map $a'\colon D^k\to |E|$ extending $|a'_0|$ and homotopic to $a$ via some homotopy $H$ satisfying $H(S^k\times I) \subseteq p^{-1}(b)$.
+  \item Invoking the approximation theorem once again (with the initial condition specified by $|a'_0|$) we find $q>m$ and $a''\colon s^{q}(D^k) \to E$
     such that $a'|\delta^{q}| \cong |a''|$ rel $S^k$.
   \item Using \cref{item:continue} we extend the (topological) homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
-  \item Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D_k \times I) = D^k\times \{0\} \cup J$ given by 
+  \item Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D^k \times I) = D^k\times \{0\} \cup J$ specified by 
     $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon s^{r}(D_k \times I) \to B$ such that
     $A'|\delta^r|\cong |A''|$ rel $\partial (D_k \times I)$.
  \end{itemize}
- Thus, we have obtained the following commutative diagram of simplicial sets
+ Thus, we have obtained the following commutative diagram of simplicial sets for which $(|a''|, |A''|)$ is a diagram homotopic to $(a, A)$.
    \begin{equation} \nonumber \xymatrix{ 
     s^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{s^{r}(i)}[d] & E \ar[d]^{p}  \\
     s^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
    \end{equation}
- By the functoriality of simplicial approximation the map $s^{r}(i)$ has a retract hence
-  by our assumption there exists the desired lifting $\widetilde{A}$.
+ By functoriality of the subdivision functor the map $s^{r}(i)$ posesses a deformation retract hence there exists the desired lifting $\widetilde{A}$.
  \end{proof}
  
 %\end{appendices} 
