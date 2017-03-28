@@ -695,7 +695,7 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
   has a lifting $\widetilde{A}$ satisfying the requirements of~\cref{item:weaker}.
  
  The idea of the proof is to approximate $(a, A)$ with a homotopic pair of geometric realizations of simplicial maps and then invoke the weak covering homotopy property. 
- The key inredient in the proof below is the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}.
+ The key ingredient in the proof below is the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}.
  For brevity we denote the subdivision functor $\sd^m\sd_*(-)$ from its statement by $s^m(-)$ and the canonical natural transformation $s^m X \to X$ by $\delta^m$.
  We proceed in a number of steps.
  \begin{itemize}
@@ -705,10 +705,10 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
   \item We can find a map $a'\colon D^k\to |E|$ extending $|a'_0|$ and homotopic to $a$ via some homotopy $H$ satisfying $H(S^k\times I) \subseteq p^{-1}(b)$.
   \item Invoking the approximation theorem once again (with the initial condition specified by $|a'_0|$) we find $q>m$ and $a''\colon s^{q}(D^k) \to E$
     such that $a'|\delta^{q}| \cong |a''|$ rel $S^k$.
-  \item Using \cref{item:continue} we extend the (topological) homotopy $a \cong a' \cong a''$ to a homotopy of diagrams $(a, A) \cong (a'', A')$.
+  \item Using \cref{item:continue} we extend the homotopy $a |\delta^q| \cong a'|\delta^q| \cong |a''|$ to a homotopy of diagrams $(a|\delta^q|, A|\delta^q|) \cong (|a''|, A')$.
   \item Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D^k \times I) = D^k\times \{0\} \cup J$ specified by 
-    $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon s^{r}(D_k \times I) \to B$ such that
-    $A'|\delta^r|\cong |A''|$ rel $\partial (D_k \times I)$.
+    $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon s^{r}(D^k \times I) \to B$ such that
+    $A'|\delta^r|\cong |A''|$ rel $\partial (D^k \times I)$.
  \end{itemize}
  Thus, we have obtained the following commutative diagram of simplicial sets for which $(|a''|, |A''|)$ is a diagram homotopic to $(a, A)$.
    \begin{equation} \nonumber \xymatrix{ 
