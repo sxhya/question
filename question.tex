@@ -3,7 +3,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage[capitalize]{cleveref}
 \usepackage[hyperref=true, backend=bibtex, firstinits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
-%\usepackage[notref,notcite]{showkeys}
+\usepackage[notref,notcite]{showkeys}
 \usepackage[matrix,arrow,curve]{xy}
 \usepackage[toc,page]{appendix}
 
@@ -56,7 +56,7 @@
 \newcommand{\pushoutcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
 \newcommand{\pullbackcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 
-\title{Amalgams of symmetric groups and $\mathfrak{H}_n$-extensions}
+\title[Amalgams of symmetric groups]{Amalgams of symmetric groups and \\ nonabelian tensor products}
 \keywords {$\mathfrak{U}(G)$-extensions, $\mathfrak{H}_n(G)$-extensions, amalgamated products, van Kampen theorem,
  {\em Mathematical Subject Classification (2010):} 55Q05, 20B30, 20E06, 20J06}
 
@@ -110,10 +110,9 @@ Theory of extensions of type $\mathfrak{H_n}$ was developed by U.~Rehmann in~\ci
 
 Theorem 1 and its proof (which itself involves little more than some basic combinatorial group theory) may be of interest for the following reasons.
 \begin{itemize}
- \item The presentation is similar in spirit to results of Brown---Loday and Kassel---Reutenauer on the presentation of 
-   the linear Steinberg group in the form of an amalgam of braid groups. 
- \item It gives a presentation of the universal extension $H_n(G)$ with generators and relations which is simpler than the original definition of $S_n(G)$ given in~\cite{Reh78}
-   and, moreover, is explicitly obtained from the Coxeter presentation of $S_n$.
+ \item The presentation is similar in spirit to results of Brown---Loday and Kassel---Reutenauer on the presentation of the linear Steinberg group in the form of an amalgam of braid groups.
+ \item It gives a presentation of the universal extension $H_n(G)$ with generators and relations which is simpler than the original presentation given in~\cite{Reh78}, see~\cref{prop:simpler}.
+       Moreover, our presentation explicitly obtained from the presentation of $S_n$ formulated in terms of transpositions.
 \end{itemize}
 
 
@@ -527,13 +526,24 @@ $\pi_1(S)$ is isomorphic to the free product of stabilizer subgroups $N_{h} \leq
 For $h \in G^n$ the subgroup $N_h$ consists of elements $(g, s) \in N$ satisfying $gh^{s^{-1}} = h$, i.e. elements of the form $(hh^{-s^{-1}}, s)$.
 Thus, $N_h\cong S_n$, $\pi_1(S)$ is isomorphic to the group $S_n(G)$ and the map $\pi_1(S) \to N$ coincides with the map $\mu$ defined in section~\ref{sec:QnG-def}.
 
-\begin{example} \label{ex44}
- We leave it as an exercise to the reader to check that an element $[h_{12}(x), h_{13}(y)] \in \pi_1(S)$ corresponds to the following element of $\pi_1(T)$
-  under the isomorphism of \cref{lm:quillen-a}:
- \begin{multline} \label{eq:pathT}
-  \gamma_{x,y} = (x[1], x[1]) \circ (x^{-1}[1], x^{-1}[2]) \circ (y[1], y[1]) \circ (y^{-1}[1], y^{-1}[3]) \circ \\ \circ (x[1], x[2]) \circ (x^{-1}[1], x^{-1}[1]) \circ (y[1], y[3]) \circ (y^{-1}[1], y^{-1}[1])).
- \end{multline}  
-\end{example}
+We would like to have a more concrete description of the isomorphism of~\cref{cor:ker-iso}.
+Fix a vector $g\in G^n$ and denote by $\gamma_{ij}(h, x)$ the path of length $4$ in $W$ connecting the points 
+ $\left(\begin{smallmatrix} x_i \\ n_i \end{smallmatrix}\right)$, $i=0..4$ whose components are given as follows:
+\[\begin{array}{ccccc}
+   x_0 = e, & x_1 = x[i], & x_2 = x[i], & x_3 = e, & x_4 = e; \\
+   n_0 = (h; e), & n_1 = (h, e), & n_2 = (d_{ij}(x) h, (ij)), & n_3 = (d_{ij}(x) h, (ij)), & n_4 = (d_{ij}(x) h, e). \end{array}\]
+One can easily check that the image $\gamma_{ij}(h, x)$ in $S$ under $\pi_N g$ is precisely the element $h_{ij}(x)$ while
+$\pi_{H\times H} f$ sends $\gamma_{ij}(h, x)$ to the loop $p_{ij}(x) = (x[i], x[i]) \circ (x^{-1}[i], x^{-1}[j])$.
+Thus, we conclude that every generator $c_{ij}(u, v)$ of $\Ker(\pi_1(S)\to N)$ corresponds to the loop $p_{ij}(u) \circ p_{ij}(v) \circ p_{ij}(u^{-1} v^{-1})$ in $T$.
+
+%The isomorphism of \cref{lm:quillen-a} can be described on the level of generators concrete as follows.
+%\begin{example} \label{ex44}
+% We leave it as an exercise to the reader to check that an element $[h_{12}(x), h_{13}(y)] \in \pi_1(S)$ corresponds to the following element of $\pi_1(T)$
+%  under the isomorphism of \cref{lm:quillen-a}:
+% \begin{multline} \label{eq:pathT}
+%  \gamma_{x,y} = (x[1], x[1]) \circ (x^{-1}[1], x^{-1}[2]) \circ (y[1], y[1]) \circ (y^{-1}[1], y^{-1}[3]) \circ \\ \circ (x[1], x[2]) \circ (x^{-1}[1], x^{-1}[1]) \circ (y[1], y[3]) \circ (y^{-1}[1], y^{-1}[1])).
+% \end{multline}  
+%\end{example}
 
 \begin{proof}[Proof of~\cref{thm:main}]
 Factor $h_n$ as a composition of a trivial cofibration followed by a fibration: 
@@ -556,9 +566,12 @@ In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentatio
   in turn, corresponds to the following normalized 2-cycle:
 \begin{equation} \label{eq:normalized} c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, 0) +(y, 0) + (0, x) - (0, y). \end{equation}
  
-Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant, any element of $\pi_1(F_{h_n}, 0)$ can be represented with 
- some 1-simplex $(\gamma, s) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(s) = h_n(\gamma)$, $d_0(s) = d_1(s)=0$. 
-It remains to find in $F_{h_n}$ the 1-simplex homotopic to the path $\phi(\gamma_{x,y})$ (cf.~\cref{ex44}).
+Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant we can represent an element of $\pi_1(F_{h_n}, 0)$ with 
+ a pair $(g, s) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_1(s) = h_n(g)$. 
+%It remains to find in $F_{h_n}$ the 1-simplex homotopic to the path $\phi(\gamma_{x,y})$ (cf.~\cref{ex44}).
+It is easy to check that the image of the loop $p_{ij}(x)$ under the natural map $T \to F_{h_n}$ is represented by the pair
+$((e, d_{ij}(x)), (x, x^{-1}) + (e, e) - (x, e) - (e, x^{-1})). $
+
 
 We use the following inductive procedure. Let $\gamma_0$ be an initial segment of a path $\gamma$ in $T$ for which we have already found such simplex
  $(g^0, s^0)$ in $F_{h_n}$ and let $g \in T_1$ be the next chain link. 
