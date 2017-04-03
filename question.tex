@@ -566,14 +566,19 @@ In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentatio
   in turn, corresponds to the following normalized 2-cycle:
 \begin{equation} \label{eq:normalized} c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, 0) +(y, 0) + (0, x) - (0, y). \end{equation}
  
-Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant we can represent an element of $\pi_1(F_{h_n}, 0)$ with 
- a pair $(g, s) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(s) = h_n(g)$. 
+Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant, the elements of $\pi_1(F_{h_n}, 0)$ can be described as
+ classes of pairs $(g, s) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(s) = h_n(g)$ up to natural homotopy relation. 
 %It remains to find in $F_{h_n}$ the 1-simplex homotopic to the path $\phi(\gamma_{x,y})$ (cf.~\cref{ex44}).
-It is easy to check that the image of the loop $p_{ij}(x)$ under the natural map $T \to F_{h_n}$ is represented by the pair
+It is easy to check that the image of the loop $p_{ij}(x)$ under the natural map $T \to F_{h_n}$ corresponds to the class of
 $((e, d_{ij}(x)), (x, x^{-1}) + (e, e) - (x, e) - (e, x^{-1})). $
 
-Filler can be computed as follows: $s_0 p_0 - s_2 d_3 s_0 p_0 + s_2 p_3 - s_1 d_2 s_0 p_0 + s_1 d_3 s_0 p_0 - s_1 p_3 + s_1 p_2$.
-Formula for composante: $p_0 + p_2 - p_3 - s_1 d_2 p_0  + s_1 d_1 p_3 + s_0 d_2 p_0$
+It is not hard to describe the group structure of $\pi_1(F_{h_n}, 0)$.
+Indeed, if $[(g^1, s^1)]$ and $[(g^2, s^2)]$ are two elements of $\pi_1(F_{h_n}, 0)$, then their product is represented by the pair $(g^1g^2, s)$, where
+ $s$ is the $1$-st face of the filler $f$ for the $3$-horn $(s^2, ,s^1, h_n(g^1, g^2))$.
+
+Now if $(p_0, ,p_2, p_3)$ is a horn then by Moore's theorem we get the following formula for the filler:
+ $f = s_0 p_0 - s_2 s_0 d_2 p_0 - s_1 s_0 d_1 p_0 + s_1 s_0 d_2 p_0 + s_1 p_2 + s_2 p_3 - s_1 p_3$. 
+Substituting  $p_0 + p_2 - p_3 - s_1 d_2 p_0  + s_1 d_1 p_3 + s_0 d_2 p_0$
 
 We use the following inductive procedure. Let $\gamma_0$ be an initial segment of a path $\gamma$ in $T$ for which we have already found such simplex
  $(g^0, s^0)$ in $F_{h_n}$ and let $g \in T_1$ be the next chain link. 
