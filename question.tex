@@ -566,19 +566,20 @@ In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentatio
   in turn, corresponds to the following normalized 2-cycle:
 \begin{equation} \label{eq:normalized} c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, 0) +(y, 0) + (0, x) - (0, y). \end{equation}
  
-Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant, the elements of $\pi_1(F_{h_n}, 0)$ can be described as
- classes of pairs $(g, s) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(s) = h_n(g)$ up to natural homotopy relation. 
+Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant, the elements of $\pi_1(F_{h_n}, 0)$ correspond to
+ classes of pairs $(g, t) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(t) = h_n(g)$. 
 %It remains to find in $F_{h_n}$ the 1-simplex homotopic to the path $\phi(\gamma_{x,y})$ (cf.~\cref{ex44}).
 It is easy to check that the image of the loop $p_{ij}(x)$ under the natural map $T \to F_{h_n}$ corresponds to the class of
 $((e, d_{ij}(x)), (x, x^{-1}) + (e, e) - (x, e) - (e, x^{-1})). $
 
 It is not hard to describe the group structure of $\pi_1(F_{h_n}, 0)$.
-Indeed, if $[(g^1, s^1)]$ and $[(g^2, s^2)]$ are two elements of $\pi_1(F_{h_n}, 0)$, then their product is represented by the pair $(g^1g^2, s)$, where
- $s$ is the $1$-st face of the filler $f$ for the $3$-horn $(s^2, ,s^1, h_n(g^1, g^2))$.
-
-Now if $(p_0, ,p_2, p_3)$ is a horn then by Moore's theorem we get the following formula for the filler:
+Indeed, if $[(g_1, t_1)]$ and $[(g_2, s_2)]$ are two elements of $\pi_1(F_{h_n}, 0)$, then their product is represented by the pair $(g_1g_2, t)$, where
+ $t$ is the $1$-st face of the filler $f$ for the $3$-horn $(t_2, ,t_1, h_n(g_1, g_2))$.
+By Moore's theorem filler for any horn $(p_0, ,p_2, p_3)$ in a simplicial abelian group can be computed via the formula
  $f = s_0 p_0 - s_2 s_0 d_2 p_0 - s_1 s_0 d_1 p_0 + s_1 s_0 d_2 p_0 + s_1 p_2 + s_2 p_3 - s_1 p_3$. 
-Substituting  $p_0 + p_2 - p_3 - s_1 d_2 p_0  + s_1 d_1 p_3 + s_0 d_2 p_0$
+Substituting concrete values of $p_i$ and using the fact that $d_1t_2$ is zero we get the following formula for $t$:
+\begin{multline} t = d_1f = p_0 - s_1 d_2 p_0 - s_0 d_1 p_0 + s_0 d_2 p_0 + p_2 - p_3 + s_1 d_1 p_3 = \\
+             = t_2 - s_1 h_n(g_2) + s_0 h_n(g_2) + t_1 - h_n(g_1, g_2) + s_1 h_n (g_1g_2). \end{multline}
 
 We use the following inductive procedure. Let $\gamma_0$ be an initial segment of a path $\gamma$ in $T$ for which we have already found such simplex
  $(g^0, s^0)$ in $F_{h_n}$ and let $g \in T_1$ be the next chain link. 
