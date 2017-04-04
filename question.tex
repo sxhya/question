@@ -534,7 +534,7 @@ Fix a vector $g\in G^n$ and denote by $\gamma_{ij}(h, x)$ the path of length $4$
    n_0 = (h; e), & n_1 = (h, e), & n_2 = (d_{ij}(x) h, (ij)), & n_3 = (d_{ij}(x) h, (ij)), & n_4 = (d_{ij}(x) h, e). \end{array}\]
 One can easily check that the image $\gamma_{ij}(h, x)$ in $S$ under $\pi_N g$ is precisely the element $h_{ij}(x)$ while
 $\pi_{H\times H} f$ sends $\gamma_{ij}(h, x)$ to the loop $p_{ij}(x) = (x[i], x[i]) \circ (x^{-1}[i], x^{-1}[j])$.
-Thus, we conclude that every generator $c_{ij}(u, v)$ of $\Ker(\pi_1(S)\to N)$ corresponds to the loop $p_{ij}(u) \circ p_{ij}(v) \circ p_{ij}(u^{-1} v^{-1})$ in $T$.
+Thus, we conclude that the element $c_{ij}(u, v)$ of $\pi_1(S)$ corresponds to the loop $p_{ij}(u) \circ p_{ij}(v) \circ p_{ij}(u^{-1} v^{-1})$ in $T$.
 
 %The isomorphism of \cref{lm:quillen-a} can be described on the level of generators concrete as follows.
 %\begin{example} \label{ex44}
@@ -564,7 +564,7 @@ We already know by Corollaries~\ref{cor:main} and~\ref{cor:ker-iso} that $K$ is 
 Let us show that $\psi$ is an isomorphism. Assume for a moment that $G$ is an abelian group.
 In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentation corresponds to the class of 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}), which,
   in turn, corresponds to the following normalized 2-cycle:
-\begin{equation} \label{eq:normalized} c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, 0) +(y, 0) + (0, x) - (0, y). \end{equation}
+\begin{equation} \label{eq:normalized} c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, e) +(y, e) + (e, x) - (e, y). \end{equation}
  
 Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant, the elements of $\pi_1(F_{h_n}, 0)$ correspond to
  classes of pairs $(g, t) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(t) = h_n(g)$. 
@@ -575,19 +575,23 @@ $((e, d_{ij}(x)), t(x)),$ where $t(x)=-(x, x^{-1}) + (e, e) - (x^{-1}, e) + (e, 
 It is not hard to describe the group structure of $\pi_1(F_{h_n}, 0)$.
 Indeed, if $[(g_1, t_1)]$ and $[(g_2, s_2)]$ are two elements of $\pi_1(F_{h_n}, 0)$, then their product is represented by the pair $(g_1g_2, t)$, where
  $t$ is the $1$-st face of the filler $f$ for the $3$-horn $(t_2, ,t_1, h_n(g_1, g_2))$.
-By Moore's theorem we can compute a filler for any horn $(p_0, ,p_2, p_3)$ in a simplicial abelian group via the formula
+By Moore's theorem one can find a filler for any horn $(p_0, ,p_2, p_3)$ in a simplicial abelian group via the formula
  $f = s_0 p_0 - s_0 s_1 d_2 p_0 - s_0 s_0 d_1 p_0 + s_0 s_0 d_2 p_0 + s_1 p_2 + s_2 p_3 - s_1 p_3$. 
 Substituting concrete values of $p_i$ and using the fact that $d_1t_2=0$ we get the following expression for $t$:
 \begin{multline} t = d_1f = p_0 - s_1 d_2 p_0 - s_0 d_1 p_0 + s_0 d_2 p_0 + p_2 - p_3 + s_1 d_1 p_3 = \\
              = t_1 + t_2 - h_n(g_1, g_2) - s_1 h_n(g_2) + s_0 h_n(g_2) + s_1 h_n (g_1g_2). \end{multline}
+Using the above formula we get that the image of $c_{ij}(u,v)$ via ??? equals $((e, c_{ij}(x, y)), t)$, where
+%t = t(x) + t(y) + t(x^{-1}y^{-1}) - h_n(g_1, g_2) - h_n(g_1g_2, g_3) - s_1h_n(g_2) + s_0h_n(g_2) - s_1h_n(g_3) + s_1h_n(g_3) + s_1h_n(g_1g_2) + s_1h_n(g_1g_2g_3)
+\begin{multline} t = 2(e, e)-(x^{-1}, e) +(xy, x^{-1}y^{-1}) -(xy, e) -(x, x^{-1}) -(y, y^{-1}) -\\  -(e, x^{-1}y^{-1}) +(e, x^{-1}) +(x, y) +(x^{-1}, y^{-1}) -(e, y) -(xyx^{-1}y^{-1}, e) +(y, e).\end{multline}
 
+\begin{comment}
 We use the following inductive procedure. Let $\gamma_0$ be an initial segment of a path $\gamma$ in $T$ for which we have already found such simplex
  $(g^0, s^0)$ in $F_{h_n}$ and let $g \in T_1$ be the next chain link. 
 Set $s_0 = \sum (a_j, b_j) \in\ZZ[BG]_2$, $t = h_n (g^0, g) = \sum_{i=1}^{2n}(-1)^i(g^0_i, g_i)$
 and compute the filler for the $3$-horn $(0,\ , s_0, t)$. Denote the $1$-st face of this filler by $s_1$.
 It is clear that $(g^0g, s_1)$ is the image of $\gamma^0 \circ g$ via $\phi$.
 The concrete formula for $s_1$ can be chosen e.\,g. as follows:
-\[s_1 = \sum_{i=1}^{2n}(g^0_i + g_i, -g_i) - \sum_j (a_j + b_j, -b_j).\]
+\[s_1 = \sum_{i=1}^{2n}(g^0_i + g_i, -g_i) - \sum_j (a_j + b_j, -b_j).\] \end{comment}
 
 Applying the above recipe to the path $\gamma_{x, y}$ we get an expression equal to~\eqref{eq:normalized}.
  This shows that $\psi$ is the identity map for an abelian group $G$.
@@ -652,7 +656,7 @@ Denote by $C_{pr}$ the class consisting of all inclusions $i\colon U\hookrightar
  %For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define their product $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$. Clearly, then .
   
  Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. take $W$ to be the path space fibration).
- Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration.
+ Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration. %Goerss--Jardine Lemma III.2.8
  Since $i_0$ is acyclic we can choose a lifting $\widetilde{F}$ in the following diagram
 \begin{equation} \nonumber \xymatrix{ 
 U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d] & \ZZ[W] \ar@{->>}[d]  \\
@@ -708,12 +712,12 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
 \end{comment}
 
 \begin{lemma} \label{lm:weak-equiv} Let $p\colon E \to B$ be a map of simplicial sets satisfying the weak covering homotopy property with respect to the class $C_{pr}$.
- Then the geometric realization of $p$ is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a weak equivalence. \end{lemma}
+ Then the geometric realization of $p$ is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a homotopy equivalence. \end{lemma}
 \begin{proof}
 
- We want to prove that $\pi_k(F_{|p|}(b), |p|^{-1}(b))$ are all trivial for $k \geq 1$.
- Clearly, it suffices to show that for every diagram $(a, A)$ of the form~\eqref{eq:plp} the map $|p|$ 
-  has a lifting $\widetilde{A}$ satisfying the requirements of~\cref{item:weaker}.
+ It suffices to show that $\pi_k(F_{|p|}(b), |p|^{-1}(b))$ are all trivial for $k \geq 1$.
+ Consider a diagram $(a, A)$ of the form~\eqref{eq:plp} (with the map $|p|$ in the right hand side). 
+ In view of the previous lemma it suffices to construct a lifting $\widetilde{A}$ satisfying the requirements of~\cref{item:weaker}.
  
  The idea of the proof is to approximate $(a, A)$ with a homotopic pair of geometric realizations of simplicial maps and then invoke the weak covering homotopy property. 
  The key ingredient in the proof below is the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}.
