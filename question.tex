@@ -610,15 +610,13 @@ It will be convenient for us to perform all calculations inside the subset $F'\s
  (thus we can identify its elements with pairs $(g, t)$).
 
 It is obvious that $F_{h_n}$ is fibrant. 
-We want to find a concrete formula for the element of $F'$ homotopy equivalent to the concatenation of two elements $(g_1, t_1), (g_2, t_2) \in F'$.
+We will need a concrete formula for the element of $F'$ homotopy equivalent to the concatenation of two elements $(g_1, t_1), (g_2, t_2) \in F'$.
 It is easy to see that the element $(g_1g_2, t)$, where $t$ is the $1$-st face of the filler $f$ for the $3$-horn $(t_2, ,t_1, h_n(g_1, g_2))$, is the desired one.
 By Moore's theorem one can find a filler for any horn $(p_0, ,p_2, p_3)$ in a simplicial abelian group via the formula
  $f = s_0 p_0 - s_0 s_1 d_2 p_0 - s_0 s_0 d_1 p_0 + s_0 s_0 d_2 p_0 + s_1 p_2 + s_2 p_3 - s_1 p_3$. 
 Substituting concrete values of $p_i$ and using the fact that $d_1t_2=0$ we get the following expression for $t$:
 \begin{multline} t = d_1f = p_0 - s_1 d_2 p_0 - s_0 d_1 p_0 + s_0 d_2 p_0 + p_2 - p_3 + s_1 d_1 p_3 = \\
              = t_1 + t_2 - h_n(g_1, g_2) - s_1 h_n(g_2) + s_0 h_n(g_2) + s_1 h_n (g_1g_2). \end{multline}
-
-
 
 In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentation corresponds to the class of 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}), which,
   in turn, corresponds to the following normalized 2-cycle:
