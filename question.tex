@@ -465,9 +465,7 @@ Most of the assertions follow from~\cref{prop:simpler} and~\cite[Proposition~5]{
 One also has to use the formula $c_{ij}(u, u) = c_{ij}(u, u^{-1})$ (see~\cite[p.~87]{Reh78}).
 \end{proof}
 
-\section{Topological applications} \label{sec:main}
-In this section we prove topological claims made in the introduction.
-\subsection{Proof of main results}
+\section{Proof of Theorem~2} \label{sec:main}
 Recall that for arbitrary set $X$ one defines the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
  is $X^{k+1}$ and whose faces and degeneracies are obtained by omitting and repeating components. 
 For a group $G$ we denote by $\pi_G$ the canonical map $EG \to BG$ sending $(g, h) \in EG_1$ to $g^{-1}h \in BG_1$.
@@ -600,52 +598,63 @@ If we denote by $K$ the kernel of the map $\nu\colon \pi_1(T) \to G^{2n}$ induce
 We already know by Corollaries~\ref{cor:main} and~\ref{cor:ker-iso} that $K$ is naturally isomorphic to $\HH_2(G, \ZZ)$ provided $n\geq 3$.
 Thus, it suffices to show that $\psi$ is an isomorphism. In view of~\cref{lm:endotr} we only need to consider the case when $G$ is abelian.
 
-We are going to compute the images of generators $c_{ij}(x, y) = x \wedge y \in \HH_2(G, \ZZ)$ under $\alpha$ and $\varphi\beta$.
-In order to do this we need to have a better description of the set of 1-simplices of $F_{h_n}$.
+We are going to compute the image of each generator $c_{ij}(x, y) = x \wedge y \in \HH_2(G, \ZZ)$ under $\psi$.
+In order to do this we need to obtain a more explicit description of the set of 1-simplices of $F_{h_n}$.
 Since both $BG^{2n}$ and $\ZZ[BG]$ are fibrant $E_{h_n}$ and $F_{h_n}$ can be constructed using the path space construction, i.\,e. $E_{h_n} = BG^{2n} \times_{\ZZ[BG]} \ZZ[BG]^I$.
 In this case the set of $1$-simplices of $F_{h_n}$ can be identified with the set of triples $(g, t, t') \in G^{2n}\times \ZZ[BG]_2 \times \ZZ[BG]_2$ 
  satisfying the following identites:
 \[d_2(t) = h_n(g),\ \ d_1(t) = d_1(t'),\ \ d_0(t') = 0.\]
-It will be convenient for us to perform all calculations inside the subset $F'\subset (F_{h_n})_1$ consisting of those triples for which $t'=0$ 
- (thus we can identify its elements with pairs $(g, t)$).
+It will be convenient for us to perform all calculations inside the subset $F'\subset (F_{h_n})_1$ consisting of those triples for which $t'=0$ and $d_1(t)=d_0(t)=0$.
+For shortness we write down an element of $F'$ as $(g, t)$.
+It is easy to check that the image of the loop $p_{ij}(x)$ under the natural map $T \to F_{h_n}$ corresponds to the pair
+$((e, d_{ij}(x)), t(x)),$ where $t(x)=-(x, x^{-1}) + (e, e) - (x^{-1}, e) + (e, x^{-1})$.
 
-It is obvious that $F_{h_n}$ is fibrant. 
-We will need a concrete formula for the element of $F'$ homotopy equivalent to the concatenation of two elements $(g_1, t_1), (g_2, t_2) \in F'$.
-It is easy to see that the element $(g_1g_2, t)$, where $t$ is the $1$-st face of the filler $f$ for the $3$-horn $(t_2, ,t_1, h_n(g_1, g_2))$, is the desired one.
+%It is obvious that $F_{h_n}$ is fibrant. 
+We want to devise a concrete formula for the element of $F'$ homotopic to the concatenation of two elements $(g_1, t_1), (g_2, t_2) \in F'$.
+It is easy to check that $(g_1g_2, t)$, where $t$ is the $1$-st face of the filler $f$ for the $3$-horn $(t_2, ,t_1, h_n(g_1, g_2))$, is the desired element.
+% (the reader is advised to draw a triangular prism at this point).
 By Moore's theorem one can find a filler for any horn $(p_0, ,p_2, p_3)$ in a simplicial abelian group via the formula
  $f = s_0 p_0 - s_0 s_1 d_2 p_0 - s_0 s_0 d_1 p_0 + s_0 s_0 d_2 p_0 + s_1 p_2 + s_2 p_3 - s_1 p_3$. 
-Substituting concrete values of $p_i$ and using the fact that $d_1t_2=0$ we get the following expression for $t$:
-\begin{multline} t = d_1f = p_0 - s_1 d_2 p_0 - s_0 d_1 p_0 + s_0 d_2 p_0 + p_2 - p_3 + s_1 d_1 p_3 = \\
+Substituting concrete values of $p_i$ into this formula and using the fact that $d_1t_2=0$ we get the following expression for $t$:
+\begin{multline} \nonumber t = d_1f = p_0 - s_1 d_2 p_0 - s_0 d_1 p_0 + s_0 d_2 p_0 + p_2 - p_3 + s_1 d_1 p_3 = \\
              = t_1 + t_2 - h_n(g_1, g_2) - s_1 h_n(g_2) + s_0 h_n(g_2) + s_1 h_n (g_1g_2). \end{multline}
-
-In this case a generator $x \wedge y$ of $\HH_2(G, \ZZ)$ in Miller's presentation corresponds to the class of 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}), which,
-  in turn, corresponds to the following normalized 2-cycle:
-\begin{equation} \label{eq:normalized} c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, e) +(y, e) + (e, x) - (e, y). \end{equation}
- 
-Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant, the elements of $\pi_1(F_{h_n}, 0)$ correspond to
- classes of pairs $(g, t) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(t) = h_n(g)$. 
-%It remains to find in $F_{h_n}$ the 1-simplex homotopic to the path $\phi(\gamma_{x,y})$ (cf.~\cref{ex44}).
-It is easy to check that the image of the loop $p_{ij}(x)$ under the natural map $T \to F_{h_n}$ corresponds to the pair
-$((e, d_{ij}(x)), t(x)),$ where $t(x)=-(x, x^{-1}) + (e, e) - (x^{-1}, e) + (e, x^{-1})$. Notice that $d_1t(x)=d_0t(x)=0$.
- 
-It is not hard to describe the group structure of $\pi_1(F_{h_n}, 0)$.
-Using the above formula we get that the image of $c_{ij}(u,v)$ via ??? equals $((e, c_{ij}(x, y)), t)$, where
+Using the above formula we get that the image of $c_{ij}(u,v)$ via $\varphi\beta$ equals $((e, e), t)$, where
 %t = t(x) + t(y) + t(x^{-1}y^{-1}) - h_n(g_1, g_2) - h_n(g_1g_2, g_3) - s_1h_n(g_2) + s_0h_n(g_2) - s_1h_n(g_3) + s_1h_n(g_3) + s_1h_n(g_1g_2) + s_1h_n(g_1g_2g_3)
-\begin{multline} t = 2(e, e)-(x^{-1}, e) +(xy, x^{-1}y^{-1}) -(xy, e) -(x, x^{-1}) -(y, y^{-1}) -\\  -(e, x^{-1}y^{-1}) +(e, x^{-1}) +(x, y) +(x^{-1}, y^{-1}) -(e, y) -(xyx^{-1}y^{-1}, e) +(y, e).\end{multline}
+\begin{multline} \label{eq:formula-t} t = 2(e, e)-(x^{-1}, e) +(xy, x^{-1}y^{-1}) -(xy, e) -(x, x^{-1}) -(y, y^{-1}) -\\  -(e, x^{-1}y^{-1}) +(e, x^{-1}) +(x, y) +(x^{-1}, y^{-1}) -(e, y) -(xyx^{-1}y^{-1}, e) +(y, e).\end{multline}
+
+The map $\alpha$ can be described as the Dold---Kan isomorphism $\HH_2(G, \ZZ) \cong \pi_2(\ZZ[BG])$ followed by the boundary map $\partial\colon \pi_2(\ZZ[BG]) \to \pi_1(F_{h_n})$.
+It is not hard to show that $\partial$ maps each $c \in \pi_2(\ZZ[BG])$ to $((e,e),-c)$ (see~\cite[p.~29]{GJar09}).
+Thus, we get that $\psi$ maps $x \wedge y$ to $-t$, where $t$ is given by~\eqref{eq:formula-t}.
+
+On the other hand, the generator $x \wedge y$ of $\HH_2(G, \ZZ)$ corresponds to the 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}) and the corresponding
+element of $\pi_2(\ZZ[BG])$ is simply the normalized 2-cycle of $c$:
+\begin{equation} \nonumber c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, e) +(y, e) + (e, x) - (e, y). \end{equation}
+It it not hard to check that $t-c'$ is the image under the differential $d_0-d_1+d_2-d_3$ of the following $3$-cycle:
+\[(xy, x^{-1}, y^{-1}) - (y, x, x^{-1}) + s_1 s_1(x^{-1} + xy - x - y) + s_0 s_0(x^{-1} - x - x^{-1}y^{-1}).\]
+%(x^{-1}, e, e) + (xy, e, e) - (x, e, e) - (y, e, e) - (e, e, x^{-1}y^{-1}) + (e, e, x^{-1}) - (e, e, x).\]
+Thus we obtain that $[t] = -[c']$, hence $\psi$ is an isomorphism, as claimed.
+
 
 \begin{comment}
+Since $F_{h_n}$ and $\ZZ[BG]$ are fibrant, the elements of $\pi_1(F_{h_n}, 0)$ correspond to
+ classes of pairs $(g, t) \in G^{2n} \times \ZZ[BG]_2$ satisfying $d_2(t) = h_n(g)$. 
+It remains to find in $F_{h_n}$ the 1-simplex homotopic to the path $\phi(\gamma_{x,y})$ (cf.~\cref{ex44}).
+ Notice that $d_1t(x)=d_0t(x)=0$.
+ 
+It is not hard to describe the group structure of $\pi_1(F_{h_n}, 0)$.
+
 We use the following inductive procedure. Let $\gamma_0$ be an initial segment of a path $\gamma$ in $T$ for which we have already found such simplex
  $(g^0, s^0)$ in $F_{h_n}$ and let $g \in T_1$ be the next chain link. 
 Set $s_0 = \sum (a_j, b_j) \in\ZZ[BG]_2$, $t = h_n (g^0, g) = \sum_{i=1}^{2n}(-1)^i(g^0_i, g_i)$
 and compute the filler for the $3$-horn $(0,\ , s_0, t)$. Denote the $1$-st face of this filler by $s_1$.
 It is clear that $(g^0g, s_1)$ is the image of $\gamma^0 \circ g$ via $\phi$.
 The concrete formula for $s_1$ can be chosen e.\,g. as follows:
-\[s_1 = \sum_{i=1}^{2n}(g^0_i + g_i, -g_i) - \sum_j (a_j + b_j, -b_j).\] \end{comment}
+\[s_1 = \sum_{i=1}^{2n}(g^0_i + g_i, -g_i) - \sum_j (a_j + b_j, -b_j).\]
 
 Applying the above recipe to the path $\gamma_{x, y}$ we get an expression equal to~\eqref{eq:normalized}.
  This shows that $\psi$ is the identity map for an abelian group $G$.
 Since $\psi$ is natural in $G$, by~\cref{lm:endotr} below we get that $\psi$ is an isomorphism for arbitrary $G$,
- therefore $\phi$ is also an isomorphism, as claimed.
+ therefore $\phi$ is also an isomorphism, as claimed. \end{comment}
 \end{proof}
 
 \appendix\section{Simplicial Dold---Serre fibrations}
