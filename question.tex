@@ -671,7 +671,7 @@ Thus we obtain that $[t] = -[c']$, hence $\psi$ is an isomorphism, as claimed.
 \end{proof}
 
 \appendix\section{Simplicial Dold---Serre fibrations}
-The aim of this appendix is to show that the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ is a quasifibration under suitable assumptions on $X$.
+The aim of this appendix is to show that the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ mentioned in the introduction is a quasifibration.
 
 We start with the definition of the simplicial analogue of the so-called ''Dold---Serre fibration``, i.\,e.
 a map posessing ''weak covering homotopy property`` (also called ''delayed homotopy lifting property``), cf.~\cite[\S~1.4.4]{KSz14}.
@@ -721,6 +721,7 @@ V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
  It is easy to see that $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$).
  We get that $Gi_0$ is fiberwise homotopic to $0$ hence the composite map $V \xrightarrow{G} W^\infty \to X^\infty$ is the desired lifting of $F$. \end{proof}
 
+\begin{comment} 
 The assertions of the following lemma are straightforward and are given without proof.
 \begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of pointed topological spaces.
 Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
@@ -743,8 +744,8 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
      Then the element of $G_k$ given by $(a, A)$ is trivial.
 \end{lemlist}
 \end{lemma}
-\begin{comment}
- Denote by $H$ the fiberwise homotopy between $a$ and $\widetilde{A}i_0$.
+
+Denote by $H$ the fiberwise homotopy between $a$ and $\widetilde{A}i_0$.
  Consider the following family of diagrams:
  \[ a_t(x) = \left\{\def\arraystretch{1.2}%
   \begin{array}{@{}c@{\quad}l@{}}
@@ -756,7 +757,6 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
     A(x, s + (2t-1)(1-s)) &  \frac{1}{2}\leq t \leq 1
   \end{array}\right.\]
  It is clear that $a_0=a$ and $A_0=A$ while the image of $a_1$ is contained in $p^{-1}(b)$.
-\end{comment}
 
 \begin{lemma} \label{lm:weak-equiv} Let $p\colon E \to B$ be a map of simplicial sets satisfying the weak covering homotopy property with respect to the class $C_{pr}$.
  Then the geometric realization of $p$ is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a homotopy equivalence. \end{lemma}
@@ -792,6 +792,7 @@ Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by
    \end{equation}
  By functoriality of the subdivision functor the map $s^{r}(i)$ posesses a deformation retract hence there exists the desired lifting $\widetilde{A}$.
  \end{proof}
+\end{comment}
  
 %\end{appendices} 
 
