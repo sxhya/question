@@ -78,7 +78,7 @@ We also describe a topological application of this construction.
 \section{Introduction}
 The aim of this note is to describe a rather surprising connection between symmetric groups and nonabelian tensors products 
  which apparently has not been studied in detail previously.
-
+ 
 \begin{comment}
 Denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
  $(g_1,\ldots, g_n)$ for which the product $g_1\cdot \ldots \cdot g_n$ lies in the derived subgroup $[G, G]$.
@@ -263,7 +263,8 @@ To simplify notation, up to the end of this section we adhere to the convention 
 \end{rem}
 
 Now we are ready to formulate the main result of this subsection.
-\begin{prop} \label{prop:Q-pres} For $n\geq 3$ and arbitrary group $G$ the group $S_n(G)$ admits presentation with $\{(ij)_a \mid i\neq j, 1\leq i,j,\leq n, a\in G\}$ 
+\begin{prop} \label{prop:Q-pres} For $n\geq 3$ and arbitrary group $G$ the group $S_n(G)$ admits presentation with 
+$\{(ij)_a \mid i\neq j, 1\leq i,j,\leq n, a\in G\}$ 
 as the set of generators and the following list of relations. % (as before, distinct letters denote distinct indices):
 \begin{align}
 (ij)_a^2 = &\, 1,                \label{Q1} \tag{SG1} \\
@@ -299,30 +300,71 @@ Verification of the fact that $\psi$ and $\varphi$ are mutually inverse is also 
 \end{proof}
 
 \subsection{Coxeter-like presentation for $S_n(G)$.}
-We conclude this section by showing that the group $S_n(G)$ defined in terms of amalgams
- coincides with the group defined in the introduction by means of Coxeter-like presentation (denote the latter by $S_n^{C}(G)$).
+The aim of this subsection is to show the following.
+\begin{prop}\label{prop:Cox-Amalgam}
+The group $S_n(G)$ defined in~\cref{prop:Q-pres} coincides with the group defined in the introduction by means of Coxeter-like presentation
+(denote the latter group by $S_n^{C}(G)$).
+\end{prop}
 
-For $1\leq t\leq n-1$ consider the group $S_n(t, G)$ defined by generators $(ij)_a$, $1\leq i<j \leq n$, $j-i\leq t$ and the following relations
+The idea of the proof is to construct a sequence of ''intermediate`` groups
+\[S_n^C(G) \to S_n(1, G) \to \ldots \to S_n(n-1,G) \to S_n(G)\]
+and then show that all the maps between these groups are isomorphisms.
+
+\begin{df}
+For $1\leq t\leq n-1$ consider the group $S_n(t, G)$ defined by the set of generators 
+$\{(ij)_a \mid 1\leq i<j \leq n,\ j-i\leq t\}$ subject to the following relations:
 \begin{align}
 (ij)_a^2                      = &\, 1,                   &               \label{CoxMix1} \\
-(ij)_a^{(jk)_b}               = &\, (jk)_{d}^{(ij)_{c}}, & \text{provided } ab = cd,      \label{CoxMix2} \\
+(ij)_a^{(jk)_b}               = &\, (jk)_{b'}^{(ij)_{a'}}, & \text{provided } ab = a'b',      \label{CoxMix2} \\
 (ij)_a (kl)_b                 = &\, (kl)_b (ij)_a,       &               \label{CoxMix3} \\
 (ij)_a ^ {(jk)_b}             = &\, (ik)_{ab}.           &               \label{CoxMix4}
 \end{align}
-In the above relations the indices satisfy the inequalities which guarantee that all the generators $(ij)_a$ appearing in the formulae are well-defined.
+In the above relations indices $i,j,k,l$ satisfy the inequalities ensuring that all the generators appearing in the formulae are well-defined.
+\end{df}
 
 In the case $t=1$ the relation~\eqref{CoxMix4} becomes vacuous and the remaining relations have the same form as \eqref{Cox1}---\eqref{Cox3}.
-Thus, the map $S_n^C(G) \to S_n(1, G)$ given by $s_i(g)\mapsto (i,i+1)_g$ is an isomorphism. 
-On the other hand, in the case $t=n-1$ the condition $j-i\leq t$ is trivially satisfied for all generators,
- hence relations \eqref{CoxMix1}---\eqref{CoxMix4} are equivalent to~\eqref{Q1}---\eqref{Q4} . Thus $S_n(n-1,G)$ is isomorphic to $S_n(G)$ and the required 
-isomorphism $S_n(G) \cong S_n^C(G)$ follows from the following lemma.
- 
+Thus, the map $S_n^C(G) \to S_n(1, G)$ defined by $s_i(g)\mapsto (i,i+1)_g$ is an isomorphism. 
+
+On the other hand, in the case $t=n-1$ the obvious embedding of generators induces a map $S_n(n-1,G) \to S_n(G)$ 
+ (we consider the latter group in the presentation of~\cref{prop:Q-pres}).
+We claim that this map is an isomorphism. Indeed, define the map $\theta\colon S_n(G) \to S_n(n-1, G)$ in the opposite direction by the following formula:
+\[\theta((ij)_a) = \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}l@{}}
+    (ij)_a & \text{if $i < j$,}\\
+    (ji)_{a^{-1}} & \text{if $j < i$.}\\
+  \end{array}\right.\]
+Only the fact that $\theta$ preserves the relation~\eqref{Q2} is not immediately obvious.
+Fix three indices $i,j,k$ satisfying $i<j<k$ and let $p,q,r$ be any permutation of these indices.
+One has to check that the equality $\theta((pq)_a^{(qr)_b}) = \theta((pr)_{ab})$ holds.
+For example, the relation $\theta((jk)_a^{(ki)_b}) = \theta((ji)_{ab})$ can be proved as follows:
+\[ \theta((jk)_a^{(ki)_b}) = (jk)_a^{(ik)_{b^{-1}}} = {(ik)_{b^{-1}}}^{(jk)_a} = (ij)_{b^{-1}a^{-1}} = \theta((ji)_{ab}).\]
+In the above formula the second equality holds by~\eqref{CoxMix2} and the third one holds by~\eqref{CoxMix4} (in which both sides are conjugated by $(jk)_a$).
+Verification of the other 5 cases is similar.
+
+To finish the proof of~\cref{prop:Cox-Amalgam} it remains to show the following lemma.
 \begin{lemma} \label{lem:coxeter-amalgam}
 For each $1 \leq t \leq n-2$ the map $f_t \colon S_n(t, G)\to S_n(t+1, G)$ induced by the obvious embedding of generators is an isomorphism.
 \end{lemma}
 \begin{proof}
-We construct a map $g_t$ in the opposite direction and show that $f_t$ and $g_t$ are mutually inverse.
+Let $(ij)_a$ be a generator of $S_n(t+1, G)$, define the map $g_t$ in the opposite direction as follows:
+\[g_t((ij)_a) = \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}l@{}}
+    (ij)_a & \text{if $j-i\leq t$,}\\
+    (ik)_{a}^{(kj)_1} & \text{if $j-i=t+1$ for some $i<k<j$.}\\
+  \end{array}\right.\]
+The value of $g_t((ij)_a)$ does not depend on the choice of $k$.
+Indeed, let $k'> k$ be another index lying between $i$ and $j$. 
+By~\eqref{CoxMix3} we have the equality $(ik)_a^{(k'j)_1} = (ik)_a$ hence
+\[(ik)_a ^{(kj)_1} = (ik)_a ^{\left((kk')_1 ^{(k'j)_1}\right)} = (ik)_a^{(kk')_{1} (k'j)_{1}} = (ik')_a ^{(k'j)_1}.\]
 
+It remains to show that $g_t$ preserves the defining relations of $S_n(t+1, G)$.
+Let us verify this for~\eqref{CoxMix2}. Assume for a moment that $k-j\leq t$ and $j-i=t+1$ and choose some index $j'$ between $i$ and $j$, then
+\[g_t((ij)_a^{(jk)_b}) =
+(ij')_a ^ {(j'j)_1 (jk)_b} =
+((jk)_{b'} ^{(j'j)_1}) ^ {(ij')_{a'} (j'j)_1} =
+(j'j)_1^{(jk)_{b'}  (ij')_{a'} (j'j)_1}
+\]
+Verification of this fact for~\eqref{CoxMix1} and~\eqref{CoxMix4} is similar but easier and is left as an exercise to the reader.
 \end{proof} 
 
 \section{Comparison with extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}} \label{sec:Hnextensions}
