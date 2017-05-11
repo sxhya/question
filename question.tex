@@ -357,14 +357,20 @@ Indeed, let $k'> k$ be another index lying between $i$ and $j$.
 By~\eqref{CoxMix3} we have the equality $(ik)_a^{(k'j)_1} = (ik)_a$ hence
 \[(ik)_a ^{(kj)_1} = (ik)_a ^{\left((kk')_1 ^{(k'j)_1}\right)} = (ik)_a^{(kk')_{1} (k'j)_{1}} = (ik')_a ^{(k'j)_1}.\]
 
-It remains to show that $g_t$ preserves the defining relations of $S_n(t+1, G)$.
-Let us verify this for~\eqref{CoxMix2}. Assume for a moment that $k-j\leq t$ and $j-i=t+1$ and choose some index $j'$ between $i$ and $j$, then
-\[g_t((ij)_a^{(jk)_b}) =
-(ij')_a ^ {(j'j)_1 (jk)_b} =
-((jk)_{b'} ^{(j'j)_1}) ^ {(ij')_{a'} (j'j)_1} =
-(j'j)_1^{(jk)_{b'}  (ij')_{a'} (j'j)_1}
-\]
-Verification of this fact for~\eqref{CoxMix1} and~\eqref{CoxMix4} is similar but easier and is left as an exercise to the reader.
+Obviously, the map $g_t$ would be the inverse to $f_t$ once we show that $g_t$ preserves the defining relations of $S_n(t+1, G)$.
+Below we outline the proof of this fact for relation~\eqref{CoxMix2} and leave the verification for other relations as an exercise.
+
+First consider the case $k-j\leq t$ and $j-i=t+1$. Choose some index $j'$ between $i$ and $j$.
+Using the defining relations of $S_n(t,G)$ we get the following chain of equalities:
+\begin{multline}\label{CoxMix2New} g_t((ij)_a^{(jk)_b}) = (ij')_{a} ^ {(j'j)_1 (jk)_b} = (ij')_a ^{ (jk)_b (j'j)_1 (jk)_b } = 
+(ij')_a ^{(jk)_1 (j'j)_b (jk)_1} = \\ = (ij')_a ^{(j'j)_b (jk)_1} = (j'j)_{b'}^ {(ij')_{a'} (jk)_1} = 
+ (j'j)_{b'}^ {(jk)_1 (ij')_{a'}} = \\ = (jk)_{b'}^{(j'j)_1 (ij')_{a'}} = (jk)_{b'}^{(ij')_{a'} (j'j)_1 (ij')_{a'}}
+ = (jk)_{b'}^{(j'j)_1 (ij')_{a'} (j'j)_1} = g_t((jk)_{b'}^{(ij)_a}). \end{multline}
+The proof in the case $k-j = t+1$ is similar:
+\[g_t((ij)_a^{(jk)_b}) = (ij)_a ^ {(k'k)_1 (jk')_b (k'k)_1} = (ij)_a ^ {(jk')_b (k'k)_1} =
+(jk')_{b'} ^ {(ij)_{a'} (k'k)_1} = (jk')_{b'} ^ {(k'k)_1 (ij)_{a'}} = g_t((jk)_{b'}^{(ij)_{a'}}).\]
+Here $k'$ is some index lying between $j$ and $k$.
+In the central equality we use either~\eqref{CoxMix2} or~\eqref{CoxMix2New} depending on whether $j-i\leq t$ or $j-i=t+1$.
 \end{proof} 
 
 \section{Comparison with extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}} \label{sec:Hnextensions}
