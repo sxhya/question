@@ -89,9 +89,11 @@ s_i(a) s_j(b)            = &\, s_j(b) s_i(a),                         & |i-j|\ge
 Notice that in the special case $G=1$ the above presentation boils down to the usual Coxeter presentation of the symmetric group $S_n$,
  i.\,e. $S_n(1) = S_n$.
  
-The group defined above bears some similarity with the {\it parametrized braid group} defined by Loday---Stein in~\cite{LS05} 
- (cf. also with the group defined by Kassel---Reutenauer in~\cite{KR98}). By analogy, we call the group $S_n(G)$ a {\it parametrized symmetric group}.
-Our first main result is the following theorem, which provides its concrete description.
+The group defined above bears some similarity with the group defined by Kassel---Reutenauer in~\cite{KR98} 
+ (cf. also with the group defined by {\it parametrized braid group} defined by Loday---Stein in~\cite{LS05}).
+By analogy, we call the group $S_n(G)$ a {\it parametrized symmetric group}.
+Our first main result is the following theorem, which provides a concrete description of $S_n(G)$ and is
+ thus a combinatorial analogue of~\cite[Theorem~1]{KR98}.
 
 Denote by $G\wr S_n$ the wreath product of $G$ and $S_n$.
 \begin{thm} \label{thm:summary} For $n \geq 3$ there is a map $\mu_n\colon S_n(G) \to G \wr S_n$ which is a crossed module.
@@ -100,41 +102,42 @@ The cokernel and the kernel of $\mu_n$ are isomorphic to $\HH_1(G, \ZZ)$ and $\H
 \end{thm}
 
 %and $H_n^\wedge(G)$ is the quotient of the so-called ''universal extension of type $\mathfrak{H}_n(G)$`` (denoted $H_n(G)$) modulo all ''symbols`` of the form $c(x, x) = 1$, $x\in G$.
-In fact, we are able to give even more concrete description of $S_n(G)$, namely, we compute the group $S_n(G)$ in terms of so-called extensions of type $\mathfrak{H_n}$ defined by U.~Rehmann in~\cite{Reh78}, see~\cref{cor:main}.
-Originally defined as a technical tool needed to formulate the noncommutative version of Matsumoto theorem,
- these extensions are directly related with nonabelian tensor products.
-For example, the group $G \mathbin{\widetilde{\otimes}} G$ is a subgroup of $H_n(G)$, the universal extension of type $\mathfrak{H}_n(G)$
+To prove the above theorem we express $S_n(G)$ in terms of so-called extensions of type $\mathfrak{H_n}$,
+ which were defined by U.~Rehmann in~\cite{Reh78}, see~\cref{cor:main}.
+Originally discovered in attempt to prove noncommutative Matsumoto theorem, these extensions are directly related with nonabelian tensor products.
+For example, the nonabelian antisymmetric square $G \mathbin{\widetilde{\otimes}} G$ is a subgroup of the group $H_n(G)$, the ''universal`` extension of type $\mathfrak{H}_n(G)$
  (we refer the reader to Section~\ref{sec:Hnextensions} for more details).
  
-Theorem 1 and its proof (which relies solely on basic combinatorial group theory) may be of interest for the following reasons:
-\begin{itemize}
- \item It establishes a connection between two classical objects: the symmetric group and the second homology of a group.  
- \item In course of the proof of Theorem~1 we obtain a  presentation of the group $H_n(G)$ that is simpler than its original presentation given in~\cite{Reh78}
-       (4 instead of 5 relations that are also shorter), see~\cref{prop:simpler}.       
- \item Theorem 1 is motivated by (and provides partial answer to) some purely topological question, which we describe below in more detail.
-\end{itemize}
+Apart from the fact that Theorem~1 establishes a connection between two classical objects: symmetric groups and the second homology,
+ it is also beneficial for the study of extensions of type $\mathfrak{H}_n(G)$.
+For example, in course of the proof of Theorem~1 we obtain a presentation of the group $H_n(G)$ that is
+ simpler than its original presentation given in~\cite{Reh78} (4 instead of 5 relations that are also shorter), see~\cref{prop:simpler}.
+
+The study of parametrized symmetric groups was originally motivated by some purely topological question, which we describe below in more detail.
 
 For a pointed simplicial set $(X, x_0)$ denote by $\ZZ[X]$ the associated free simplicial abelian group.
 Define the ''alternating`` map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the following identity:
  \[h_n(x_1, x_2, \ldots x_{2n}) = \sum\limits_{i=1}^{2n}(-1)^ix_i.\]
 Define the ''stabilization`` map $X^{2n} \hookrightarrow X^{2(n+1)}$ by $x \mapsto (x, x_0, x_0)$ and denote by $X^\infty$ the colimit of $X^n$.
 
-Recently S.~Podkorytov showed that the limit map $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$ is a {\it quasifibration}
+Motivated by the study of homotopy invaiants, S.~Podkorytov showed in~\cite{Po17} that the limit map 
+$h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$ is a {\it quasifibration}
  provided $X$ is fibrant and connected.
-By definition, this means that the natural map $h^{-1}_\infty(b) \to F_{h_\infty}(b)$ between the fiber and the homotopy fiber of $h_\infty$ over any point $b$ is 
+By definition, this means that the natural map $h^{-1}_\infty(b) \to F_{h_\infty}(b)$ between the fiber
+and the homotopy fiber of $h_\infty$ over any point $b$ is 
 a weak (hence homotopy) equivalence.
 This assertion is essentially proved in~\cite[Lemma~9.1]{Po17}, however some technical work is required to
-  formulate it this way, see~\cref{lm:weak-equiv} below.
+  formulate it this way, see~\cref{sec:quasifib} below.
 
-One may wonder whether the maps $h_n$ satisfy some weaker analogue of this property,
- i.\,e. one might expect that the map $h_n^{-1}(0) \to F_{h_n}(0)$ is $c(n)$-connected for some $c(n)$ which depends only on $n$ and tends to infinity as $n\to \infty$.
+One may wonder whether the maps $h_n$ satisfy some weaker property.
+For example, one might expect that the map $h_n^{-1}(0) \to F_{h_n}(0)$ is $c(n)$-connected for some $c(n)$ which depends only on $n$ and tends to infinity as $n\to \infty$.
   
 The following result which is a consequence of Theorem 1 asserts that this map is at least $1$-connected in one important special case.
 \begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$
  the natural map $h_n^{-1}(0) \to F_{h_n}(0)$ induces an isomorphism of fundamental groups
  $\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n})$. \end{thm}
-\cref{thm:main} reduces to~\cref{thm:summary} by means of Quillen Theorem A and van Kampen theorem.
-It also involves some explicit computations with simplicial fundamental groups.
+Apart from~\cref{thm:summary} the proof of \cref{thm:main} involves some explicit computations with simplicial fundamental groups 
+ using Quillen Theorem A and van Kampen theorem.
 
 \subsection{Acknowledgements}
 I wish to thank Semyon Podkorytov for suggesting the problem and also for his kind permission to use some of his unpublished results.
@@ -350,7 +353,7 @@ In the central equality we use either~\eqref{CoxMix2} or~\eqref{CoxMix2New} depe
 \end{proof} 
 
 \section{Comparison with extensions of type \texorpdfstring{$\mathfrak{H}_n(G)$}{Hn(G)}} \label{sec:Hnextensions}
-The aim of this section is to compute the group $S_n(G)$ in terms of Rehmann's extensions of
+The aim of this section is to express the group $S_n(G)$ in terms of Rehmann's extensions of
  type $\mathfrak{H}_n$ and thus finish the proof of~\cref{thm:summary}. 
 
 \subsection{Presentation for the subgroup $HS_n(G)$}
@@ -411,7 +414,6 @@ h_{ij}(a)^{-1}                = &\, h_{ij}(a^{-1}). \tag{R4} \label{H4}
 \end{prop}
 
 In the next subsection we put the group $HS_n(G)$ into the context of Rehmann's extensions of type $\mathfrak{H}_n(G)$.
-
 \subsection{Extensions of type $\mathfrak{H}_n$}
 We start with a brief review of the material of \S~1--3 of~\cite{Reh78}.
 For $n\geq 3$ denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
@@ -434,61 +436,35 @@ By definition, {\it an extension of type $\mathfrak{H}_n(G)$} is an extension $H
  the one which fits into the following diagram.
 \[ \xymatrix{ H_n(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ H \ar@{->>}[r] & D_n(G)} \]
 %Any $\mathfrak{H}_n(G)$-extension is central, see~\cite[Proposition~2.3]{Reh78}.
-The relationship between nonabelian tensor products and the group 
-\[ \xymatrix{ G \mathbin{\widetilde{\otimes}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H_n(G) \ar@{->>}[r] & D_n(G)}\]
-%   \xymatrix{ G \wedge G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_1} \\ H^\wedge_n(G) \ar@{->>}[r] & D_n(G)} 
 
-\begin{comment}
-We now recall the notion of \emph{an extension of type $\mathfrak{U}(G)$} introduced by Rehmann in~\cite[\S~1]{Reh78}.
-Denote by $U(G)$ the group presented by generators $(u, v)$, $u,v\in G$ and relations:
-\begin{align}
- ({}^{u} v, {}^{u}w) (u,  w) = &\, (uv, w), \tag{U1} \label{U1} \\
- (u,  vw) (v,  wu) (w,  uv)  = &\, 1.       \tag{U2} \label{U2}
-\end{align}
-There is a left action of $G$ on $U(G)$ given by ${}^x (u, v) = ({}^{x}u, {}^{x}v).$
-Equivalently, $U(G)$ can be defined by the following relations, see~\cite[p.~8]{De76}.
-\begin{align} 
- (u, v) (v, u)     = &\, 1,          \label{U4} \\
- (u, v) \ {}^v(u, w) = &\, (u, vw),  \label{U6} \\
- {}^u(v, w)(w, v)  = &\, (u, [v, w]).\label{U9} \end{align}
-It is clear from the definition that $U(G)$ is a quotient of the nonabelian tensor square $G\otimes G$ and that
-the map $(u, v) \mapsto [u, v]$ defines a $G$-equivariant map $U(G) \twoheadrightarrow [G, G]$.
-Notice that in the literature one can find alternative notations for $U(G)$ which emphasize its
- connection with nonabelian tensor products e.\,g. $(G, G)$ or $G \mathbin{\widetilde{\wedge}} G$.
- 
-By definition, an {\it extension of type $\mathfrak{U}(G)$} is simply a quotient of $U(G)$
- that fits into the following commutative diagram with $G$-equivariant arrows.
-\[ \xymatrix{ U(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ U \ar@{->>}[r] & [G, G]} \]
+For $1\leq k\leq n$ denote by $\iota_k$ the inclusion map which sends an element $g$ of $[G, G]$ to the vector of $G^n$
+ whose only nontrivial component equals $g$ and is on $k$-th position.
+The relationship between nonabelian tensor products and extensions of type $\mathfrak{H}_n(G)$ is 
+ best explained by the following pull-back diagram.
+\[ \xymatrix{ G \mathbin{\widetilde{\otimes}} G \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H_n(G) \ar@{->>}[r] & D_n(G)}\]
+Here $k$ is arbitrary and $G \mathbin{\widetilde{\otimes}} G$ denotes the nonabelian antisymmetric square 
+ (it is denoted by $U(G)$ in~\cite{Reh78} and by $(G, G)$ in~\cite{De76}).
 
-There is a correspondence between extensions of type $\mathfrak{H}_n(G)$ and $\mathfrak{U}(G)$.
-One can obtain a $\mathfrak{U}(G)$-extension from given $\mathfrak{H}_n(G)$-extension via restriction.
-Indeed, let $H$ be an extension of type $\mathfrak{H}_n(G)$ and $k$ be arbitrary number $1\leq k\leq n$.
-Denote by $\iota_k$ the inclusion map $[G, G] \to D_n(G)$ that inserts an element $g \in [G, G]$ at the $k$-th position.
-Then the corresponding extension $U_H$ is simply the pull-back of $H$ with respect to $\iota_k$.
+A quotient of $G \mathbin{\widetilde{\otimes}} G$ is called an {\it extension of type $\mathfrak{U}(G)$} (cf.~\cite[\S~1]{Reh78}).
+There is one-to-one correspondence between extensions of type $\mathfrak{H}_n(G)$ and those of type $\mathfrak{U}(G)$.
+One obtains a $\mathfrak{U}(G)$-extension $U_H$ from a given $\mathfrak{H}_n(G)$-extension $H$ by taking pull-back square as in the above diagram.
+In other words, $U_H$ is the subgroup of $H$ generated by all the ''symbols`` $c_{kj}(u, v)$, where
+\[c_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(vu)^{-1}, \ \ 1\leq i \neq j \leq n,\ u,v \in G.\]
+(Notice that symbols $c_{ij}(u, v)$ do not depend on $j$).
+The inverse construction which produces an $\mathfrak{H}_n(G)$ extension from the given $\mathfrak{U}(G)$-extension and a number $n$ is described in detail in~\cite[\S~3]{Reh78}.
 
-In other words, $U_H$ is simply the subgroup of $H$ generated by 
-symbols $c_{kj}(u, v)=h_{kj}(u) \cdot h_{kj}(v) \cdot h_{kj}(vu)^{-1}$ 
- (here $j$ is any index not equal $k$, $c_{kj}(u,v)$ does not depend on $j$, see~\cite[Proposition~2.1]{Reh78}).
-It can be shown that $U$ is an extension of type $\mathfrak{U}(G)$ with kernel~$\mathrm{Ker}(\pi_U)$ 
- isomorphic to $\mathrm{Ker}(\pi_H)$, see~\cite[Propositions~2.2--2.3]{Reh78}.
-In~\cite[\S~3]{Reh78} Rehmann also describes the inverse construction which assign to every $\mathfrak{U}(G)$-extension
- $U\twoheadrightarrow [G, G]$ and a number $n\geq 3$ some extension $H_U$ of type $\mathfrak{H}_n(G)$ that fits into the pull-back diagram above.
-% TODO: Is this correspondence one-to-one?
-% TODO: Does $G\otimes G$ correspond to $H_n(G)$ via this construction (and vice-versa)?
-\end{comment}
-
-In this subsection we finish the proof of~\cref{thm:summary}.
-Our main result is the following.
+We now proceed with the proof of~\cref{thm:summary}.
+Our main result here is the following.
 \begin{prop} \label{prop:simpler} 
 For $n\geq 3$ relations \eqref{H0}--\eqref{H4} imply \eqref{RH1}--\eqref{RH5}.
 Moreover, for $n\geq 4$ relations \eqref{H0}--\eqref{H3} are equivalent to \eqref{RH1}--\eqref{RH5}.
 \end{prop}
-For $u, v\in G$ we define the following two symbols:
-\[c_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(vu)^{-1}, c'_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(uv)^{-1}.\]
+For $u, v\in G$ define the following symbol (notice the difference between $c_{ij}$ and $c'_{ij}$):
+\[ c'_{ij}(u,v)=h_{ij}(u)h_{ij}(v)h_{ij}(uv)^{-1}.\]
 Notice that~\eqref{RH4} implies $h_{ij}(1)=1$ therefore $c_{ij}(u, u^{-1}) = c'_{ij}(u, u^{-1})$.
-Our goal is to show that~\eqref{RH3} can be omitted from the definition of $H_n(G)$ provided $n \geq 4$.
+Let us show that~\eqref{RH3} can be omitted from the definition of $H_n(G)$ provided $n \geq 4$.
 \begin{lemma} \label{item-lem33} If one excludes relation~\eqref{RH3} from the list of defining relations for the group $H_n(G)$, $n\geq 3$,
- the following still remain true:
+ the following assertions still remain true:
  \begin{lemlist}
 \item \label{item-lem33-cntr} The elements $c_{ij}(u, u^{-1})$ are central in $H_n(G)$;
 \item \label{item-lem33-comm} One has $c'_{ij}(u, v) = [h_{ij}(u), h_{kj}(v)]$, $k\neq i, j$;
@@ -502,7 +478,7 @@ Since in any group $[a, b]=1$ implies $[a^{-1}, b] = [a, b^{-1}] = [a^{-1}, b^{-
  $c_{ij}(u^{-1}, u)^{-1} = c_{ji}(u, u^{-1})$ centralizes both $h_{kj}(v)$ and $h_{jk}(v)$.
 Together with~\eqref{RH2} and~\eqref{RH5} this implies that $c_{ij}(u, u^{-1})$ centralizes all the generators of $H_n(G)$ and hence lies in the center of $H_n(G)$.
 
-The second and third assertions are straightforward corollaries of~\eqref{RH4}.
+The second and the third assertions are straightforward corollaries of~\eqref{RH4}.
 The fourth assertion follows from the third one:
 \[{}^{h_{ij}(w)} c'_{ij}(u, v) = {}^{h_{ij}(w)} c'_{kj}(v, u)^{-1} = (c'_{kj}(v, w)^{-1} c'_{kj}(v, uw))^{-1} = c'_{ij}(uw, v) c'_{ij}(w, v)^{-1}.\]
 \end{proof}
@@ -542,10 +518,10 @@ The assertion of the proposition becomes evident once one notices the following:
 \end{proof}
 
 \begin{cor} \label{cor:main} For $n \geq 3$ the group $HS_n(G)$ is the quotient of the extension $H_n(G)$ by~\eqref{H4} (in particular, 
- is an extension of type $\mathfrak{H}_n(G)$).
+ it is an extension of type $\mathfrak{H}_n(G)$).
 %The associated $\mathfrak{U}(G)$ extension $U_{HS_n(G)}$ is isomophic to the quotient of $U(G)$ modulo single family of relations
 %\begin{equation} \nonumber (u, u) = 1, \ u\in G. \end{equation}
-Moreover, we have the following natural isomorphism:
+Moreover, there are natural isomorphisms:
 \begin{equation} \Ker(HS_n(G) \to D_n(G)) = \Ker(S_n(G) \to G \wr S_n) \cong \HH_2(G, \ZZ). \end{equation} \end{cor}
 \begin{proof}
 Most of the assertions follow from~\cref{prop:simpler} and~\cite[Proposition~5]{De76}.
@@ -708,7 +684,7 @@ It it not hard to check that $t-c'$ is the image of the following $3$-chain unde
 Thus we obtain that $[t] = -[c']$, hence $\psi$ is an isomorphism, as claimed.
 \end{proof}
 
-\appendix\section{Simplicial Dold---Serre fibrations}
+\appendix\section{Simplicial Dold---Serre fibrations} \label{sec:quasifib}
 The aim of this appendix is to show that the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ mentioned in the introduction is a quasifibration.
 
 We start with the definition of the simplicial analogue of the so-called ''Dold---Serre fibration``, i.\,e.
