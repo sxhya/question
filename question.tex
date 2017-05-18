@@ -3,7 +3,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage[capitalize]{cleveref}
 \usepackage[hyperref=true, backend=bibtex, firstinits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
-\usepackage[notref,notcite]{showkeys}
+%\usepackage[notref,notcite]{showkeys}
 \usepackage[matrix,arrow,curve]{xy}
 \usepackage[toc,page]{appendix}
 
@@ -75,7 +75,7 @@ We also describe a topological application of this construction.
 \maketitle
 
 \section{Introduction}
-The aim of this note is to describe a rather surprising connection between symmetric groups and nonabelian tensors products 
+The aim of this note is to describe a connection between symmetric groups and nonabelian tensors products 
  which apparently has not been studied in detail previously.
  
 Let $G$ be a (possibly noncommutative) group. 
@@ -88,27 +88,29 @@ s_i(a) s_j(b)            = &\, s_j(b) s_i(a),                         & |i-j|\ge
 Notice that in the special case $G=1$ the above presentation boils down to the usual Coxeter presentation of the symmetric group $S_n$,
  i.\,e. $S_n(1) = S_n$.
  
-The group defined above bears some similarity with the group defined by Kassel---Reutenauer in~\cite{KR98} 
+The group defined above bears some similarity with the group $G_n(R)$ defined by Kassel---Reutenauer in~\cite{KR98} for a ring $R$
  (cf. also with the {\it parametrized braid group} defined by Loday---Stein in~\cite{LS05}).
 By analogy, we call the group $S_n(G)$ a {\it parametrized symmetric group}.
-Our first main result is the following theorem, which provides a concrete description of $S_n(G)$ and is
- thus a combinatorial analogue of~\cite[Theorem~1]{KR98}.
+Our first main result is the following theorem, which provides its concrete description of.
 
 Denote by $G\wr S_n$ the wreath product of $G$ and $S_n$.
 \begin{thm} \label{thm:summary} For $n \geq 3$ there is a map $\mu_n\colon S_n(G) \to G \wr S_n$ which is a crossed module.
 The cokernel and the kernel of $\mu_n$ are isomorphic to $\HH_1(G, \ZZ)$ and $\HH_2(G, \ZZ)$ respectively.
 \end{thm}
-
-To prove the above theorem we express $S_n(G)$ in terms of so-called extensions of type $\mathfrak{H_n}$,
+To prove the above theorem we compute $S_n(G)$ in terms of so-called extensions of type $\mathfrak{H_n}$,
  which were defined by U.~Rehmann in~\cite{Reh78}, see~\cref{cor:main}.
 Originally discovered in attempt to prove noncommutative Matsumoto theorem, these extensions are directly related with nonabelian tensor products.
 For example, the nonabelian antisymmetric square $G \mathbin{\widetilde{\otimes}} G$ is a subgroup of the group $H_n(G)$, the ''universal`` extension of type $\mathfrak{H}_n(G)$
  (we refer the reader to Section~\ref{sec:Hnextensions} for more details).
+
+To some extent the above theorem is analogous to~\cite[Th{\'e}or{\`e}me~1]{KR98}, which asserts that 
+ the group $G_n(R)$ with Coxeter-like presentation is isomorphic to $\mathrm{St}_n(R) \rtimes S_n$
+  (hence it contains the unstable $\mathrm{K}_2$-group $\mathrm{K}_{2,n}(R)$ as a subgroup).
  
-In course of the proof of Theorem~1 we find a presentation of the universal extension $H_n(G)$ which is
+In course of the proof of~\cref{thm:summary} we find a presentation of the universal extension of type $\mathfrak{H}_n(G)$ which is
  simpler than its original presentation given in~\cite{Reh78} (4 instead of 5 relations, which are also shorter), see~\cref{prop:simpler}.
 
-For us Theorem~1 was motivated by some purely topological question, which we describe below in more detail.
+For us~\cref{thm:summary} was motivated by some purely topological question, which we describe below in more detail.
 
 For a pointed simplicial set $(X, x_0)$ denote by $\ZZ[X]$ the associated free simplicial abelian group.
 Define the ''alternating`` map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ by the following identity:
@@ -518,8 +520,8 @@ The assertion of the proposition now becomes evident once one notices the follow
 
 \begin{cor} \label{cor:main} For $n \geq 3$ the group $HS_n(G)$ is the quotient of the extension $H_n(G)$ by~\eqref{H4} (in particular, 
  it is an extension of type $\mathfrak{H}_n(G)$).
-Moreover, there are natural isomorphisms:
-\begin{equation} \Ker(HS_n(G) \to D_n(G)) = \Ker(S_n(G) \to G \wr S_n) \cong \HH_2(G, \ZZ). \end{equation} \end{cor}
+Moreover, there is an isomorphism, which is natural in $G$:
+\begin{equation} \Ker(S_n(G) \to G \wr S_n) = \Ker(HS_n(G) \to D_n(G)) \cong \HH_2(G, \ZZ). \end{equation} \end{cor}
 \begin{proof}
 Notice that imposing~\eqref{H4} has the same effect as modding out by all symbols $c_{ij}(u, u) = c_{ij}(u, u^{-1})$ (cf.~\cite[p.~87]{Reh78}).
 The corollary and \cref{thm:summary} now follow from the above proposition and~\cite[Proposition~5]{De76}.
@@ -589,8 +591,9 @@ For $h \in G^n$ the subgroup $N_h$ consists of elements $(g, s) \in N$ satisfyin
 Thus, $N_h\cong S_n$, $\pi_1(S)$ is isomorphic to the group $S_n(G)$ and the map $\pi_1(S) \to N$ coincides with the map $\mu$ defined in section~\ref{sec:QnG-def}.
 In particular, for an abelian $G$ its kernel is generated by symbols $c_{ij}(u, v)$.
 
-
-The following lemma gives a more concrete description of the isomorphism $\theta$ from~\cref{cor:ker-iso}.
+We have shown that $\Ker(\mu)$ is isomorphic to $\Ker(\pi_1(h_n(0)) \to G^{2n})$.
+This isomorphism is natural in $G$, since all the objects $N$, $H\times H$, $S$, $T$ used in its construction depended on $G$ functorially.
+The following lemma gives even more concrete description of this isomorphism for abelian $G$.
 \begin{lemma} \label{lem:concrete-formula}
  If $G$ is abelian then every generator $c_{ij}(u, v) \in \Ker(\pi_1(S)\to N)$ is mapped under $\theta$ to the class (in $\pi_1(T)$) of the loop $f_{ij}(u, v)$, 
   which is defined as follows:
