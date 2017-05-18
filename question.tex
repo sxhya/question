@@ -91,7 +91,7 @@ Notice that in the special case $G=1$ the above presentation boils down to the u
 The group defined above bears some similarity with the group $G_n(R)$ defined by Kassel---Reutenauer in~\cite{KR98} for a ring $R$
  (cf. also with the {\it parametrized braid group} defined by Loday---Stein in~\cite{LS05}).
 By analogy, we call the group $S_n(G)$ a {\it parametrized symmetric group}.
-Our first main result is the following theorem, which provides its concrete description of.
+Our first main result is the following theorem, which provides its concrete description.
 
 Denote by $G\wr S_n$ the wreath product of $G$ and $S_n$.
 \begin{thm} \label{thm:summary} For $n \geq 3$ there is a map $\mu_n\colon S_n(G) \to G \wr S_n$ which is a crossed module.
@@ -484,10 +484,10 @@ The fourth assertion follows from the third one:
 If one excludes relation~\eqref{RH3} from the list of defining relations for the group $H_n(G)$, $n\geq 3$, the following statements are equivalent:
 \begin{enumerate}
 \item \label{item1} \eqref{RH3} holds;
-\item \label{item4} one has $c'_{ij}(u, v)^{-1} = c'_{ij}(v, u)$;
-\item \label{item5} symbols $c'_{ij}(u, v)$ do not depend on $i$;
-\item \label{item5} one has $c'_{ij}(u, vw) = c'_{ij}(wu, v) \cdot c'_{ij}(uv, w)$;
-\item \label{item6} one has $c'_{ij}(u, vu^{-1}) = c'_{ij}(uv, u^{-1})$.
+\item \label{item2} one has $c'_{ij}(u, v)^{-1} = c'_{ij}(v, u)$;
+\item \label{item3} symbols $c'_{ij}(u, v)$ do not depend on $i$;
+\item \label{item4} one has $c'_{ij}(u, vw) = c'_{ij}(wu, v) \cdot c'_{ij}(uv, w)$;
+\item \label{item5} one has $c'_{ij}(u, vu^{-1}) = c'_{ij}(uv, u^{-1})$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -680,15 +680,15 @@ It it not hard to check that $t-c'$ is the image of the following $3$-chain unde
 Thus we obtain that $[t] = -[c']$, hence $\psi$ is an isomorphism, as claimed.
 \end{proof}
 
-\appendix\section{Simplicial Dold---Serre fibrations} \label{sec:quasifib}
-The aim of this appendix is to show that the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ mentioned in the introduction is a quasifibration.
+\subsection{Quasifibration property of the map $h_\infty$} \label{sec:quasifib}
+We finish the paper with the proof of another claim about $h_n$ made in the introduction,
+ namely the one that $h_\infty\colon X^{\infty}\to \ZZ[X]$ is a quasifibration.
 
-We start with the definition of the simplicial analogue of the so-called ''Dold---Serre fibration``, i.\,e.
-a map posessing ''weak covering homotopy property`` (also called ''delayed homotopy lifting property``), cf.~\cite[\S~1.4.4]{KSz14}.
-We show in~\cref{lm:dhlp,lm:weak-equiv} that the map $h_\infty$ satisfies this property and that every map with this property is a quasifibration.
+We show that $h_n$ satisfies some lifting property akin to ''weak covering homotopy property``
+(also called ''delayed homotopy lifting property``) satisfied by ''Dold---Serre fibrations``(cf.~\cite[\S~1.4.4]{KSz14}).
  
 \begin{df} \label{df:dhlp}
- Let $C$ be a subclass of the class of acyclic cofibrations in the category of simplicial sets.
+ Let $C$ be a class of acyclic cofibrations in the category of simplicial sets.
  We say that a map of simplicial sets $p\colon E \to B$ satisfies {\it weak homotopy covering property} with respect to $C$ if 
   for every commutative square
 \begin{equation} \xymatrix{ 
@@ -699,12 +699,11 @@ for which $i \in C$ there exists a map $\widetilde{F}$ such that the lower trian
  (i.\,e. a homotopy $H$ such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{pg} B$).
 \end{df}
 
-Denote by $C_{pr}$ the class consisting of all inclusions $i\colon U\hookrightarrow V$ of finite polyhedral simplicial sets 
- for which there exists a deformation retract (i.\,e. a map $r\colon V\to U$ homotopic to $\mathrm{id}_V$).
-\begin{lemma} \label{lm:dhlp} For a fibrant and connected simplicial set $X$ the map $h_\infty \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
+\begin{lemma} \label{lm:dhlp} For a fibrant and connected simplicial set $X$ the map $h_\infty \colon X^\infty \to \ZZ[X]$ 
+ satisfies the weak covering homotopy property with respect to all inclusions $i_0\colon X \hookrightarrow X \times \Delta^1$.
 \end{lemma}
 \begin{proof}
- Let $i_0$ be a map from $C_{pr}$ and $r$ be the corresponding retraction.
+ Denote by $r$ the retraction corresponding to $i_0$.
  We first reduce the problem to the special case when $g$ is the constant map at the basepoint of $X^\infty$ (which we denote by $0$).
  Indeed, let $F, g$ be arbitrary maps as in~\eqref{eq:plp-def}.
  Since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
