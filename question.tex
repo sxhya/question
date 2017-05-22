@@ -105,7 +105,7 @@ For example, the nonabelian antisymmetric square $G \mathbin{\widetilde{\otimes}
 
 To some extent the above theorem is analogous to~\cite[Th{\'e}or{\`e}me~1]{KR98}, which asserts that 
  the group $G_n(R)$ with Coxeter-like presentation is isomorphic to $\mathrm{St}_n(R) \rtimes S_n$
-  (hence it contains the unstable $\mathrm{K}_2$-group $\mathrm{K}_{2,n}(R)$ as a subgroup).
+  and hence contains the subgroup isomorphic to the unstable $\mathrm{K}_2$-group $\mathrm{K}_{2,n}(R)$.
  
 In course of the proof of~\cref{thm:summary} we find a presentation of the universal extension of type $\mathfrak{H}_n(G)$ which is
  simpler than its original presentation given in~\cite{Reh78} (4 instead of 5 relations, which are also shorter), see~\cref{prop:simpler}.
@@ -118,15 +118,13 @@ Define the ''alternating`` map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ 
 Define the ''stabilization`` map $X^{2n} \hookrightarrow X^{2(n+1)}$ by $x \mapsto (x, x_0, x_0)$ and denote by $X^\infty$ the colimit of $X^n$.
 
 Motivated by the study of homotopy invaiants, S.~Podkorytov showed in~\cite{Po17} that the limit map 
-$h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$ is a {\it quasifibration}
- provided $X$ is fibrant and connected.
-By definition, this means that the natural map $h^{-1}_\infty(b) \to F_{h_\infty}(b)$ between the fiber
-and the homotopy fiber of $h_\infty$ over any point $b$ is 
-a weak (hence homotopy) equivalence.
+$h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$ satisfies some property akin to the quasifibration property which reads as follows:
+for fibrant and connected $X$ the natural map $h^{-1}_\infty(b) \to F_{h_\infty}(b)$ between the fiber
+ and the homotopy fiber of $h_\infty$ over any point $b \in \ZZ[X]$ is a weak (hence homotopy) equivalence.
 This assertion is essentially proved in~\cite[Lemma~9.1]{Po17}, however some technical work is required to
   formulate it this way, see~\cref{sec:quasifib} below.
 
-One may wonder whether the maps $h_n$ satisfy some weaker property.
+One might ask whether the fibers of $h_n$ satisfy some weaker property.
 For example, one might expect that the map $h_n^{-1}(0) \to F_{h_n}(0)$ is $c(n)$-connected for some $c(n)$ which depends only on $n$ and tends to infinity as $n\to \infty$.
   
 The following result which is a consequence of Theorem 1 asserts that this map is at least $1$-connected in one important special case.
@@ -680,15 +678,14 @@ It it not hard to check that $t-c'$ is the image of the following $3$-chain unde
 Thus we obtain that $[t] = -[c']$, hence $\psi$ is an isomorphism, as claimed.
 \end{proof}
 
-\subsection{Quasifibration property of the map $h_\infty$} \label{sec:quasifib}
-We finish the paper with the proof of another claim about $h_n$ made in the introduction,
- namely the one that $h_\infty\colon X^{\infty}\to \ZZ[X]$ is a quasifibration.
+\subsection{Simplicial Dold---Serre fibrations}\label{sec:quasifib}
+The aim of this appendix is to prove the quasifibration property of the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ mentioned in the introduction.
 
-We show that $h_n$ satisfies some lifting property akin to ''weak covering homotopy property``
-(also called ''delayed homotopy lifting property``) satisfied by ''Dold---Serre fibrations``(cf.~\cite[\S~1.4.4]{KSz14}).
- 
+We start with the definition of a simplicial analogue of ''weak covering homotopy property`` 
+ (also called ''delayed homotopy lifting property``), cf.~\cite[\S~1.4.4]{KSz14}.
+
 \begin{df} \label{df:dhlp}
- Let $C$ be a class of acyclic cofibrations in the category of simplicial sets.
+ Let $C$ be a subclass of the class of acyclic cofibrations in the category of simplicial sets.
  We say that a map of simplicial sets $p\colon E \to B$ satisfies {\it weak homotopy covering property} with respect to $C$ if 
   for every commutative square
 \begin{equation} \xymatrix{ 
@@ -699,16 +696,18 @@ for which $i \in C$ there exists a map $\widetilde{F}$ such that the lower trian
  (i.\,e. a homotopy $H$ such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{pg} B$).
 \end{df}
 
+Let us show that $h_\infty$ satisfies the above lifting property, later we deduce the quasifibration property from it.
 \begin{lemma} \label{lm:dhlp} For a fibrant and connected simplicial set $X$ the map $h_\infty \colon X^\infty \to \ZZ[X]$ 
- satisfies the weak covering homotopy property with respect to all inclusions $i_0\colon X \hookrightarrow X \times \Delta^1$.
+ satisfies the simplicial weak covering homotopy property with respect to all trivial cofibrations of the form $i_0\colon\Delta^k \to \Delta^k\times \Delta^1$.
 \end{lemma}
 \begin{proof}
- Denote by $r$ the retraction corresponding to $i_0$.
+ Denote by $r$ be retraction corresponding to $i_0$.
  We first reduce the problem to the special case when $g$ is the constant map at the basepoint of $X^\infty$ (which we denote by $0$).
  Indeed, let $F, g$ be arbitrary maps as in~\eqref{eq:plp-def}.
- Since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
- If now $\widetilde{F}_0$ is a lifting in the diagram similar to~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom one is $F_0 = F - h_\infty gr$
+ Since $U$ is finite, the image of $g$ is contained in $X^{2N} \subset X^\infty$.
+ If now $\widetilde{F}_0$ is a lifting in the diagram similar to~\eqref{eq:plp-def} in which the top map is replaced by $0$ and the bottom one by $F_0 = F - h_\infty gr$
   then $\widetilde{F} = gr \times \widetilde{F}_0$ is the desired lifting of $F$.
+ %For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define their product $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$. Clearly, then .
   
  Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. take $W$ to be the path space fibration).
  Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration. %Goerss--Jardine Lemma III.2.8
@@ -728,7 +727,78 @@ V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
  Notice that the image of $Gi_0$ is contained in the fiber $h_W^{-1}(0)$.
  It is easy to see that $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$).
  We get that $Gi_0$ is fiberwise homotopic to $0$ hence the composite map $V \xrightarrow{G} W^\infty \to X^\infty$ is the desired lifting of $F$. \end{proof}
+
  
+\begin{lemma} \label{lem:topo-facts} Let $p\colon E \to B$ be a map of pointed simplicial sets.
+Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
+Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
+\begin{lemlist}
+ \item Maps of triples $(\Delta^k, \partial\Delta^k, \Lambda_0^k) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the form
+   \begin{equation} \xymatrix{ 
+    \Delta^k \ar@{^{(}->}_{i_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
+    \Delta^k\times I \ar^{\pi}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
+    \label{eq:plp} \end{equation}
+    Here $J$ denotes $(\partial\Delta^k \times I) \cup (\Delta^k \times \{1\})$. In the sequel we denote such a diagram by $(a, A)$.
+ \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a ''diagram homotopy`` that connects them.
+     By a diagram homotopy we mean a family of maps $(a_t, A_t)$ continously depending on $t\in [0, 1]$ such that $pa_t = A_t \pi i_0$ holds for all $t$.
+ \item \label{item:continue} Let $(a, A)$ be a diagram and $a'$ be any other map 
+     homotopic to $a$ via some homotopy $H$ such that $H(S^{k-1}\times I) \subseteq p^{-1}(b)$.
+     Then there exists a map $A'$ such that $(a', A')$ is a diagram homotopic to $(a, A)$.
+ \item \label{item:weaker} 
+     Assume that in the diagram~\eqref{eq:plp} there exists a diagonal map $\widetilde{A} \colon D^k\times I \to E$ 
+     such that the bottom triangle is commutative and the upper is commutative up to a fiberwise homotopy.
+     Then the element of $G_k$ given by $(a, A)$ is trivial.
+\end{lemlist}
+\end{lemma}
+\begin{comment}
+ Denote by $H$ the fiberwise homotopy between $a$ and $\widetilde{A}i_0$.
+ Consider the following family of diagrams:
+ \[ a_t(x) = \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}l@{}}
+    H(x, 2t)               & 0\leq t\leq \frac{1}{2}\\
+    \widetilde{A}(x, 2t-1) & \frac{1}{2}\leq t \leq 1\end{array}\right.;\  \
+  A_t(x, s) = \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}l@{}}
+    A(x, s)                & 0\leq t\leq \frac{1}{2} \\
+    A(x, s + (2t-1)(1-s)) &  \frac{1}{2}\leq t \leq 1
+  \end{array}\right.\]
+ It is clear that $a_0=a$ and $A_0=A$ while the image of $a_1$ is contained in $p^{-1}(b)$.
+\end{comment}
+
+\begin{lemma} \label{lm:weak-equiv} Let $p\colon E \to B$ be a map of simplicial sets satisfying the weak covering homotopy property with respect to the class $C_{pr}$.
+ Then the geometric realization of $p$ is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a homotopy equivalence. \end{lemma}
+\begin{proof}
+
+ It suffices to show that $\pi_k(F_{|p|}(b), |p|^{-1}(b))$ are all trivial for $k \geq 1$.
+ Consider a diagram $(a, A)$ of the form~\eqref{eq:plp} (with the map $|p|$ in the right hand side). 
+ In view of the previous lemma it suffices to construct a lifting $\widetilde{A}$ satisfying the requirements of~\cref{item:weaker}.
+ 
+ The idea of the proof is to approximate $(a, A)$ with a homotopic pair of geometric realizations of simplicial maps and then invoke the weak covering homotopy property. 
+ The key ingredient in the proof below is the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}.
+ For brevity we denote the subdivision functor $\sd^m\sd_*(-)$ from its statement by $s^m(-)$ and the canonical natural transformation $s^m X \to X$ by $\delta^m$.
+ 
+ We proceed in a number of steps.
+ Denote the restriction of $a$ to $S^{k-1}$ by $a_0$.
+ Notice that the image of $a_0$ is contained in $|p^{-1}(b)|$.
+ Using the approximation theorem we find a simplicial map $a_0'\colon s^m (S^{k-1}) \to p^{-1}(b)$ such that $a|\delta^m| \cong |a'_0|$.     
+ 
+ We can find a map $a'\colon D^k\to |E|$ extending $|a'_0|$ and homotopic to $a$ via some homotopy $H$ satisfying $H(S^k\times I) \subseteq p^{-1}(b)$.
+ 
+ Invoking the approximation theorem once again (with the initial condition specified by $|a'_0|$) we find $q>m$ and $a''\colon s^{q}(D^k) \to E$
+ such that $a'|\delta^{q}| \cong |a''|$ rel $S^k$.
+ Using \cref{item:continue} we extend the homotopy $a |\delta^q| \cong a'|\delta^q| \cong |a''|$ to a homotopy of diagrams $(a|\delta^q|, A|\delta^q|) \cong (|a''|, A')$.
+ 
+ Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D^k \times I) = D^k\times \{0\} \cup J$ specified by 
+ $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon s^{r}(D^k \times I) \to B$ such that
+ $A'|\delta^r|\cong |A''|$ rel $\partial (D^k \times I)$.
+ 
+ Thus, we have obtained the following commutative diagram of simplicial sets for which $(|a''|, |A''|)$ is a diagram homotopic to $(a, A)$.
+   \begin{equation} \nonumber \xymatrix{ 
+    s^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{s^{r}(i)}[d] & E \ar[d]^{p}  \\
+    s^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
+   \end{equation}
+ By functoriality of the subdivision functor the map $s^{r}(i)$ posesses a deformation retract hence there exists the desired lifting $\widetilde{A}$.
+ \end{proof} 
 \printbibliography
 
 \end{document}
