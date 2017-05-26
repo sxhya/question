@@ -116,14 +116,13 @@ Define the ''alternating`` map of simplicial sets $h_n\colon X^{2n} \to \ZZ[X]$ 
  \[h_n(x_1, x_2, \ldots x_{2n}) = \sum\limits_{i=1}^{2n}(-1)^ix_i.\]
 Define the ''stabilization`` map $X^{2n} \hookrightarrow X^{2(n+1)}$ by $x \mapsto (x, x_0, x_0)$ and denote by $X^\infty$ the colimit of $X^n$.
 
-Motivated by the study of homotopy invariants of maps, S.~Podkorytov showed that the limit map 
-$h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$ satisfies the following property akin to the quasifibration property:
-for fibrant and connected $X$ the natural map $h^{-1}_\infty(b) \to F_{h_\infty}(b)$ between the fiber
- and the homotopy fiber of $h_\infty$ over any point $b \in \ZZ[X]_0$ is a weak equivalence.
+Motivated by the study of homotopy invariants of maps, S.~Podkorytov showed for a connected simplicial set $X$ that the limit map 
+$h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$ is a quasifibration.
+This means, in particular, that the natural map $h^{-1}_\infty(b) \to F_{h_\infty}(b)$ between the fiber and the homotopy fiber of $h_\infty$ over any point $b \in \ZZ[X]_0$ is a weak equivalence.
 This assertion essentially follows from~\cite[Lemma~9.1]{Po17}, although some technical work is required to deduce this. %, see~\cref{sec:quasifib} below.
 
 One might ask whether the fibers of $h_n$ satisfy some weaker property.
-For example, one might expect that the map $h_n^{-1}(0) \to F_{h_n}(0)$ is $c(n)$-connected for some $c(n)$ which depends only on $n$. %and tends to infinity as $n\to \infty$.
+For example, one might expect that the map $h_n^{-1}(0) \to F_{h_n}(0)$ is $c(n)$-connected for some $c(n)$ which depends only on $n$ and tends to infinity as $n\to \infty$.
   
 The following result which is a consequence of Theorem 1 asserts that this map is at least $1$-connected in one important special case.
 \begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$
@@ -133,8 +132,8 @@ Apart from~\cref{thm:summary} the proof of \cref{thm:main} involves some explici
  using Quillen Theorem A and van Kampen theorem.
 
 \subsection{Acknowledgements}
-I wish to thank Semyon Podkorytov for posing the problem and also for his kind permission to include some of his unpublished results into the paper.
-I am also grateful to S.~O.~Ivanov, V.~Isaev and N.~A.~Vavilov for their numerous helpful comments and interest in this work.
+I wish to thank S.~S. Podkorytov for posing the problem and numerous helpful discussions.
+I am also grateful to S.~O.~Ivanov, V.~Isaev and N.~A.~Vavilov for their valuable comments and interest in this work.
 This work received financial support from the Russian Science Foundation grant 14-21-00035.
 
 \section{Definition of $S_n(G)$ and its basic properties} \label{sec:QnG-def}
