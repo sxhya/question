@@ -56,6 +56,8 @@
 \newcommand{\pushoutcorner}[1][dr]{\save*!/#1+1.2pc/#1:(1,-1)@^{|-}\restore}
 \newcommand{\pullbackcorner}[1][dr]{\save*!/#1-1.2pc/#1:(-1,1)@^{|-}\restore}
 
+\newcommand\blfootnote[1]{\begingroup \renewcommand\thefootnote{}\footnote{#1}\addtocounter{footnote}{-1}\endgroup}
+
 \title[Parametrized symmetric groups]{Parametrized symmetric groups and \\ the second homology of a group}
 \keywords {Extensions of type $\mathfrak{H}_n(G)$, amalgamated products, van Kampen theorem,
  {\em Mathematical Subject Classification (2010):} 20F05, 55Q05, 20B30, 20E06, 20J06, 20F55}
@@ -65,6 +67,8 @@
 \date {\today}
 
 \begin{document}
+
+\blfootnote{During the final stage of this work the author was supported by the Russian Science Foundation grant 19-71-30002.}
 
 \begin{abstract}
 We introduce the notion of a symmetric group parametrized by elements of a group.
@@ -137,7 +141,6 @@ Apart from~\cref{thm:summary} the proof of \cref{thm:main} involves some explici
 \subsection{Acknowledgements}
 I wish to thank S.~S. Podkorytov for posing the problem and numerous helpful discussions.
 I am also grateful to S.~O.~Ivanov, V.~Isaev and N.~A.~Vavilov for their valuable comments and interest in this work.
-During the final stage of this work the author was supported by the Russian Science Foundation grant 19-71-30002.
 
 \section{Definition of $S_n(G)$ and its basic properties} \label{sec:QnG-def}
 The aim of this section is to prove the first part of~\cref{thm:summary}, namely the fact that $S_n(G)$ is a crossed module over $G \wr S_n$.
