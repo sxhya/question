@@ -112,7 +112,7 @@ Define the ''stabilization`` map $X^{2n} \hookrightarrow X^{2(n+1)}$ by $x \maps
 Motivated by the study of homotopy invariants of maps, S.~Podkorytov showed for a connected simplicial set $X$ that the limit map 
 $h_\infty = \mathrm{colim}_n(h_n) \colon X^\infty \to \ZZ[X]$ is a quasifibration.
 This means, in particular, that the natural map $h^{-1}_\infty(b) \to F_{h_\infty}(b)$ between the fiber and the homotopy fiber of $h_\infty$ over any point $b \in \ZZ[X]_0$ is a weak equivalence.
-This assertion essentially follows from~\cite[Lemma~9.1]{Po17}, although some technical work is required to deduce this. %, see~\cref{sec:quasifib} below.
+This assertion essentially follows from~\cite[Lemma~9.1]{Po17}, although some technical work is required to deduce this.
 
 One might ask whether the fibers of $h_n$ satisfy some weaker property.
 For example, one might expect that the map $h_n^{-1}(0) \to F_{h_n}(0)$ is $c(n)$-connected for some $c(n)$ which depends only on $n$ and tends to infinity as $n\to \infty$.
@@ -145,7 +145,7 @@ We continue to denote by $s_g$ the image of the element $s_g\in F$ under the can
 
 \begin{rem}
 From the definition of the semidirect product we immediately obtain that
-\begin{equation} \nonumber s^g = (1_{G^n}, s)^{(g, 1)} = (g^{-1}, s) (g, 1) = (g^{-1} g^{(s^{-1})}, s), \end{equation}
+\[ s^g = (1_{G^n}, s)^{(g, 1)} = (g^{-1}, s) (g, 1) = (g^{-1} g^{(s^{-1})}, s), \]
 therefore the equality $s^g = s^h$ holds in $G \wr S_n$ iff
 $g^{-1} g^{(s^{-1})} = h^{-1} h^{(s^{-1})}$, or what is the same, iff $s$ fixes $hg^{-1}$.
 Thus, the map $\mu \colon S_n(G) \to G \wr S_n$ given by $\mu(s_g) = s^g = (g^{-1}g^{(s^{-1})}, s)$ is well-defined.
@@ -185,21 +185,21 @@ The key step in the proof is the following lemma.
 \begin{proof} 
 First of all, we immediately check that~\eqref{eq:Peiffer-simple} holds in the special case when $t$ fixes $g\in G^n$.
 Indeed, by~\eqref{eq:main_rel} one has $t_1 = t_{g}$ therefore
-\begin{equation} \nonumber t^{-1}_1 s_{g} t_1 = t^{-1}_{g} s_{g} t_{g} = (s^t)_{g} = (s^t)_{g^t}.  \end{equation}
+\[ t^{-1}_1 s_{g} t_1 = t^{-1}_{g} s_{g} t_{g} = (s^t)_{g} = (s^t)_{g^t}.\]
 
 Without loss of generality we may assume that $l\neq i$ and $l\neq j$.
 Denote by $g'$ the vector which differs from $g$ only at $l$-th position, for which we set $g'_l = g_k$. 
 Since the only nontrivial component of $g'g^{-1}$ (resp. $g'g^{-t}$) is located at $l$-th (resp. $k$-th) position,
 it is fixed by $s$ (resp. $s^t)$, therefore from~\eqref{eq:main_rel} we conclude that $s_g = s_{g'}$ (resp. $(s^t)_{g'} = (s^t)_{g^t}$).
 Finally, since $g'$ is fixed by $t$, we get that
-\begin{equation} \nonumber t^{-1}_1 s_g t_1 = t^{-1}_1 s_{g'} t_1 = (s^t)_{g'^t} = s^t_{g'} = (s^t)_{g^t}. \text{\qedhere}\end{equation} \end{proof}
+\[ t^{-1}_1 s_g t_1 = t^{-1}_1 s_{g'} t_1 = (s^t)_{g'^t} = s^t_{g'} = (s^t)_{g^t}. \text{\qedhere}\] \end{proof}
 
 \begin{proof}[Proof of~\cref{thm:cms}]
 Let us show that~\eqref{eq:Peiffer-simple} holds for arbitrary transpositions $s, t \in S_n$.
 It suffices to consider the case $s=t=(ij)$. 
 After choosing some $k\neq i,j$ and presenting $(ij)$ as $(kj)(ik)(kj)$ we use \cref{lem:transp-deff}:
-\begin{equation} \nonumber (ij)^{-1}_1 (ij)_g (ij)_1 = (ij)^{-1}_1 (kj)_g (ik)_g (kj)_g (ij)_1 =
-(ki)_{g^{(ij)}} (jk)_{g^{(ij)}} (ki)_{g^{(ij)}} = (ij)_{g^{(ij)}}. \end{equation}
+\[ (ij)^{-1}_1 (ij)_g (ij)_1 = (ij)^{-1}_1 (kj)_g (ik)_g (kj)_g (ij)_1 =
+(ki)_{g^{(ij)}} (jk)_{g^{(ij)}} (ki)_{g^{(ij)}} = (ij)_{g^{(ij)}}. \]
 The proposition now follows by induction on the length of permutations $s$, $t$.
 \end{proof}
 
@@ -249,7 +249,7 @@ It is obvious that $\psi_g$ preserves the defining relations \eqref{Sym1}--\eqre
 It remains to show that the equality $\psi_g(s) = \psi_h(s)$ holds whenever $g, h\in G^n$ and $s\in S_n$ are such that $s_g=s_h$.
 
 Indeed, if $hg^{-1}$ is fixed by $s$ then for every $1\leq i\leq n$ we have that $(hg^{-1})_i = (hg^{-1})_{s(i)}$, or equivalently that
-$h_i^{-1} h_{s(i)} = g_i^{-1} g_{s(i)}$. %This already shows that the identity $\psi_g(s) = \psi_h(s)$ holds in the special case when $s$ is a transposition. 
+$h_i^{-1} h_{s(i)} = g_i^{-1} g_{s(i)}$.
 For example, if $s$ is a cycle of length $p$, i.\,e. $s=(i_1, i_2, \ldots i_p)$ with $i_{k+1} = s(i_k)$ we get that
 \begin{multline} \nonumber
  \psi_g(s) = \psi_g\left({\prod\limits_{k=1}^{p-1}(i_k, i_{k+1})}\right) = 
@@ -289,7 +289,7 @@ Thus, the map $S_n^C(G) \to S_n(1, G)$ defined by $s_i(g)\mapsto (i,i+1)_g$ is a
 On the other hand, in the case $t=n-1$ the obvious embedding of generators induces a map $S_n(n-1,G) \to S_n(G)$ 
  (we consider the latter group in the presentation of~\cref{prop:Q-pres}).
 We claim that this map is an isomorphism. Indeed, consider the map $\theta\colon S_n(G) \to S_n(n-1, G)$ in the opposite direction given by the following formula:
-\[\theta((ij)_a) = \left\{\def\arraystretch{1.2}%
+\[\theta((ij)_a) = \left\{\def\arraystretch{1.2}
   \begin{array}{@{}c@{\quad}l@{}}
     (ij)_a & \text{if $i < j$,}\\
     (ji)_{a^{-1}} & \text{if $j < i$.}\\
@@ -308,7 +308,7 @@ For each $1 \leq t \leq n-2$ the map $f_t \colon S_n(t, G)\to S_n(t+1, G)$ induc
 \end{lemma}
 \begin{proof}
 Let $(ij)_a$ be a generator of $S_n(t+1, G)$, define the map $g_t$ inverse to $f_t$ as follows:
-\[g_t((ij)_a) = \left\{\def\arraystretch{1.2}%
+\[g_t((ij)_a) = \left\{\def\arraystretch{1.2}
   \begin{array}{@{}c@{\quad}l@{}}
     (ij)_a & \text{if $j-i\leq t$,}\\
     (ik)_{a}^{(kj)_1} & \text{if $j-i=t+1$ for some $i<k<j$.}\\
@@ -417,7 +417,6 @@ There is a surjective group homomorphism $H_n(G) \twoheadrightarrow D_n(G)$ send
 By definition, {\it an extension of type $\mathfrak{H}_n(G)$} is an extension $H$ of $D_n(G)$ which is also a quotient of $H_n(G)$, i.\,e. 
  an extension $H$ which fits into the following diagram:
 \[ \xymatrix{ H_n(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ H \ar@{->>}[r] & D_n(G).} \]
-%Any $\mathfrak{H}_n(G)$-extension is central, see~\cite[Proposition~2.3]{Reh78}.
 
 For $1\leq k\leq n$ denote by $\iota_k$ the map sending an element $g$ of $[G, G]$ to $g[k]$ (recall that $g[k]$ is the vector of $G^n$
  whose only nontrivial component equals $g$ and is located in the $k$-th position).
@@ -665,7 +664,7 @@ Thus, we get that $\psi$ maps $x \wedge y$ to $-t$, where $t$ is given by~\eqref
 
 On the other hand, the generator $x \wedge y$ of $\HH_2(G, \ZZ)$ corresponds to the 2-cycle $c = (x, y) - (y, x)$ (cf.~\cite[(14), p.~582]{Mi52}) and the corresponding
 element of $\pi_2(\ZZ[BG])$ is simply the normalized 2-cycle of $c$:
-\begin{equation} \nonumber c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, e) +(y, e) + (e, x) - (e, y). \end{equation}
+\[ c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, e) +(y, e) + (e, x) - (e, y). \]
 It it not hard to check that $t-c'$ is the image of the following $3$-chain under the differential $d_0-d_1+d_2-d_3$:
 \[(xy, x^{-1}, y^{-1}) - (y, x, x^{-1}) + s_1 s_1(x^{-1} + xy - x - y) + s_0 s_0(x^{-1} - x - x^{-1}y^{-1}).\]
 We obtain that the classes of $t$ and $c'$ in $\HH_2(G, \ZZ)$ are the same, therefore $\psi$ is an isomorphism, as claimed.
