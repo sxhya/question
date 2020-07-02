@@ -101,8 +101,8 @@ Our first main result is the following theorem, which provides its concrete desc
 \begin{thm} \label{thm:summary} For $n \geq 3$ there is a map $\mu_n\colon S_n(G) \to G \wr S_n$ which is a crossed module.
 The cokernel and the kernel of $\mu_n$ are isomorphic to $\HH_1(G, \ZZ)$ and $\HH_2(G, \ZZ)$ respectively.
 \end{thm}
-In fact, we compute $S_n(G)$ in terms of so-called extensions of type $\mathfrak{H_n}(G)$, see~\cref{cor:main}.
-These groups were introduced by U.~Rehmann in~\cite{Reh78} in the context of noncommutative Matsumoto theorem.
+In fact, we compute $S_n(G)$ in terms of the so-called ``extensions of type $\mathfrak{H_n}(G)$'', see~\cref{cor:main}.
+The extensions of type $\mathfrak{H_n}(G)$ were introduced by U.~Rehmann in~\cite{Reh78} in the context of the noncommutative Matsumoto theorem.
 They are directly related with nonabelian tensor products.
 For example, the nonabelian antisymmetric square $G \mathbin{\widetilde{\otimes}} G$ is a subgroup of the group $H_n(G)$, the ''universal`` extension of type $\mathfrak{H}_n(G)$
  (we refer the reader to Section~\ref{sec:Hnextensions} for more details).
@@ -135,8 +135,8 @@ The following result which is a consequence of Theorem 1 asserts that this map a
 \begin{thm} \label{thm:main} If $X=BG$ is the classifying space of a group $G$ then for $n\geq 3$
  the natural map $h_n^{-1}(0) \to F_{h_n}(0)$ induces an isomorphism of fundamental groups
  $\pi_1(h^{-1}_n(0))\cong \pi_1(F_{h_n}(0))$. \end{thm}
-Apart from~\cref{thm:summary} the proof of \cref{thm:main} involves some explicit computations with simplicial fundamental groups 
- using Quillen Theorem A and van Kampen theorem.
+In addition to~\cref{thm:summary} the proof of \cref{thm:main} involves some explicit computations with simplicial fundamental groups 
+ using Quillen's Theorem A and the van Kampen theorem.
 
 \subsection{Acknowledgements}
 I wish to thank S.~S. Podkorytov for posing the problem and numerous helpful discussions.
@@ -147,7 +147,7 @@ The aim of this section is to prove the first part of~\cref{thm:summary}, namely
 It will be useful for us to start with another definition of the group $S_n(G)$ given in terms of amalgams of symmetric groups.
 In the end of the section we show that this alternative definition coincides with the one given in the introduction.
 
-Let $G$ be a group. Recall that the {\it wreath product} is, by definition,
+Let $G$ be a group. Recall that the {\it wreath product} $G \wr S_n$ is, by definition,
 the semidirect product $G^n \rtimes S_n$, in which $S_n$ acts on $G^n$ on the right by permuting its factors.
 
 Consider the family $\{{S_n}^{(g)}\}_{g\in G^n}$ of isomorphic copies of $S_n$ indexed by elements of $G^n$ and let $F$ be the free product of groups from this family.
@@ -155,19 +155,18 @@ For $s\in S_n$ and $g\in G^n$ we denote by
 $s_{g}$ the image of $s$ in $F$ under the canonical map $S_n^{(g)} \to F$.
 Define the group $S_n(G)$ as the quotient of $F$ modulo the following single family of relations:
 \begin{equation} \label{eq:main_rel} s_{g} = s_{h}, \text{ if $s^g = s^h$ holds in $G \wr S_n$.} \end{equation}
-We still denote by $s_g$ the image of the element $s_g\in F$ under the canonical map $F\to S_n(G)$.
+We continue to denote by $s_g$ the image of the element $s_g\in F$ under the canonical map $F\to S_n(G)$.
 
 \begin{rem}
-Expanding the definition of the semidirect product we get that
-\begin{equation} \nonumber s^g = (1_{G^n}, s)^{(g, 1)} = (g^{-1}, s) (g, 1) = (g^{-1} g^{(s^{-1})}, s). \end{equation}
+From the definition of the semidirect product we immediately obtain that
+\begin{equation} \nonumber s^g = (1_{G^n}, s)^{(g, 1)} = (g^{-1}, s) (g, 1) = (g^{-1} g^{(s^{-1})}, s), \end{equation}
 therefore the equality $s^g = s^h$ holds in $G \wr S_n$ iff
 $g^{-1} g^{(s^{-1})} = h^{-1} h^{(s^{-1})}$, or what is the same, iff $s$ fixes $hg^{-1}$.
-
-The last statement immediately implies that the map $\mu \colon S_n(G) \to G \wr S_n$ given by $\mu(s_g) = s^g = (g^{-1}g^{(s^{-1})}, s)$ is well-defined.
+Thus, the map $\mu \colon S_n(G) \to G \wr S_n$ given by $\mu(s_g) = s^g = (g^{-1}g^{(s^{-1})}, s)$ is well-defined.
 \end{rem}
 
-Observe from the definition of $S_n(G)$ that there is a split exact sequence.
-\begin{equation} \label{eq:ex-seq} \xymatrix{1 \ar[r] & \mathrm{Ker}(\pi) \ar[r] &  S_n(G) \ar@<0.5ex>[r]^{\pi} & S_n \ar[r] \ar@{-->}@<0.5ex>[l]^{\iota(1)} & 1,} \end{equation}
+Observe from the definition of $S_n(G)$ that there is a split exact sequence
+\begin{equation} \label{eq:ex-seq} \xymatrix{1 \ar[r] & \mathrm{Ker}(\pi) \ar[r] &  S_n(G) \ar@<0.5ex>[r]^{\pi} & S_n \ar[r] \ar@{-->}@<0.5ex>[l]^{\iota(1)} & 1.} \end{equation}
 Here the map $\pi = \pi_{S_n} \circ \mu$ removes subscript $g$ from each $s_g$ and the section $\iota(1)$ maps $s$ to $s_1$, where $1$ is the identity element of $G^n$.
 Clearly, $S_n(G)$ decomposes as $HS_n(G) \rtimes S_n$, where $HS_n(G) = \mathrm{Ker}(\pi)$.
 
@@ -181,32 +180,31 @@ In our situation, we let $G \wr S_n$ act on $S_n(G)$ by
 \begin{equation} \label{eq:action} (s_g)^{(h, t)} = {s^t}_{(gh)^t}, \text{ for $s, t \in S_n$ and $g, h \in G^n$.} \end{equation}
 The goal of this subsection is to prove the following.
 \begin{prop} \label{thm:cms} For $n \geq 3$ the map $\mu \colon S_n(G) \to G \wr S_n $ is a crossed module. \end{prop}
-From the fact that $\mu$ is a crossed module one can deduce that $\Ker(\mu)$ is a central subgroup of $S_n(G)$ and $\mathrm{Im}(\mu)$ is a normal subgroup of $G \wr S_n$.
+From the fact that $\mu$ is a crossed module one can deduce that $\Ker(\mu)$ is a central subgroup of $S_n(G)$ and that $\mathrm{Im}(\mu)$ is a normal subgroup of $G \wr S_n$.
 It is not hard to show that the group $S_2(G)$ is isomorphic to a free product of copies of $S_2$ indexed by elements of $G$ 
  (the center of this group is trivial if $G\neq 1$).
-Therefore, the requirement $n\geq 3$ in the statement of~\cref{thm:cms} is essential.
+Thus, the requirement $n\geq 3$ in the statement of~\cref{thm:cms} is essential.
 
-Verification of the fact that formula~\eqref{eq:action} gives a well-defined action of $G\wr S_n$ on $S_n(G)$ 
- that satisfies~\eqref{eq:precrossed} is lengthy but straightforward. Let us show that~\eqref{eq:Peiffer} holds. 
-It suffices to verify Peiffer identities only for the generators of $S_n(G)$, for which it takes the form:
+Verification of the fact that formula~\eqref{eq:action} gives a well-defined action of $G\wr S_n$ on $S_n(G)$ and that this action satisfies~\eqref{eq:precrossed} is lengthy but straightforward. Let us show that~\eqref{eq:Peiffer} holds. 
+It suffices to verify Peiffer identities only for the generators of $S_n(G)$, for which it takes the form
 \begin{equation} \label{eq:Peiffer-gen} t^{-1}_h s_g t_h = {s^t}_{(gh^{-1})^t\cdot h} \text{ for all $s, t \in S_n$, $g, h\in G^n$.}\end{equation}
-If we act on both sides of the above formula by $(h^{-1}, 1) \in G \wr S_n$ we obtain the equality
+If we act by $(h^{-1}, 1) \in G \wr S_n$ on both sides of the above equality we obtain the equality
 $t^{-1}_1 s_{gh^{-1}} t_1 = {s^t}_{(gh^{-1})^t}$.
-Thus, to prove~\eqref{eq:Peiffer-gen} it suffices to show the following simpler relation:
+Thus, to prove~\eqref{eq:Peiffer-gen} it suffices to check the following simpler relation:
 \begin{equation} \label{eq:Peiffer-simple} t^{-1}_1 s_g t_1 = {s^t}_{g^t} \text{ for all $s, t \in S_n$, $g\in G^n$.}\end{equation}
 
 The key step in the proof is the following lemma.
 \begin{lemma} \label{lem:transp-deff} 
  The relation~\eqref{eq:Peiffer-simple} holds in the special case when $s=(ij)$ and $t=(kl)$ are two nonequal transpositions. \end{lemma}
 \begin{proof} 
-First of all, we immediately check that~\eqref{eq:Peiffer-simple} holds in the special case when $t$ fixes $g'\in G^n$.
-Indeed, by~\eqref{eq:main_rel} we have $t_1 = t_{g'}$, hence 
-\begin{equation} \nonumber t^{-1}_1 s_{g'} t_1 = t^{-1}_{g'} s_{g'} t_{g'} = (s^t)_{g'} = (s^t)_{g'^t}.  \end{equation}
+First of all, we immediately check that~\eqref{eq:Peiffer-simple} holds in the special case when $t$ fixes $g\in G^n$.
+Indeed, by~\eqref{eq:main_rel} one has $t_1 = t_{g}$ therefore
+\begin{equation} \nonumber t^{-1}_1 s_{g} t_1 = t^{-1}_{g} s_{g} t_{g} = (s^t)_{g} = (s^t)_{g^t}.  \end{equation}
 
 Without loss of generality we may assume that $l\neq i$ and $l\neq j$.
 Denote by $g'$ the vector which differs from $g$ only at $l$-th position, for which we set $g'_l = g_k$. 
 Since the only nontrivial component of $g'g^{-1}$ (resp. $g'g^{-t}$) is located at $l$-th (resp. $k$-th) position,
-it is fixed by $s$ (resp. $s^t)$, hence from~\eqref{eq:main_rel} we conclude that $s_g = s_{g'}$ (resp. $(s^t)_{g'} = (s^t)_{g^t}$).
+it is fixed by $s$ (resp. $s^t)$, therefore from~\eqref{eq:main_rel} we conclude that $s_g = s_{g'}$ (resp. $(s^t)_{g'} = (s^t)_{g^t}$).
 Finally, since $g'$ is fixed by $t$, we get that
 \begin{equation} \nonumber t^{-1}_1 s_g t_1 = t^{-1}_1 s_{g'} t_1 = (s^t)_{g'^t} = s^t_{g'} = (s^t)_{g^t}. \text{\qedhere}\end{equation} \end{proof}
 
@@ -226,8 +224,7 @@ From this presentation we later deduce both the Coxeter presentation for $S_n(G)
 
 We start with the following simple lemma which is, in essence, a variant of the standard presentation of the symmetric group in terms of reflections
  with some redundant generators and relations added (cf.~\cite[Theorem~2.4.3]{Ca89}).
-\begin{lemma} \label{lm:Snpres} For $n\geq 3$ The symmetric group $S_n$ admits presentation with 
-$\{(ij) \mid i\neq j,\ 1\leq i,j\leq n\}$ as the set of generators and the following list of relations
+\begin{lemma} \label{lm:Snpres} For $n\geq 3$ The symmetric group $S_n$ admits presentation with the set of generators $\{(ij) \mid i\neq j,\ 1\leq i,j\leq n\}$ and the following list of relations
  (in every formula distinct letters denote distinct indices):
 \begin{align}
 (ij)^2 = &\, 1,         \label{Sym1} \\
@@ -241,9 +238,9 @@ To simplify notation, up to the end of this section we adhere to the convention 
 \end{rem}
 
 Now we are ready to formulate the main result of this subsection.
-\begin{prop} \label{prop:Q-pres} For $n\geq 3$ and arbitrary group $G$ the group $S_n(G)$ admits presentation with 
+\begin{prop} \label{prop:Q-pres} For $n\geq 3$ and arbitrary group $G$ the group $S_n(G)$ admits presentation with the set of generators
 $\{(ij)_a \mid i\neq j, 1\leq i,j,\leq n, a\in G\}$ 
-as the set of generators and the following list of relations.
+and the following list of relations.
 \begin{align}
 (ij)_a^2 = &\, 1,                \label{Q1} \tag{SG1} \\
 (ij)_a^{(jk)_b} = &\, (ik)_{ab}, \label{Q2} \tag{SG2} \\
@@ -259,13 +256,13 @@ For $1\leq i\leq n$ and $x\in G$ denote by $x[i]$ the element of $G^n$
 It is not hard to deduce from the definition of $S_n(G)$ and~\cref{lem:transp-deff} 
  that the formula $(ij)_a \mapsto (ij)_{a[j]}$ gives a well-defined map $\varphi\colon S'\to S_n(G)$.
 
-Now we are going to construct the map $\psi\colon S_n(G)\to S'$ in the opposite direction. 
+Now we are going to construct a map $\psi\colon S_n(G)\to S'$ in the opposite direction. 
 Using the presentation of $S_n$ given by~\cref{lm:Snpres}  we define for a fixed $g\in G^n$ the map 
  $\psi_g\colon S_n \to S'$ by $\psi_g((ij)) = (ij)_{g_i^{-1} g_j}.$
 It is obvious that $\psi_g$ preserves the defining relations \eqref{Sym1}--\eqref{Sym0} of $S_n$. 
 It remains to show that the equality $\psi_g(s) = \psi_h(s)$ holds whenever $g, h\in G^n$ and $s\in S_n$ are such that $s_g=s_h$.
 
-Indeed, if $hg^{-1}$ is fixed by $s$ then for every $1\leq i\leq n$ we have $(hg^{-1})_i = (hg^{-1})_{s(i)}$, or equivalently
+Indeed, if $hg^{-1}$ is fixed by $s$ then for every $1\leq i\leq n$ we have that $(hg^{-1})_i = (hg^{-1})_{s(i)}$, or equivalently that
 $h_i^{-1} h_{s(i)} = g_i^{-1} g_{s(i)}$. %This already shows that the identity $\psi_g(s) = \psi_h(s)$ holds in the special case when $s$ is a transposition. 
 For example, if $s$ is a cycle of length $p$, i.\,e. $s=(i_1, i_2, \ldots i_p)$ with $i_{k+1} = s(i_k)$ we get that
 \begin{multline} \nonumber
@@ -277,7 +274,7 @@ The proof in the general case is similar.
 Verification of the fact that $\psi$ and $\varphi$ are mutually inverse is also immediate.
 \end{proof}
 
-\subsection{Coxeter-like presentation for $S_n(G)$.}
+\subsection{A Coxeter-like presentation of $S_n(G)$.}
 The aim of this subsection is to show the following.
 \begin{prop}\label{prop:Cox-Amalgam}
 The group $S_n(G)$ defined in~\cref{prop:Q-pres} coincides with the group defined in the introduction by means of Coxeter-like presentation
@@ -290,14 +287,14 @@ and then show that all the maps between these groups are isomorphisms.
 
 \begin{df}
 For $1\leq t\leq n-1$ consider the group $S_n(t, G)$ defined by the set of generators 
-$\{(ij)_a \mid 1\leq i<j \leq n,\ j-i\leq t\}$ subject to the following relations:
+$\{(ij)_a \mid 1\leq i<j \leq n,\ j-i\leq t\}$ and the following relations:
 \begin{align}
 (ij)_a^2                      = &\, 1,                   &               \label{CoxMix1} \\
 (ij)_a^{(jk)_b}               = &\, (jk)_{b'}^{(ij)_{a'}}, & \text{provided } ab = a'b',      \label{CoxMix2} \\
 (ij)_a (kl)_b                 = &\, (kl)_b (ij)_a,       &               \label{CoxMix3} \\
 (ij)_a ^ {(jk)_b}             = &\, (ik)_{ab}.           &               \label{CoxMix4}
 \end{align}
-In the above relations indices $i,j,k,l$ satisfy the inequalities ensuring that all the generators appearing in the formulae are well-defined.
+In the above formulae letters $i,j,k,l$ denote distinct indices satisfying the inequalities ensuring that the generators appearing in the above formulae belong to the set of generators of $S_n(t, G)$.
 \end{df}
 
 In the case $t=1$ the relation~\eqref{CoxMix4} becomes vacuous and the remaining relations have the same form as \eqref{Cox1}---\eqref{Cox3}.
@@ -305,7 +302,7 @@ Thus, the map $S_n^C(G) \to S_n(1, G)$ defined by $s_i(g)\mapsto (i,i+1)_g$ is a
 
 On the other hand, in the case $t=n-1$ the obvious embedding of generators induces a map $S_n(n-1,G) \to S_n(G)$ 
  (we consider the latter group in the presentation of~\cref{prop:Q-pres}).
-We claim that this map is an isomorphism. Indeed, define the map $\theta\colon S_n(G) \to S_n(n-1, G)$ in the opposite direction by the following formula:
+We claim that this map is an isomorphism. Indeed, consider the map $\theta\colon S_n(G) \to S_n(n-1, G)$ in the opposite direction given by the following formula:
 \[\theta((ij)_a) = \left\{\def\arraystretch{1.2}%
   \begin{array}{@{}c@{\quad}l@{}}
     (ij)_a & \text{if $i < j$,}\\
@@ -332,13 +329,13 @@ Let $(ij)_a$ be a generator of $S_n(t+1, G)$, define the map $g_t$ inverse to $f
   \end{array}\right.\]
 The value of $g_t((ij)_a)$ does not depend on the choice of $k$.
 Indeed, let $k'> k$ be another index lying between $i$ and $j$. 
-By~\eqref{CoxMix3} we have the equality $(ik)_a^{(k'j)_1} = (ik)_a$ hence
+By~\eqref{CoxMix3} we have the equality $(ik)_a^{(k'j)_1} = (ik)_a$ therefore
 \[(ik)_a ^{(kj)_1} = (ik)_a ^{\left((kk')_1 ^{(k'j)_1}\right)} = (ik)_a^{(kk')_{1} (k'j)_{1}} = (ik')_a ^{(k'j)_1}.\]
 
 Let us show that $g_t$ is well defined (i.\,e. preserves the defining relations of $S_n(t+1, G)$).
 Below we outline the proof of this fact for relation~\eqref{CoxMix2} and leave the verification for other relations as an exercise.
 
-First consider the case $k-j\leq t$ and $j-i=t+1$. Choose some index $j'$ between $i$ and $j$.
+First, consider the case $k-j\leq t$ and $j-i=t+1$. Choose some index $j'$ between $i$ and $j$.
 Using the defining relations of $S_n(t,G)$ we get the following chain of equalities:
 \begin{multline}\label{CoxMix2New} g_t((ij)_a^{(jk)_b}) = (ij')_{a} ^ {(j'j)_1 (jk)_b} = (ij')_a ^{ (jk)_b (j'j)_1 (jk)_b } = 
 (ij')_a ^{(jk)_1 (j'j)_b (jk)_1} = \\ = (ij')_a ^{(j'j)_b (jk)_1} = (j'j)_{b'}^ {(ij')_{a'} (jk)_1} = 
@@ -355,14 +352,14 @@ In the central equality we use either~\eqref{CoxMix2} or~\eqref{CoxMix2New} depe
 The aim of this section is to express the group $S_n(G)$ in terms of Rehmann's extensions of
  type $\mathfrak{H}_n$ and thus finish the proof of~\cref{thm:summary}. 
 
-\subsection{Presentation for the subgroup $HS_n(G)$}
-Our first goal is to obtain an explicit presentation of the subgroup $HS_n(G)$ of $S_n(G)$.
+\subsection{Presentation of the subgroup $HS_n(G)$}
+Our first goal is to obtain an explicit presentation of the subgroup $HS_n(G) = \Ker(S_n(G) \to S_n)$.
 
 For every $i\neq j$ and $a\in G$ we define the element $h_{ij}(a) \in HS_n(G)$ as follows:
 \begin{equation} \label{eq:h-def} 
 h_{ij}(a) = (ij)_{a} \cdot (ij)_1. 
 \end{equation}
-It is not hard to show that $h_{ij}(a)$ form a generating set for $HS_n(G)$.
+It is not hard to show that the elements $h_{ij}(a)$ form a generating set for $HS_n(G)$.
 In fact, there is an explicit formula how an element of $HS_n(G)$ originally expressed through $(ij)_{a}$'s can be rewritten in terms of $h_{ij}(a)$.
 Indeed, if $h$ lies in $HS_n(G)$ and is written as $\prod_{k=1}^N(i_k j_k)_{a_k}$ for some $i_k\neq j_k$ and $a_k\in G$ then it can be rewritten as follows:
 \begin{equation} \label{eq:rp} \tag{$\tau$}
@@ -385,20 +382,20 @@ Using these two properties and repeating the arguments used in the proof of~\cit
 one can simplify the generic presentation of $HS_n(G)$ from~\cite[Theorem~2.6]{MKS76} and obtain the following.
 \begin{lemma} \label{lm:h-gen}
 
- For $n\geq 3$ the group $HS_n(G)$ admits presentation on the generators $h_{ij}(a)$ with the following two families of defining relations:
+ For $n\geq 3$ the group $HS_n(G)$ admits presentation by means of the generators $h_{ij}(a)$ and the following two families of defining relations:
  \begin{align}
   h_{ij}(a) = &\, \tau\left((ij)_a \cdot (ij)_1\right); \label{eq:tau1} \\
   \tau(KRK^{-1}) = &\, 1, \label{eq:tau2} 
  \end{align}  
- where $R$ varies over relations of~\cref{prop:Q-pres} and $K$ is any word in $(ij)_1$, $i\neq j$.
+ where $R$ varies over the relations~\eqref{Q1}--\eqref{Q4} and $K$ is any word in $(ij)_1$, $i\neq j$.
 \end{lemma}
 
 From~\eqref{eq:tau1} one immediately obtains the equality $h_{ij}(1)=1$, $i\neq j$.
 Thus, if we denote by $\sigma$ the permutation corresponding to a word $K$ and let $S_n$ act on $h_{ij}(a)$'s in the natural way
  we get that the word $\tau(KRK^{-1})$ is equivalent to ${}^{\sigma}\tau(R)$ (modulo relations $h_{ij}(1)=1$). 
 
-Since the image of every relator from~\cref{prop:Q-pres} under the action of $S_n$
- is still a relator of the same form, only relations of the form $\tau(R)=1$ are, in fact, 
+Since the image of every relation from~\cref{prop:Q-pres} under the action of $S_n$
+ is still a relation of the same form, only relations of the form $\tau(R)=1$ are, in fact, 
  needed for the presentation of $HS_n(G)$.
 Writing down what $\tau(R)$ is for each of \eqref{Q1}--\eqref{Q4} we get the following.
  
@@ -422,7 +419,7 @@ The subgroup $D_n(G)$ is generated by elements $d_{ij}(g)$, where $d_{ij}(g)$ de
  $i$-th component equals $g$, $j$-th component equals $g^{-1}$ and all other components are trivial.
 
 The following definition is copied from \cite[\S~2]{Reh78}.
-Consider the group $H_n(G)$ defined by generators $h_{ij}(u)$, $u\in G$, $i\neq j$ subject to the following relations:
+Consider the group $H_n(G)$ defined by generators $h_{ij}(u)$, $u\in G$, $i\neq j$ and the following list of relations:
 \begin{align}
 h_{ij}(u) h_{ji}(u)                = &\, 1,                        &                     \tag{H1} \label{RH1} \\
 h_{ij}(u) h_{ki}(u) h_{jk}(u)      = &\, 1,                        &                     \tag{H2} \label{RH2} \\
@@ -432,13 +429,13 @@ h_{ij}(u) h_{kj}(v) h_{ij}(u)^{-1} = &\, h_{kj}(vu) h_{kj}(u)^{-1},& \text{for }
 There is a surjective group homomorphism $H_n(G) \twoheadrightarrow D_n(G)$ sending $h_{ij}(u)$ to $d_{ij}(u)$.
 
 By definition, {\it an extension of type $\mathfrak{H}_n(G)$} is an extension $H$ of $D_n(G)$ which is also a quotient of $H_n(G)$, i.\,e. 
- the one which fits into the following diagram.
-\[ \xymatrix{ H_n(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ H \ar@{->>}[r] & D_n(G)} \]
+ an extension $H$ which fits into the following diagram:
+\[ \xymatrix{ H_n(G) \ar@{->>}[rd] \ar@{->>}[d] & \\ H \ar@{->>}[r] & D_n(G).} \]
 %Any $\mathfrak{H}_n(G)$-extension is central, see~\cite[Proposition~2.3]{Reh78}.
 
-For $1\leq k\leq n$ denote by $\iota_k$ the map which sends an element $g$ of $[G, G]$ to $g[k]$ (the vector of $G^n$
- whose only nontrivial component equals $g$ and is located on $k$-th position).
-Denote by $U_{H_n(G)}$ the pull-back in the following diagram:
+For $1\leq k\leq n$ denote by $\iota_k$ the map sending an element $g$ of $[G, G]$ to $g[k]$ (recall that $g[k]$ is the vector of $G^n$
+ whose only nontrivial component equals $g$ and is located in the $k$-th position).
+Denote by $U_{H_n(G)}$ the pullback of the following diagram:
 \[ \xymatrix{ U_{H_n(G)} \pullbackcorner \ar@{^{(}->}[d] \ar@{->>}[r] & [G, G] \ar@{^{(}->}[d]^{\iota_k} \\ H_n(G) \ar@{->>}[r] & D_n(G)}\]
 It turns out, that the group $U_{H_n(G)}$ is isomorphic to $G \mathbin{\widetilde{\otimes}} G$ for any $k$.
 Here $G \mathbin{\widetilde{\otimes}} G$  denotes the nonabelian antisymmetric square of $G$ 
@@ -447,13 +444,13 @@ Here $G \mathbin{\widetilde{\otimes}} G$  denotes the nonabelian antisymmetric s
 A quotient of $G \mathbin{\widetilde{\otimes}} G$ is called an {\it extension of type $\mathfrak{U}(G)$} (cf.~\cite[\S~1]{Reh78}).
 There is one-to-one correspondence between extensions of type $\mathfrak{H}_n(G)$ and those of type $\mathfrak{U}(G)$.
 One obtains a $\mathfrak{U}(G)$-extension $U_H$ from a given $\mathfrak{H}_n(G)$-extension $H$ by taking pull-back as in the above diagram.
-In other words, $U_H$ is the subgroup of $H$ generated by all the symbols $c_{kj}(u, v)$, where
+In other words, $U_H$ is the subgroup of $H$ generated by the symbols $c_{kj}(u, v)$, where
 \[c_{kj}(u,v)=h_{kj}(u)h_{kj}(v)h_{kj}(vu)^{-1}, \ \ 1\leq k \neq j \leq n,\ u,v \in G.\]
-(It can be shown that symbols $c_{kj}(u, v)$ do not depend on $j$).
-The inverse construction which produces an $\mathfrak{H}_n(G)$ extension from the given $\mathfrak{U}(G)$-extension and a number $n$ is described in detail in~\cite[\S~3]{Reh78}.
+It can be shown that the symbols $c_{kj}(u, v)$ do not depend on $j$.
+The inverse construction which produces an $\mathfrak{H}_n(G)$-extension from a given $\mathfrak{U}(G)$-extension and a number $n$ is described in detail in~\cite[\S~3]{Reh78}.
 
-We now proceed with the proof of~\cref{thm:summary}.
-Our main result is the following.
+\subsection{Proof of~\cref{thm:summary}}
+A key ingredient in the proof of~\cref{thm:summary} is the following result, which is also interesting in itself.
 \begin{prop} \label{prop:simpler} 
 For $n\geq 3$ relations \eqref{H0}--\eqref{H4} imply \eqref{RH1}--\eqref{RH5}.
 Moreover, for $n\geq 4$ relations \eqref{H0}--\eqref{H3} are equivalent to \eqref{RH1}--\eqref{RH5}.
@@ -472,10 +469,10 @@ Let us show that~\eqref{RH3} can be omitted from the definition of $H_n(G)$ prov
  \end{lemlist}
 \end{lemma}
 \begin{proof}
-First one shows using~\eqref{RH4} that $c_{ij}(u, u^{-1})$ centralizes $h_{kj}(v)$ (cf. with the proof of~\cite[Lemma~2.1(2)]{Reh78}).
+First, one shows using~\eqref{RH4} that $c_{ij}(u, u^{-1})$ centralizes $h_{kj}(v)$ (cf. with the proof of~\cite[Lemma~2.1(2)]{Reh78}).
 Since in any group $[a, b]=1$ implies $[a^{-1}, b] = [a, b^{-1}] = [a^{-1}, b^{-1}] = 1$ we get that $c_{ij}(u, u^{-1})$ also centralizes $h_{kj}(v)^{-1} = h_{jk}(v)$ and
- $c_{ij}(u^{-1}, u)^{-1} = c_{ji}(u, u^{-1})$ centralizes both $h_{kj}(v)$ and $h_{jk}(v)$.
-Together with~\eqref{RH2} and~\eqref{RH5} this implies that $c_{ij}(u, u^{-1})$ centralizes all the generators of $H_n(G)$ and hence lies in the center of $H_n(G)$.
+ that $c_{ij}(u^{-1}, u)^{-1} = c_{ji}(u, u^{-1})$ centralizes both $h_{kj}(v)$ and $h_{jk}(v)$.
+Together with~\eqref{RH2} and~\eqref{RH5} this implies that $c_{ij}(u, u^{-1})$ centralizes all the generators of $H_n(G)$ and therefore lies in the center of $H_n(G)$.
 
 The second and the third assertions are straightforward corollaries of~\eqref{RH4}.
 The fourth assertion follows from the third one:
@@ -495,10 +492,10 @@ If one excludes relation~\eqref{RH3} from the list of defining relations for the
 \begin{proof}
 Implications $(1) \implies (2) \implies (3) \implies (4)$ can proved by essentially the same argument as 
  the corresponding statements for $c_{ij}(u, v)$ contained in~\cite[Lemmas~2.1-2.2]{Reh78}.
-Implication $(4) \implies (5)$ is trivial.
+The implication $(4) \implies (5)$ is trivial.
 
-We now prove $(5) \implies (1)$. Notice that~\eqref{RH4} implies ${}^{h_{ij}(u)^{-1}}h_{ik}(v) = h_{ik}(u)^{-1} h_{ik}(vu)$, therefore
-using~\cref{item-lem33-cntr} we get that ${}^{h_{ij}(u)}h_{ik}(v) = {}^{c'_{ij}(u, u^{-1}) h_{ij}(u^{-1})^{-1}}h_{ik}(v) = h_{ik}(u^{-1})^{-1} h_{ik}(vu^{-1}).$
+Now let us prove $(5) \implies (1)$. Notice that~\eqref{RH4} implies ${}^{h_{ij}(u)^{-1}}h_{ik}(v) = h_{ik}(u)^{-1} h_{ik}(vu)$, therefore
+from~\cref{item-lem33-cntr} we get that ${}^{h_{ij}(u)}h_{ik}(v) = {}^{c'_{ij}(u, u^{-1}) h_{ij}(u^{-1})^{-1}}h_{ik}(v) = h_{ik}(u^{-1})^{-1} h_{ik}(vu^{-1}).$
 Thus, \eqref{RH3} is equivalent to the equality 
 \[ h_{ik}(uv) h_{ik}(u)^{-1} = h_{ik}(u^{-1})^{-1} h_{ik}(vu^{-1}),\]
 or what is the same
@@ -520,18 +517,24 @@ To prove the proposition it remains to notice the following:
 \end{itemize}
 \end{proof}
 
-\begin{cor} \label{cor:main} For $n \geq 3$ the group $HS_n(G)$ is the quotient of the group $H_n(G)$ by~\eqref{H4} (in particular, 
- it is an extension of type $\mathfrak{H}_n(G)$).
-Moreover, there is an isomorphism, which is natural in $G$:
+\begin{cor} \label{cor:main} For $n \geq 3$ the group $HS_n(G)$ is the quotient of the group $H_n(G)$ by~\eqref{H4}. In particular, 
+ it is an extension of type $\mathfrak{H}_n(G)$.
+Moreover, there is an isomorphism, natural in $G$:
 \begin{equation} \Ker(S_n(G) \to G \wr S_n) = \Ker(HS_n(G) \to D_n(G)) \cong \HH_2(G, \ZZ). \end{equation} \end{cor}
 \begin{proof}
 Notice that imposing~\eqref{H4} has the same effect as modding out by all symbols $c_{ij}(u, u) = c_{ij}(u, u^{-1})$ (cf.~\cite[p.~87]{Reh78}).
-The corollary and \cref{thm:summary} now follow from the above proposition and~\cite[Proposition~5]{De76}.
+The corollary now follow from the above proposition and~\cite[Proposition~5]{De76}.
 \end{proof}
+
+\begin{proof}[Proof of~\cref{thm:summary}]
+ The required assertion easily follows from the above corollary, \cref{thm:cms} and the fact that $\mathrm{Coker}(\mu_n) \cong G^n/D_n(G) \cong \HH_1(G, \ZZ)$.
+\end{proof}
+
+
 Notice that the extension of type $\mathfrak{U}(G)$ corresponding to $HS_n(G)$ is isomorphic to the exterior square $G\wedge G$. 
 
 \section{Proof of Theorem~2} \label{sec:main}
-Recall that for arbitrary set $X$ one defines the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
+Recall that for an arbitrary set $X$ one defines the space $EX$ as the the simplicial set whose set of $k$-simplices $EX_k$
  is $X^{k+1}$ and whose faces and degeneracies are obtained by omitting and repeating components. 
 For a group $G$ we denote by $\pi_G$ the canonical map $EG \to BG$ sending $(g, h) \in EG_1$ to $g^{-1}h \in BG_1$.
  
@@ -543,27 +546,27 @@ With this notation the subset $N(x\to x)$ coincides with the stabilizer subgroup
 \begin{lemma} \label{lm:quillen-a} The simplicial sets $U$ and $V$ are homotopy equivalent. \end{lemma}
 \begin{proof} First, we define yet another simplicial set $W$ as follows.
 Its $k$-simplices $W_k$ are matrices $\left(\begin{smallmatrix}x_0 & x_1 & \ldots & x_k&\\ n_0 & n_1 & \ldots & n_k \end{smallmatrix}\right)$,
- where $x_i\in X$ are $n_i\in N$ are such that all $n_i$'s act on each $x_j$ in the same way, i.\,e. $n_ix_j = n_{i'} x_j$ for $0\leq i,i',j\leq k$. 
- The faces and degeneracies of $W$ are the maps of omission and repetition of columns.
+ where $x_i\in X$ are $n_i\in N$ are such that $n_ix_j = n_{i'} x_j$ for $0\leq i,i',j\leq k$. 
+ The faces and degeneracies of $W$ are obtained by omitting and repeating components.
  
- Now there are two simplicial maps $f\colon W\to U$, $g\colon W\to V$ whose action on $0$-simplicies is given by 
+ There are two simplicial maps $f\colon W\to U$, $g\colon W\to V$ whose action on $0$-simplicies is given by 
   $f\left(\begin{smallmatrix}x_0 \\ n_0\end{smallmatrix}\right) = (x_0, n_0x_0)$, 
   $g\left(\begin{smallmatrix}x_0 \\ n_0\end{smallmatrix}\right) = n_0$. 
  To prove the lemma it suffices to show that $f$ and $g$ are homotopy equivalences. 
  The proof for $f$ and $g$ is similar, let us show, for example, that $g$ is a homotopy equivalence.
  
- In view of Quillen theorem A (cf.\cite[ex.~IV.3.11]{Kbook}) it suffices to show that for each $p$-simplex $d \colon \Delta^p \to V$ the 
+ In view of Quillen's theorem A (cf.\cite[ex.~IV.3.11]{Kbook}) it suffices to show that for each $p$-simplex $d \colon \Delta^p \to V$ the 
   pullback $g/(p, d)$ of $d$ and $g$ is contractible.
  The simplicial set $g/(p, d)$ can be interpreted as the subset of $\Delta^p \times EX$ whose set of $k$-simplices consists of pairs
   $(\alpha\colon \underline{k}\to \underline{p}, (x_0, \ldots, x_k)\in X(\alpha, d)^{k+1})$.
  Here $X(\alpha, d)$ is the subset of $X$ consisting of all $x$ for which $d_{\alpha(i)}x = d_{\alpha(j)}x$ for $0\leq i,j\leq k$.
- Notice that the set $X_d := X(id_{\underline{p}}, d)$ is nonempty and is contained in every $X(\alpha, d)$ (it even equals $X(\alpha, d)$ for surjective $\alpha$).
+ Notice that the set $X_d := X(id_{\underline{p}}, d)$ is nonempty and is contained in every $X(\alpha, d)$ (it even equals $X(\alpha, d)$ for a surjective $\alpha$).
  Now choose a point $\widetilde{x}\in X_d$ and consider the simplicial homotopy \[H\colon \Delta^p \times EX \times \Delta^1 \to \Delta^p\times EX\] 
   between the identity map of $\Delta^p \times EX$ and
  the map $\Delta^p \times c_{\widetilde{x}}$, where $c_{\widetilde{x}}$ is the constant map. 
  More concretely, $H$ sends each triple $(\alpha\colon \underline{k} \to \underline{p}, (x_0, \ldots, x_k), \beta\colon \underline{k}\to\underline{1})$
  to $(\alpha, (x_0, \ldots, x_{i-1}, \widetilde{x}, \ldots, \widetilde{x}))$, where $i$ is the minimal number such that $\beta(i)=1$.
- By the choice of $\widetilde{x}$ the image of $H$ restricted to $g/(p, d)\times \Delta^1$ is contained in $g/(p, d)$, hence $g/(p, d)$ is contractible. 
+ By the choice of $\widetilde{x}$ the image of $H$ restricted to $g/(p, d)\times \Delta^1$ is contained in $g/(p, d)$, therefore $g/(p, d)$ is contractible. 
 \end{proof}
 
 Now suppose that $X=H$ is also a group upon which $N$ acts on the left.
@@ -587,7 +590,7 @@ The simplicial subset $T \subset BG^{2n}$ from the above corollary is precisely 
 The latter map coincides with the alternating map $h_n$ from the introduction up to a permutation of factors of $BG^{2n}$,
  therefore we can identify $T$ with $h_n^{-1}(0)$.
 
-It is also easy to compute the map $\pi_1(S) \to N$. Indeed, van Kampen theorem~\cite[Theorem~2.7]{May99} asserts that
+It is also easy to compute the map $\pi_1(S) \to N$. Indeed, the van Kampen theorem~\cite[Theorem~2.7]{May99} asserts that
 $\pi_1(S)$ is isomorphic to the free product of stabilizer subgroups $N_{h} \leq N$ amalgamated over pairwise intersections $N_h \cap N_{h'}$, $h, h\in H$.
 For $h \in G^n$ the subgroup $N_h$ consists of elements $(g, s) \in N$ satisfying $gh^{s^{-1}} = h$, i.e. elements of the form $(hh^{-s^{-1}}, s)$.
 Thus, there is an isomorphism $N_h\cong S_n$, the fundamental group $\pi_1(S)$ is isomorphic to $S_n(G)$ and the map $\pi_1(S) \to N$ coincides with the map $\mu$ defined in section~\ref{sec:QnG-def}.
@@ -597,23 +600,23 @@ We have shown that $\Ker(\mu)$ is isomorphic to $\Ker(\pi_1(h_n(0)) \to G^{2n})$
 This isomorphism is natural in $G$, since all the objects $N$, $H\times H$, $S$, $T$ used in its construction depended on $G$ functorially.
 The following lemma gives even more concrete description of this isomorphism for abelian $G$.
 \begin{lemma} \label{lem:concrete-formula}
- If $G$ is abelian then every generator $c_{ij}(u, v) \in \Ker(\pi_1(S)\to N)$ is mapped under $\theta$ to the class (in $\pi_1(T)$) of the loop $f_{ij}(u, v)$, 
-  which is defined as follows:
+ If $G$ is abelian then every generator $c_{ij}(u, v) \in \Ker(\pi_1(S)\to N)$ is mapped under $\theta$ to the class (in $\pi_1(T)$) of the loop $f_{ij}(u, v)$  defined as follows:
  \[f_{ij}(u,v) = p_{ij}(u) \circ p_{ij}(v) \circ p_{ij}(u^{-1} v^{-1}), \text{ where }
    p_{ij}(x)=(x[i], x[i]) \circ (x^{-1}[i], x^{-1}[j]).\]
  Here we denote by $x \circ y$ the formal concatenation of two loops from $T_1$.
 \end{lemma}
 \begin{proof}
-Fix a vector $g\in G^n$ and denote by $\gamma_{ij}(g, x)$ the path of length $4$ in $W$ (the simplicial set defined in the proof of~\cref{lm:quillen-a}) which connects 
-the following five points of $W_0$:
+For the proof of the lemma we use the simplicial set $W$ and the maps $f \colon W \to U \subseteq E(H\times H)$, $g \colon W \to V \subseteq EN$ defined in the proof of~\cref{lm:quillen-a}.
+
+Fix a vector $h\in G^n$ and denote by $\gamma_{ij}(h, x)$ the path of length $4$ in $W$ between the following five points of $W_0$:
 \[
-\Big(\begin{smallmatrix} e    \\ (g; e) \end{smallmatrix}\Big),\,
-\Big(\begin{smallmatrix} x[i] \\ (g; e) \end{smallmatrix}\Big),\,
-\Big(\begin{smallmatrix} x[i] \\ (d_{ij}(x) g, (ij)) \end{smallmatrix}\Big),\,
-\Big(\begin{smallmatrix} e    \\ (d_{ij}(x) g, (ij)) \end{smallmatrix}\Big),\,
-\Big(\begin{smallmatrix} e    \\ (d_{ij}(x) g, e) \end{smallmatrix}\Big).\]
-One can easily check that the image of $\gamma_{ij}(g, x)$ in $S$ under $\pi_N g$ is precisely the element $h_{ij}(x)$, while
-$\pi_{H\times H} f$ sends $\gamma_{ij}(g, x)$ to the loop $p_{ij}(x)$ ($f, g$ are also defined in the proof of~\cref{lm:quillen-a}).
+\Big(\begin{smallmatrix} e    \\ (h; e) \end{smallmatrix}\Big),\,
+\Big(\begin{smallmatrix} x[i] \\ (h; e) \end{smallmatrix}\Big),\,
+\Big(\begin{smallmatrix} x[i] \\ (d_{ij}(x) h, (ij)) \end{smallmatrix}\Big),\,
+\Big(\begin{smallmatrix} e    \\ (d_{ij}(x) h, (ij)) \end{smallmatrix}\Big),\,
+\Big(\begin{smallmatrix} e    \\ (d_{ij}(x) h, e) \end{smallmatrix}\Big).\]
+Now one can easily check that the image of $\gamma_{ij}(h, x)$ in $S$ under $\pi_N g$ is precisely the element $h_{ij}(x)$, while
+the image of $\gamma_{ij}(h, x)$ under $\pi_{H\times H} f$ is the loop $p_{ij}(x)$.
 \end{proof}
 
 \begin{lemma} \label{lm:endotr} The only natural endotransformations of the functor $\HH_2(-, \ZZ)\colon \catname{Groups}\to \catname{Ab}$ 
@@ -628,13 +631,13 @@ $\pi_{H\times H} f$ sends $\gamma_{ij}(g, x)$ to the loop $p_{ij}(x)$ ($f, g$ ar
  The functor $A \mapsto \wedge^2A$ is clearly quadratic and corresponds to the quadratic $\ZZ$-module $0 \to \ZZ \to 0$ under this equivalence.
  Thus, we get that $\eta$ restricted to $\catname{Add}(\ZZ)$ coincides with the the morphism of multiplication by $n\in \ZZ$.
  
- Consider the group $\Gamma_k = \langle x_1, y_1, \ldots x_k, y_k \mid [x_1, y_1]\cdot \ldots \cdot [x_k, y_k] \rangle$ (the fundamental group of a sphere with $k$ handles).
+ Consider the group $\Gamma_k = \langle x_1, y_1, \ldots x_k, y_k \mid [x_1, y_1]\cdot \ldots \cdot [x_k, y_k] \rangle$, i.\,e. the fundamental group of the sphere with $k$ handles.
  It is clear that the abelianization map $\Gamma_k \to \ZZ^{2k}$ induces an injection $\HH_2(\Gamma_k, \ZZ) \cong \ZZ \to \wedge^2\ZZ^{2k}$.  
- Consider the following diagrams.
+ Consider the following diagrams:
   \[ \xymatrix{ \ZZ \ar@{^{(}->}[r] \ar[d]_{\eta_{\Gamma_k}} & \ar[d]^{n \cdot} \wedge^2\ZZ^{2k} \\
                 \ZZ \ar@{^{(}->}[r]                          & \wedge^2\ZZ^{2k} } \ \ \ 
      \xymatrix{   \ZZ  \ar[r]^(.35){\chi} \ar[d]_{\eta_{\Gamma_k}} & \ar[d]^{\eta_G} \HH_2(G, \ZZ) \\
-                  \ZZ  \ar[r]^(.35){\chi}                          & \HH_2(G, \ZZ)}  \]
+                  \ZZ  \ar[r]^(.35){\chi}                          & \HH_2(G, \ZZ).}  \]
  From the left diagram it follows that $\eta_{\Gamma_k}$ is also the morphism of multiplication by $n$.
  For every element $x\in \HH_2(G, \ZZ)$ there exist an integer $k$ and a map $\chi\colon \Gamma_k\to G$ sending the generator of $\HH_2(\Gamma_k, \ZZ)$ to $x$.
  From the right square we conclude that $\eta_G(x) = nx$, as claimed.
@@ -642,7 +645,7 @@ $\pi_{H\times H} f$ sends $\gamma_{ij}(g, x)$ to the loop $p_{ij}(x)$ ($f, g$ ar
 
 \begin{proof}[Proof of~\cref{thm:main}]
 Factor $h_n$ as the composition of a trivial cofibration and a fibration \[BG^{2n}\to E_{h_n} \to \ZZ[BG].\]
-Now write down the starting portion of the long homotopy exact sequence for the latter.
+Now write down the starting portion of the long homotopy exact sequence.
 If we denote by $K$ the kernel of the map $\nu\colon \pi_1(T) \to G^{2n}$ induced by the embedding $h_n^{-1}(0)=T \subseteq BG^{2n}$ we obtain the following commutative diagram:
 \[ \xymatrix{1 \ar[r] & K       \ar[d]_{\psi} \ar[r]_{\beta} & \pi_1(T) \ar[d]_{\varphi} \ar[r]_{\nu}     & G^{2n} \ar[r] \ar[d]_{\cong} & \HH_1(G, \ZZ) \ar[r] \ar@{=}[d] & 1 \\
              1 \ar[r] & \HH_2(G, \ZZ) \ar[r]_{\alpha} & \pi_1(F_{h_n})           \ar[r]  & \pi_1(E_{h_n}) \ar[r]                       & \HH_1(G, \ZZ) \ar[r] & 1.}\]
@@ -679,7 +682,7 @@ element of $\pi_2(\ZZ[BG])$ is simply the normalized 2-cycle of $c$:
 \begin{equation} \nonumber c' = c - s_0d_0c - s_1d_1c + s_1d_0 = (x, y) - (y, x) - (x, e) +(y, e) + (e, x) - (e, y). \end{equation}
 It it not hard to check that $t-c'$ is the image of the following $3$-chain under the differential $d_0-d_1+d_2-d_3$:
 \[(xy, x^{-1}, y^{-1}) - (y, x, x^{-1}) + s_1 s_1(x^{-1} + xy - x - y) + s_0 s_0(x^{-1} - x - x^{-1}y^{-1}).\]
-We obtain that the classes of $t$ and $c'$ in $\HH_2(G, \ZZ)$ are the same, hence $\psi$ is an isomorphism, as claimed.
+We obtain that the classes of $t$ and $c'$ in $\HH_2(G, \ZZ)$ are the same, therefore $\psi$ is an isomorphism, as claimed.
 \end{proof}
 
 \begin{comment}
