@@ -2,17 +2,8 @@
 \usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, geometry, verbatim, enumitem, graphicx, mathtools, xfrac, microtype, nameref, thmtools}
 \usepackage[breaklinks=true]{hyperref}
 \usepackage[capitalize]{cleveref}
-\usepackage[hyperref=true, backend=bibtex, firstinits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
-%\usepackage[notref,notcite]{showkeys}
 \usepackage[matrix,arrow,curve]{xy}
 \usepackage[toc,page]{appendix}
-
-\addbibresource{question.bib}
-\renewbibmacro*{volume+number+eid}{\ifentrytype{article}{\- \iffieldundef{volume}{}{Vol.~\printfield{volume},}\iffieldundef{number}{}{ No.~\printfield{number},}}}
-\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat[article, inproceedings, inbook, book, thesis]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
-\renewcommand*{\bibfont}{\footnotesize}
 
 \newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label={\rm(\arabic{lemlisti})}, ref=\thelemma.(\arabic{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
 
@@ -97,7 +88,6 @@ The group defined above bears some similarity with the group $G_n(R)$ defined by
 By analogy, we call the group $S_n(G)$ a {\it parametrized symmetric group}.
 Our first main result is the following theorem, which provides its concrete description.
 
-%Denote by $G\wr S_n$ the wreath product of $G$ and $S_n$.
 \begin{thm} \label{thm:summary} For $n \geq 3$ there is a map $\mu_n\colon S_n(G) \to G \wr S_n$ which is a crossed module.
 The cokernel and the kernel of $\mu_n$ are isomorphic to $\HH_1(G, \ZZ)$ and $\HH_2(G, \ZZ)$ respectively.
 \end{thm}
@@ -106,10 +96,6 @@ The extensions of type $\mathfrak{H_n}(G)$ were introduced by U.~Rehmann in~\cit
 They are directly related with nonabelian tensor products.
 For example, the nonabelian antisymmetric square $G \mathbin{\widetilde{\otimes}} G$ is a subgroup of the group $H_n(G)$, the ''universal`` extension of type $\mathfrak{H}_n(G)$
  (we refer the reader to Section~\ref{sec:Hnextensions} for more details).
-
-%To some extent our result is analogous to~\cite[Th{\'e}or{\`e}me~1]{KR98}, which asserts that 
-% the group $G_n(R)$ with Coxeter-like presentation is isomorphic to $\mathrm{St}_n(R) \rtimes S_n$
-%  and hence contains the subgroup isomorphic to the unstable $\mathrm{K}_2$-group $\mathrm{K}_{2,n}(R)$.
  
 In course of the proof of~\cref{thm:summary} we find a presentation of the universal extension of type $\mathfrak{H}_n(G)$ which is
  simpler than its original presentation given in~\cite{Reh78} (4 instead of 5 relations, which are also shorter), see~\cref{prop:simpler}.
@@ -142,7 +128,7 @@ In addition to~\cref{thm:summary} the proof of \cref{thm:main} involves some exp
 I wish to thank S.~S. Podkorytov for posing the problem and numerous helpful discussions.
 I am also grateful to S.~O.~Ivanov, V.~Isaev and N.~A.~Vavilov for their valuable comments and interest in this work.
 
-\section{Definition of $S_n(G)$ and its basic properties} \label{sec:QnG-def}
+\section{Definition of \texorpdfstring{$S_n(G)$}{Sn(G)} and its basic properties} \label{sec:QnG-def}
 The aim of this section is to prove the first part of~\cref{thm:summary}, namely the fact that $S_n(G)$ is a crossed module over $G \wr S_n$.
 It will be useful for us to start with another definition of the group $S_n(G)$ given in terms of amalgams of symmetric groups.
 In the end of the section we show that this alternative definition coincides with the one given in the introduction.
@@ -170,7 +156,7 @@ Observe from the definition of $S_n(G)$ that there is a split exact sequence
 Here the map $\pi = \pi_{S_n} \circ \mu$ removes subscript $g$ from each $s_g$ and the section $\iota(1)$ maps $s$ to $s_1$, where $1$ is the identity element of $G^n$.
 Clearly, $S_n(G)$ decomposes as $HS_n(G) \rtimes S_n$, where $HS_n(G) = \mathrm{Ker}(\pi)$.
 
-\subsection{Crossed module structure on $S_n(G)$}
+\subsection{Crossed module structure on \texorpdfstring{$S_n(G)$}{Sn(G)}}
 Recall from~\cite[\S~2.2]{BHS11} that a {\it crossed module} is a morphism of groups $\mu\colon M\to N$ together with a right action of $N$ on $M$ 
 compatible with the conjugation action of $N$ on itself, i.\,e.
 \begin{equation} \label{eq:precrossed} \tag{CM1} \mu(m^n) = \mu(m)^n \text{ for all $n \in N$, $m \in M$}, \end{equation}
@@ -217,7 +203,7 @@ After choosing some $k\neq i,j$ and presenting $(ij)$ as $(kj)(ik)(kj)$ we use \
 The proposition now follows by induction on the length of permutations $s$, $t$.
 \end{proof}
 
-\subsection{An explicit presentation of $S_n(G)$}
+\subsection{An explicit presentation of \texorpdfstring{$S_n(G)$}{Sn(G)}}
 In this section we obtain an explicit presentation of $S_n(G)$ in terms of reflections.
 From this presentation we later deduce both the Coxeter presentation for $S_n(G)$ and
  an explicit presentation for the subgroup $HS_n(G)$.
@@ -274,7 +260,7 @@ The proof in the general case is similar.
 Verification of the fact that $\psi$ and $\varphi$ are mutually inverse is also immediate.
 \end{proof}
 
-\subsection{A Coxeter-like presentation of $S_n(G)$.}
+\subsection{A Coxeter-like presentation of \texorpdfstring{$S_n(G)$}{Sn(G)}.}
 The aim of this subsection is to show the following.
 \begin{prop}\label{prop:Cox-Amalgam}
 The group $S_n(G)$ defined in~\cref{prop:Q-pres} coincides with the group defined in the introduction by means of Coxeter-like presentation
@@ -352,7 +338,7 @@ In the central equality we use either~\eqref{CoxMix2} or~\eqref{CoxMix2New} depe
 The aim of this section is to express the group $S_n(G)$ in terms of Rehmann's extensions of
  type $\mathfrak{H}_n$ and thus finish the proof of~\cref{thm:summary}. 
 
-\subsection{Presentation of the subgroup $HS_n(G)$}
+\subsection{Presentation of the subgroup \texorpdfstring{$HS_n(G)$}{HSn(G)}}
 Our first goal is to obtain an explicit presentation of the subgroup $HS_n(G) = \Ker(S_n(G) \to S_n)$.
 
 For every $i\neq j$ and $a\in G$ we define the element $h_{ij}(a) \in HS_n(G)$ as follows:
@@ -410,7 +396,7 @@ h_{ij}(a)^{-1}                = &\, h_{ij}(a^{-1}). \tag{R4} \label{H4}
 \end{prop}
 
 In the next subsection we put the group $HS_n(G)$ into the context of Rehmann's extensions of type $\mathfrak{H}_n(G)$.
-\subsection{Extensions of type $\mathfrak{H}_n$}
+\subsection{Extensions of type \texorpdfstring{$\mathfrak{H}_n$}{Hn}}
 We start with a brief review of the material of \S~1--3 of~\cite{Reh78}.
 For $n\geq 3$ denote by $D_n(G)$ the subgroup of $G^n$ consisting of vectors
 $(g_1,\ldots, g_n)$ for which the product $g_1 g_2 \ldots g_n$ lies in the derived subgroup $[G, G]$.
@@ -449,7 +435,7 @@ In other words, $U_H$ is the subgroup of $H$ generated by the symbols $c_{kj}(u,
 It can be shown that the symbols $c_{kj}(u, v)$ do not depend on $j$.
 The inverse construction which produces an $\mathfrak{H}_n(G)$-extension from a given $\mathfrak{U}(G)$-extension and a number $n$ is described in detail in~\cite[\S~3]{Reh78}.
 
-\subsection{Proof of~\cref{thm:summary}}
+\subsection{Proof of\texorpdfstring{\cref{thm:summary}}{Theorem 1}}
 A key ingredient in the proof of~\cref{thm:summary} is the following result, which is also interesting in itself.
 \begin{prop} \label{prop:simpler} 
 For $n\geq 3$ relations \eqref{H0}--\eqref{H4} imply \eqref{RH1}--\eqref{RH5}.
@@ -685,130 +671,72 @@ It it not hard to check that $t-c'$ is the image of the following $3$-chain unde
 We obtain that the classes of $t$ and $c'$ in $\HH_2(G, \ZZ)$ are the same, therefore $\psi$ is an isomorphism, as claimed.
 \end{proof}
 
-\begin{comment}
-\section{Fibers of $h_\infty$}\label{sec:quasifib}
-The aim of this appendix is to sketch the proof of the quasifibration property 
- of the map $h_\infty\colon X^{\infty}\to \ZZ[X]$ mentioned in the introduction.
+\begin{thebibliography}{10}
+\bibitem{Ba96}
+{\sc H.~J. Baues}, 
+{\em Homotopy type and homology}, 
+Oxford University Press, 1996.
 
-We start with the definition of a simplicial analogue of ''weak covering homotopy property`` 
- (sometimes called ''delayed homotopy lifting property``), cf.~\cite[\S~1.4.4]{KSz14}.
+\bibitem{BHS11}
+{\sc R.~Brown, P.~J. Higgins, and R.~Sivera}, 
+{\em Nonabelian algebraic topology}, 
+vol.~15 of EMS Tracts in Mathematics, 2011.
 
-\begin{df} \label{df:dhlp}
- Let $C$ be a subclass of the class of acyclic cofibrations in the category of simplicial sets.
- We say that a map of simplicial sets $p\colon E \to B$ satisfies {\it weak homotopy covering property} with respect to $C$ if 
-  for every commutative square
-\begin{equation} \xymatrix{ 
-U \ar[r]^{g}  \ar@{^{(}->}_{i}[d] & E \ar^{p}[d] \\
-V \ar[r]_{F} \ar@{-->}[ru]^{\widetilde{F}} & B}
-\label{eq:plp-def} \end{equation}
-for which $i \in C$ there exists a map $\widetilde{F}$ such that the lower triangle commutes strictly and the upper one commutes up to a fiberwise homotopy $H$
- (i.\,e. a homotopy $H$ such that $pH \colon U \times I \to B$ coincides with the composite $U \times I \xrightarrow{\pi} U \xrightarrow{pg} B$).
-\end{df}
+\bibitem{Ca89}
+{\sc R.~W. Carter}, 
+{\em Simple groups of {L}ie type}, 
+vol.~22, John Wiley \& Sons, 1989.
 
-Denote by $C_{pr}$ the class consisting of all inclusions $i\colon U\hookrightarrow V$ of finite polyhedral simplicial sets 
- for which there exists a deformation retract (i.\,e. a map $r\colon V\to U$ homotopic to $\mathrm{id}_V$).
-\begin{lemma} \label{lm:dhlp} For a fibrant and connected simplicial set $X$ the map $h_\infty \colon X^\infty \to \ZZ[X]$ satisfies the weak covering homotopy property with respect to the class $C_{pr}$.
-\end{lemma}
-\begin{proof}
- Let $i_0$ be a map from $C_{pr}$ and $r$ be the corresponding retraction.
- We first reduce the problem to the special case when $g$ is the constant map at the basepoint of $X^\infty$ (which we denote by $0$).
- Indeed, let $F, g$ be arbitrary maps as in~\eqref{eq:plp-def}.
- Since $U$ is finite the image of $g$ is contained in $X^{2N} \subset X^\infty$.
- If now $\widetilde{F}_0$ is a lifting in the diagram similar to~\eqref{eq:plp-def} in which the top map equals $0$ and the bottom one is $F_0 = F - h_\infty gr$
-  then $\widetilde{F} = gr \times \widetilde{F}_0$ is the desired lifting of $F$.
- %For any maps $f\colon A \to X^\infty$ and $g\colon A \to X^{2N}$ one can define their product $g\times f$ by $(g \times f)(a) = (g(a); f(a)) \in X^\infty$. Clearly, then .
-  
- Now choose a contractible fibrant simplicial set $W$ which maps surjectively onto $X$ (e.\,g. take $W$ to be the path space fibration).
- Since $p \colon W \twoheadrightarrow X$ is surjective, the associated map between free simplicial abelian groups is a Kan fibration. %Goerss--Jardine Lemma III.2.8
- Since $i_0$ is acyclic we can choose a lifting $\widetilde{F}$ in the following diagram
-\begin{equation} \nonumber \xymatrix{ 
-U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d] & \ZZ[W] \ar@{->>}[d]  \\
-V \ar[r]_{F} \ar[ru]_{\widetilde{F}} & \ZZ[X]}
-\end{equation}
+\bibitem{De76}
+{\sc R.~K. Dennis}, 
+\href{https://www.math.uni-bielefeld.de/~rehmann/Publ/in_search.pdf}{\em In search of new homology functors having a close relationship to {K}-theory},
+Preprint, Cornell University,  (1976).
 
- It is clear that the image of $\widetilde{F}$ is contained in the simplicial subgroup $\ZZ[W]_0 \leq \ZZ[W]$ which, by definition, consists of linear combinations $\sum_i n_i w_i$ for which $\sum_i n_i = 0$.
- By~\cite[Lemma~9.1]{Po17} the canonical map $\ZZ[\underline{\Hom}(V, W)]_0 \to \underline{\Hom}(V, \ZZ[W]_0)$ is surjective, hence
-  the map $\widetilde{F}$ can be lifted along $h_W$ in such a way that the bottom triangle in following diagram commutes strictly.
-\begin{equation} \nonumber \label{eq:W-lift} \xymatrix{ 
-U \ar[r]^{0}  \ar@{^{(}->}_{i_0}[d]                               & W^\infty \ar[d]^{h_W}  \\
-V \ar[r]_{\widetilde{F}} \ar@{-->}[ru]^{G} & \ZZ[W]}
-\end{equation}
- Notice that the image of $Gi_0$ is contained in the fiber $h_W^{-1}(0)$.
- It is easy to see that $h_W^{-1}(0)$ is contractible (the contracting homotopy for $W^\infty$ can be restricted to $h_W^{-1}(0)$).
- We get that $Gi_0$ is fiberwise homotopic to $0$ hence the composite map $V \xrightarrow{G} W^\infty \to X^\infty$ is the desired lifting of $F$. \end{proof}
+\bibitem{GJar09}
+{\sc P.~G. Goerss and J.~F. Jardine},
+{\em Simplicial homotopy theory},
+Springer Science \& Business Media, 2009.
 
-The assertions of the following lemma are straightforward and are given without proof.
-\begin{lemma} \label{lem:topo-facts} Let $p\colon (E, e) \to (B, b)$ be a map of pointed topological spaces.
-Let $p^{-1}(b) \hookrightarrow F_{p}(b) \subseteq E\times_B B^I$ be the inclusion map of the fiber of $p$ into the homotopy fiber.
-Denote $k$-th relative homotopy group (or set) $\pi_k(F_p(b), p^{-1}(b), e))$ by $G_k$.
-\begin{lemlist}
- \item Maps of triples $(D^k, S^{k-1}, pt) \to (F_p(b), p^{-1}(b), e)$ are in one-to-one correspondence with commuting diagrams of the form
-   \begin{equation} \xymatrix{ 
-    D^k \ar@{^{(}->}_{i_0}[d]  \ar_{a}[rr] & & E \ar^{p}[d]  \\
-    D^k\times I \ar^{\pi}[r] & (D^k \times I) / J \ar^(.7){A}[r] & B}
-    \label{eq:plp} \end{equation}
-    Here $J$ denotes $(S^{k-1} \times I) \cup (D^k \times \{1\})$. In the sequel we denote such a diagram by $(a, A)$.
- \item Two diagrams $(a_0, A_0)$ and $(a_1, A_1)$ represent the same element of $G_k$ iff there exists a ''diagram homotopy`` that connects them.
-     By a diagram homotopy we mean a family of maps $(a_t, A_t)$ continously depending on $t\in [0, 1]$ such that $pa_t = A_t \pi i_0$ holds for all $t$.
- \item \label{item:continue} Let $(a, A)$ be a diagram and $a'$ be any other map 
-     homotopic to $a$ via some homotopy $H$ such that $H(S^{k-1}\times I) \subseteq p^{-1}(b)$.
-     Then there exists a map $A'$ such that $(a', A')$ is a diagram homotopic to $(a, A)$.
- \item \label{item:weaker} 
-     Assume that in the diagram~\eqref{eq:plp} there exists a diagonal map $\widetilde{A} \colon D^k\times I \to E$ 
-     such that the bottom triangle is commutative and the upper is commutative up to a fiberwise homotopy.
-     Then the element of $G_k$ given by $(a, A)$ is trivial.
-\end{lemlist}
-\end{lemma}
+\bibitem{KR98}
+{\sc C.~Kassel and C.~Reutenauer}, 
+\href{http://www.math.uiuc.edu/K-theory/0167/KsRt121196.pdf}{\em Une variante {\`a} la {C}oxeter du groupe de {S}teinberg},
+K-theory, 14 (1998), pp.~305--318.
 
- Denote by $H$ the fiberwise homotopy between $a$ and $\widetilde{A}i_0$.
- Consider the following family of diagrams:
- \[ a_t(x) = \left\{\def\arraystretch{1.2}%
-  \begin{array}{@{}c@{\quad}l@{}}
-    H(x, 2t)               & 0\leq t\leq \frac{1}{2}\\
-    \widetilde{A}(x, 2t-1) & \frac{1}{2}\leq t \leq 1\end{array}\right.;\  \
-  A_t(x, s) = \left\{\def\arraystretch{1.2}%
-  \begin{array}{@{}c@{\quad}l@{}}
-    A(x, s)                & 0\leq t\leq \frac{1}{2} \\
-    A(x, s + (2t-1)(1-s)) &  \frac{1}{2}\leq t \leq 1
-  \end{array}\right.\]
- It is clear that $a_0=a$ and $A_0=A$ while the image of $a_1$ is contained in $p^{-1}(b)$.
+\bibitem{LS05}
+{\sc J.-L. Loday and M.~R. Stein}, 
+\href{https://arxiv.org/abs/math/0212206}{\em Parametrized braid groups of {C}hevalley groups},
+Doc. Math., 10 (2005), pp.~391--416.
 
+\bibitem{MKS76}
+{\sc W.~Magnus, A.~Karrass, and D.~Solitar}, 
+{\em Combinatorial group theory},
+Dover Publications, 1976.
 
-\begin{lemma} \label{lm:weak-equiv} Let $p\colon E \to B$ be a map of simplicial sets satisfying the weak covering homotopy property with respect to the class $C_{pr}$.
- Then the geometric realization of $p$ is a quasifibration, i.\,e. for every point $b \in B_0$ the inclusion $|p|^{-1}(b) \hookrightarrow F_{|p|}(b)$ is a homotopy equivalence. \end{lemma}
-\begin{proof}
+\bibitem{May99}
+{\sc J.~P. May}, 
+{\em A concise course in algebraic topology}, 
+University of Chicago press, 1999.
 
- It suffices to show that $\pi_k(F_{|p|}(b), |p|^{-1}(b))$ are all trivial for $k \geq 1$.
- Consider a diagram $(a, A)$ of the form~\eqref{eq:plp} (with the map $|p|$ in the right hand side). 
- In view of the previous lemma it suffices to construct a lifting $\widetilde{A}$ satisfying the requirements of~\cref{item:weaker}.
- 
- The idea of the proof is to approximate $(a, A)$ with a homotopic pair of geometric realizations of simplicial maps and then invoke the weak covering homotopy property. 
- The key ingredient in the proof below is the simplicial approximation theorem~\cite[Theorem~4.7]{Jar04}.
- For brevity we denote the subdivision functor $\sd^m\sd_*(-)$ from its statement by $s^m(-)$ and the canonical natural transformation $s^m X \to X$ by $\delta^m$.
- 
- We proceed in a number of steps.
- Denote the restriction of $a$ to $S^{k-1}$ by $a_0$.
- Notice that the image of $a_0$ is contained in $|p^{-1}(b)|$.
- Using the approximation theorem we find a simplicial map $a_0'\colon s^m (S^{k-1}) \to p^{-1}(b)$ such that $a|\delta^m| \cong |a'_0|$.     
- 
- We can find a map $a'\colon D^k\to |E|$ extending $|a'_0|$ and homotopic to $a$ via some homotopy $H$ satisfying $H(S^k\times I) \subseteq p^{-1}(b)$.
- 
- Invoking the approximation theorem once again (with the initial condition specified by $|a'_0|$) we find $q>m$ and $a''\colon s^{q}(D^k) \to E$
- such that $a'|\delta^{q}| \cong |a''|$ rel $S^k$.
- Using \cref{item:continue} we extend the homotopy $a |\delta^q| \cong a'|\delta^q| \cong |a''|$ to a homotopy of diagrams $(a|\delta^q|, A|\delta^q|) \cong (|a''|, A')$.
- 
- Applying the approximation theorem to $A'$ with the initial condition on the boundary $\partial (D^k \times I) = D^k\times \{0\} \cup J$ specified by 
- $pa''$ and $const_b$, respectively, we find an integer $r>q$ and a map $A''\colon s^{r}(D^k \times I) \to B$ such that
- $A'|\delta^r|\cong |A''|$ rel $\partial (D^k \times I)$.
- 
- Thus, we have obtained the following commutative diagram of simplicial sets for which $(|a''|, |A''|)$ is a diagram homotopic to $(a, A)$.
-   \begin{equation} \nonumber \xymatrix{ 
-    s^{r}(D^k)          \ar[r]^(0.7){a''\gamma^{r-q}}  \ar@{^{(}->}_{s^{r}(i)}[d] & E \ar[d]^{p}  \\
-    s^{r}(D^k \times I) \ar[r]_(0.7){A''}  \ar@{-->}[ru]_{\widetilde{A}} & B}
-   \end{equation}
- By functoriality of the subdivision functor the map $s^{r}(i)$ posesses a deformation retract hence there exists the desired lifting $\widetilde{A}$.
- \end{proof}
-\end{comment} 
-\printbibliography
+\bibitem{Mi52}
+{\sc C.~Miller}, 
+\href{https://dx.doi.org/10.2307/2032593}{\em The second homology group of a group; relations among commutators}, 
+Proc. AMS, 3 (1952), pp.~588--595.
+
+\bibitem{Po17}
+{\sc S.~Podkorytov}, 
+\href{http://www.pdmi.ras.ru/~ssp/se.pdf}{\em Straight homotopy invariants}, 
+in Top. Proceedings, vol.~49, 2017, pp.~41--64.
+
+\bibitem{Reh78}
+{\sc U.~Rehmann}, 
+\href{http://gdz.sub.uni-goettingen.de/dms/load/img/?PPN=PPN243919689_0301&DMDID=DMDLOG_0009}
+{\em Zentrale {E}rweiterungen der speziellen linearen {G}ruppe eines {S}chiefk{\"o}rpers.},
+J. Reine Angew. Math., 301 (1978), pp.~77--104.
+
+\bibitem{Kbook}
+{\sc C.~A. Weibel}, 
+{\em The {K}-book: An introduction to algebraic {K}-theory},
+vol.~145, AMS, 2013.
+\end{thebibliography}
 
 \end{document}
